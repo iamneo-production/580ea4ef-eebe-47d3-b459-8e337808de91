@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css';
+import './login.css';
 import PrivateRoutes from './utils/PrivateRoutes'
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
