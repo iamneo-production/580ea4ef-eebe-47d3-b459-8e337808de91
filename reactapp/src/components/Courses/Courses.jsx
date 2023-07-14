@@ -47,8 +47,10 @@ const Courses = () => {
                 "description": "History description"
             }
         ];
-    
-        setcourseList(examplelist);
+        
+        // store the returned/response data from the backend viewcourses()
+        setcourseList(examplelist); 
+         
     },[searchTerm]
     )
 
