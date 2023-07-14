@@ -4,7 +4,9 @@ import PrivateRoutes from './utils/PrivateRoutes'
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
 import Details from './Viewacademy/Details';
-
+import AddAcademy from './AdminAcademy/AddAcademy';
+import EditAcademy from './AdminAcademy/EditAcademy';
+import AdminHome from "./AdminAcademy/Home";
 
 function App() {
   return (
