@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css';
-import PrivateRoutes from './utils/PrivateRoutes';
+import './Login.css';
+import PrivateRoutes from './utils/PrivateRoutes'
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
-import Details from './Viewacademy/Details';
-import Courses from './components/Courses/Courses';
-
+import Details from './components/Viewacademy/Details';
+import AddAcademy from './AdminAcademy/AddAcademy';
+import EditAcademy from './AdminAcademy/EditAcademy';
+import AdminHome from "./AdminAcademy/Home";
+import Home from './components/Home';
 
 function App() {
   return (
@@ -20,10 +22,9 @@ function App() {
             <Route element={<Signup/>} path="/signup"/>
             <Route element={<div>Page Not Found</div>} path="*"/>
             <Route element={<Details/>} path="/Details"/>
-            <Route element={<Courses/>} path="/Courses"/>
-            <Route path='/AdminInstitute' element={<AdminInstitute />} />
-            <Route path='/admin/addInstitute' element={<AddAcademy/>} />
-            <Route path='/admin/editInstitute/:instituteId' element = {<EditAcademy/>} />
+            <Route element={<AdminInstitute/>} path="/AdminInstitute"/>
+            <Route element={<AddAcademy/>} path ="/admin/addInstitute"/>
+            <Route element={<EditAcademy/>} path="admin/editInstitute/:instituteId"/>
           </Routes>
       </Router>
     </div>
