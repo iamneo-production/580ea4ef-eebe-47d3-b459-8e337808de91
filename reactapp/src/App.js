@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
-import PrivateRoutes from './utils/PrivateRoutes'
+import PrivateRoutes from './utils/PrivateRoutes';
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
 import Details from './Viewacademy/Details';
+import Courses from './components/Courses/Courses';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route element={<Signup/>} path="/signup"/>
             <Route element={<div>Page Not Found</div>} path="*"/>
             <Route element={<Details/>} path="/Details"/>
+            <Route element={<Courses/>} path="/Courses"/>
             <Route path='/AdminInstitute' element={<AdminInstitute />} />
             <Route path='/admin/addInstitute' element={<AddAcademy/>} />
             <Route path='/admin/editInstitute/:instituteId' element = {<EditAcademy/>} />
