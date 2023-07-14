@@ -19,7 +19,9 @@ function App() {
             <Route element={<Signup/>} path="/signup"/>
             <Route element={<div>Page Not Found</div>} path="*"/>
             <Route element={<Details/>} path="/Details"/>
-            
+            <Route path='/AdminInstitute' element={<AdminInstitute />} />
+            <Route path='/admin/addInstitute' element={<AddAcademy/>} />
+            <Route path='/admin/editInstitute/:instituteId' element = {<EditAcademy/>} />
           </Routes>
       </Router>
     </div>
