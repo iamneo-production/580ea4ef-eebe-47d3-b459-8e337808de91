@@ -27,7 +27,8 @@ const Details = () => {
 
 
 
-  //this is detaild page
+  //this is details page
+  //this helps to fill details of student
 
   
 
