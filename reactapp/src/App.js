@@ -1,23 +1,28 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Viewacademy from './Viewacademy/Viewacademy.jsx';
-import Academy from './Viewacademy/Academy';
-import ListOfCourses from './Viewacademy/ListOfCourses';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import './App.css';
+import PrivateRoutes from './utils/PrivateRoutes'
+import Signup from './components/Auth/Signup';
+import Login from './components/Auth/Login';
 import Details from './Viewacademy/Details';
-const App = () => {
+
+
+function App() {
   return (
-    <div>
-      <BrowserRouter>
-      <Routes>
-      <Route path='/' element={<Viewacademy/>}/>
-      <Route path='/Academy' element={<Academy/>}/>
-      <Route path='/ListOfCourses' element={<ListOfCourses/>}/>
-      <Route path='/Details' element={<Details/>}/>
-      </Routes>
-      </BrowserRouter>
-      
-      </div>
+    <div className="App">
+        <Router>
+          <Routes>
+            <Route element={<PrivateRoutes />}>
+                <Route element={<Home/>} path="/" exact/>
+                 <Route element={<AdminHome/>} path="/adminhome"/>
+            </Route>
+            <Route element={<Login/>} path="/login"/>
+            <Route element={<Signup/>} path="/signup"/>
+            <Route element={<div>Page Not Found</div>} path="*"/>
+            <Route element={<Details/>} path="/Details"/>
+            
+          </Routes>
+      </Router>
+    </div>
   );
 }
 
