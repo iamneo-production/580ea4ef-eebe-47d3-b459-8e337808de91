@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Viewacademy from './Viewacademy/Viewacademy.jsx';
+import Academy from './Viewacademy/Academy';
+import ListOfCourses from './Viewacademy/ListOfCourses';
+import Details from './Viewacademy/Details';
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+      <BrowserRouter>
+      <Routes>
+      <Route path='/' element={<Viewacademy/>}/>
+      <Route path='/Academy' element={<Academy/>}/>
+      <Route path='/ListOfCourses' element={<ListOfCourses/>}/>
+      <Route path='/Details' element={<Details/>}/>
+      </Routes>
+      </BrowserRouter>
+      
+      </div>
   );
 }
 
