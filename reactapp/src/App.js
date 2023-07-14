@@ -7,7 +7,8 @@ import Details from './Viewacademy/Details';
 import AddAcademy from './AdminAcademy/AddAcademy';
 import EditAcademy from './AdminAcademy/EditAcademy';
 import AdminHome from "./AdminAcademy/Home";
-
+import Home from './components/Home';
+import AdminInstitute from "./";
 function App() {
   return (
     <div className="App">
@@ -21,9 +22,9 @@ function App() {
             <Route element={<Signup/>} path="/signup"/>
             <Route element={<div>Page Not Found</div>} path="*"/>
             <Route element={<Details/>} path="/Details"/>
-            <Route path='/AdminInstitute' element={<AdminInstitute />} />
-            <Route path='/admin/addInstitute' element={<AddAcademy/>} />
-            <Route path='/admin/editInstitute/:instituteId' element = {<EditAcademy/>} />
+            <Route element={<AdminInstitute/>} path="/AdminInstitute"/>
+            <Route element={<AddAcademy/>} path ="/admin/addInstitute"/>
+            <Route element={<EditAcademy/>} path="admin/editInstitute/:instituteId"/>
           </Routes>
       </Router>
     </div>
