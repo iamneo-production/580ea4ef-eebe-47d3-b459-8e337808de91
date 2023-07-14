@@ -27,7 +27,7 @@ const Details = () => {
 
 
 
-  
+  //this is detaild page
 
   
 
