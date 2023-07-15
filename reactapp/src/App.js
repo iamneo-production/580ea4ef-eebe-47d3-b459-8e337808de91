@@ -4,10 +4,10 @@ import PrivateRoutes from './utils/PrivateRoutes'
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
 import Details from './components/Viewacademy/Details';
-import AddAcademy from './AdminAcademy/AddAcademy';
-import EditAcademy from './AdminAcademy/EditAcademy';
-import AdminHome from "./AdminAcademy/Home";
-import Home from './components/Home';
+import AddAcademy from './components/AdminAcademy/AddAcademy';
+import EditAcademy from './components/AdminAcademy/EditAcademy';
+import AdminHome from './components/dummydashboard/AdminHome';
+import Home from './components/dummydashboard/Home';
 
 function App() {
   return (
