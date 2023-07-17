@@ -37,7 +37,7 @@ navigate("/");
 };
 
 function goToHome(){
-  navigate("/")
+  navigate("/AdminInstitute")
 }
 
 

@@ -1,0 +1,21 @@
+.navbar{
+    background-color: darkgreen;
+    display:flex;
+    justify-content: space-between;
+    gap:20rem;
+    margin-bottom: 4rem;
+    width: 100%;
+    
+  }
+  
+  #navbarNav{
+    display:flex;
+    justify-content: space-between;
+    gap:15rem;
+    font-size: larger;
+    color:white;
+  }
+  .ul:hover{
+    color: black;
+  }
+  

@@ -8,7 +8,7 @@ import AddAcademy from './components/AdminAcademy/AddAcademy';
 import EditAcademy from './components/AdminAcademy/EditAcademy';
 import AdminHome from './components/dummydashboard/AdminHome';
 import Home from './components/dummydashboard/Home';
-
+import AdminInstitute from './components/AdminAcademy/AdminInstitute';
 function App() {
   return (
     <div className="App">

@@ -1,0 +1,131 @@
+#search {
+    margin-right: 1.5rem;
+    margin-left: 33rem;
+    margin-bottom: 5rem;
+    padding: -20px;
+    font-size: medium;
+}
+
+
+#searchButton {
+    font-size: large;
+    text-align: center;
+
+}
+
+#searchButton:hover{
+    background-color: green;
+    color: black;    
+    outline:none;
+}
+
+.addbtn {
+    display: flex;
+    float: right;
+    margin-bottom: 3rem;
+    margin-right: .5rem;
+    margin-top: 2rem;
+}
+
+#addStudent {
+    margin: 0%;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    padding:-40px;
+}
+
+#addStudent:hover {
+    background-color: green;
+    color: black;
+}
+
+.addbtn2{
+    display: flex;
+    float: right;
+    margin:0%
+}
+#addstudentbtn {
+   
+    margin: 0%;
+    translate: -0.75rem -22rem;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
+#addstudentbtn:hover {
+    background-color: green;
+    color: black;
+}
+
+#adminEditStudent:hover {
+    background-color: green;
+    color: aliceblue;
+}
+
+#adminEditStudent {
+    margin-right: 2px;
+    border: none;
+    outline: none;
+}
+
+#updateStudent {
+    float: right;
+    margin: 0%;
+    translate: -0.75rem -22rem;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
+#updateStudent:hover {
+    background-color: green;
+    color: black;
+}
+
+
+.details {
+    display: flex;
+    flex: wrap;
+    margin-top: 5rem;
+    margin-left: 5rem;
+    margin-bottom: 2rem;
+    
+}
+
+.details input {
+    font-size: large;
+
+}
+
+input {
+    font-size-adjust: inherit;
+    text-align: center;
+    padding: 7px;
+    margin: 2rem;
+    font-size: larger;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+.Address {
+    margin-top: 1rem;
+    margin-left: 5rem;
+    margin-bottom: 1rem;
+    font-size: medium;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: aliceblue;
+    translate: 30rem -22rem;
+    width: 55.3%;
+}
+
+.Address input {
+    font-size: small;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.79rem;
+}

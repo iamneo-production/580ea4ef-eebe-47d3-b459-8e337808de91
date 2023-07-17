@@ -16,7 +16,9 @@ import com.examly.springapp.repository.UserRepository;
 import com.examly.springapp.response.LoginResponse;
 import com.examly.springapp.response.SignupResponse;
 import java.util.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin
 @RestController
 public class AuthController {
 
@@ -34,7 +36,7 @@ public class AuthController {
 		boolean status = isUserPresent(data);
 		loginResponse.setStatus(status);
 		if (status) {
-			Optional<UserModel> optional = userRepository.findByEmail(data.getEmail());
+			Optional<UserModel> optional = userRepository.findUserByEmail(data.getEmail());
 			if (optional.isPresent()) {
 				loginResponse.setName(optional.get().getUsername());
 				loginResponse.setUserRole(optional.get().getUserRole());
@@ -45,7 +47,7 @@ public class AuthController {
 
 	public boolean isUserPresent(LoginModel data) {
 		if (null != data) {
-			Optional<UserModel> optional = userRepository.findByEmail(data.getEmail());
+			Optional<UserModel> optional = userRepository.findUserByEmail(data.getEmail());
 			if (optional.isPresent() && passwordEncoder.matches(data.getPassword(), optional.get().getPassword())) {
 				return true;
 			}
@@ -59,7 +61,7 @@ public class AuthController {
 		boolean status = isAdminPresent(data);
 		loginResponse.setStatus(status);
 		if (status) {
-			Optional<UserModel> optional = userRepository.findByEmail(data.getEmail());
+			Optional<UserModel> optional = userRepository.findUserByEmail(data.getEmail());
 			if (optional.isPresent()) {
 				loginResponse.setName(optional.get().getUsername());
 				loginResponse.setUserRole(optional.get().getUserRole());
@@ -70,7 +72,7 @@ public class AuthController {
 
 	public boolean isAdminPresent(LoginModel data) {
 		if (null != data) {
-			Optional<UserModel> optional = userRepository.findByEmail(data.getEmail());
+			Optional<UserModel> optional = userRepository.findUserByEmail(data.getEmail());
 			if (optional.isPresent() && passwordEncoder.matches(data.getPassword(), optional.get().getPassword())) {
 				return true;
 			}
@@ -88,7 +90,7 @@ public class AuthController {
 
 	public String saveUser(UserModel user) {
 		try {
-			Optional<UserModel> optional = userRepository.findByEmail(user.getEmail());
+			Optional<UserModel> optional = userRepository.findUserByEmail(user.getEmail());
 			if (!optional.isPresent()) {
 				user.setPassword(passwordEncoder.encode(user.getPassword()));
 				UserModel userModel = userRepository.save(user);
@@ -112,7 +114,7 @@ public class AuthController {
 
 	public String saveAdmin(UserModel user) {
 		try {
-			Optional<UserModel> optional = userRepository.findByEmail(user.getEmail());
+			Optional<UserModel> optional = userRepository.findUserByEmail(user.getEmail());
 			if (!optional.isPresent()) {
 				user.setPassword(passwordEncoder.encode(user.getPassword()));
 				UserModel userModel = userRepository.save(user);
@@ -124,5 +126,19 @@ public class AuthController {
 			logger.info("Failed to save Admin", e);
 		}
 		return "Failed";
+		
 	}
+	// @PostMapping("/login")
+	// public ResponseEntity<JWTAuthResponse> loginUser(@RequestBody LoginModel loginModel){
+	// 	Authentication authentication=authenticationManager.authenticate(
+	// 			new UsernamePasswordAuthenticationToken(loginModel.getEmail(), 
+	// 					loginModel.getPassword())
+	// 			);
+	// 	SecurityContextHolder.getContext().setAuthentication(authentication);
+		
+	// 	String token = JwtUtils.generateJwt(authentication);
+		
+
+	// 	return ResponseEntity.ok(new JWTAuthResponse(token));
+	// }//
 }
