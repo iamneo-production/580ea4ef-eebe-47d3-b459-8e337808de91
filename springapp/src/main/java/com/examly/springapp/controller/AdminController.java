@@ -12,7 +12,7 @@ import java.util.Optional;
 
 
 @RestController
-@CrossOrigin
+@CrossOrigin("*")
 
 public class AdminController {
 
