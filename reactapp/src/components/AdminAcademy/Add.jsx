@@ -32,8 +32,8 @@ setUser({ ...user, [e.target.name]:e.target.value});
 
 const onSubmit =async (e) => {
   e.preventDefault();
-  await axios.post("http://localhost:8080/admininstitute",user)
-navigate("/");
+  await axios.post("https://8080-aabbcbadccfbfcadcdaadecbbaeeaadadfcaea.project.examly.io/admininstitute",user)
+navigate("/AdminInstitute");
 };
 
 function goToHome(){

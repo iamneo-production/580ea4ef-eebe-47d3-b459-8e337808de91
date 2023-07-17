@@ -25,12 +25,12 @@ loadUsers();
   },[]);
 
   const loadUsers = async()=>{
-    const result=await axios.get("http://localhost:8080/admin/viewInstitutes");
+    const result=await axios.get("https://8080-aabbcbadccfbfcadcdaadecbbaeeaadadfcaea.project.examly.io/admin/viewInstitutes");
 setUsers(result.data);
   };
 
 const deleteUser=async (instituteId)=>{
-  await axios.delete(`http://localhost:8080/admin/deleteInstitutes/${instituteId}`)
+  await axios.delete(`https://8080-aabbcbadccfbfcadcdaadecbbaeeaadadfcaea.project.examly.io/admin/deleteInstitutes/${instituteId}`)
   loadUsers()
 }
 
