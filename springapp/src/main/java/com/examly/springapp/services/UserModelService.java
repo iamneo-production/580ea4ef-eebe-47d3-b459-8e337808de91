@@ -53,7 +53,6 @@ public class UserModelService {
         return userExist != null && "admin".equals(userExist.getUserRole());
 
     }
-
     public boolean userAlreadyExist(String email) {
         return userRepository.findUserByEmail(email) != null;
     }
@@ -82,7 +81,7 @@ public class UserModelService {
         Optional<UserModel> optionalUser = userRepository.findUserByEmail(data.getEmail());
         if (optionalUser.isPresent()) {
             UserModel user = optionalUser.get();
-            // Perform necessary validations or operations with the user object
+         // Perform necessary validations or operations with the user object
             return ResponseEntity.ok("User found: " + user.getUsername());
         } else {
             return ResponseEntity.notFound().build();
@@ -94,7 +93,6 @@ public class UserModelService {
         return optionalUser.orElse(null);
     }
     
-
    /*  public ResponseEntity<?> validateUser(LoginModel data) {
         Optional<UserModel> optionalUser = userRepository.findByEmail(data.getEmail());
         if (optionalUser.isPresent()) {
@@ -105,7 +103,6 @@ public class UserModelService {
             return ResponseEntity.notFound().build();
         }
     }*/
-
     public ResponseEntity<?> authenticateUser(LoginModel data) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(data.getEmail(), data.getPassword()));
