@@ -21,25 +21,25 @@ public class AdminController {
 
 
     @PostMapping("/admininstitute")
-    InstituteModel newInstitute(@RequestBody InstituteModel newInstitute) {
+    public InstituteModel addInstitute(@RequestBody InstituteModel newInstitute) {
         return instituteModelRepository.save(newInstitute);
     }
 
     @GetMapping("/admin/viewInstitutes")
-    List<InstituteModel> getAllInstitutes() {
+    public List<InstituteModel> ViewInstitute() {
         return instituteModelRepository.findAll();
     }
 
 
     @GetMapping("/admin/editInstitute/{instituteId}")
 
-    Optional<InstituteModel> updateInstituteModel(@PathVariable Long instituteId) {
+    public Optional<InstituteModel> editInstitute(@PathVariable Long instituteId) {
         return instituteModelRepository.findById(instituteId);
     }
 
 
     @PutMapping("/admin/editInstitute/{instituteId}")
-    Optional<InstituteModel> updateInstituteModel(@RequestBody InstituteModel newInstitute, @PathVariable Long instituteId) {
+    public Optional<InstituteModel> editInstitute(@RequestBody InstituteModel newInstitute, @PathVariable Long instituteId) {
         return instituteModelRepository.findById(instituteId)
                 .map(instituteModel -> {
                     instituteModel.setEmail(newInstitute.getEmail());
@@ -53,7 +53,7 @@ public class AdminController {
     }
 
     @DeleteMapping("/admin/deleteInstitutes/{instituteId}")
-    String deleteInstituteModel(@PathVariable Long instituteId){
+    public String deleteInstitute(@PathVariable Long instituteId){
     instituteModelRepository.deleteById(instituteId);
     return "Institute with id"+instituteId+" has been deleted";
 }
