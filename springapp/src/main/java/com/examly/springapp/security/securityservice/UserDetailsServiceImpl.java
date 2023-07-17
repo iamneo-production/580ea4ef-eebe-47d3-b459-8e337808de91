@@ -23,11 +23,4 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         UserModel user = userOptional.orElseThrow(() -> new UsernameNotFoundException("User doesn't exist with email: " + email));
         return UserDetailsImpl.build(user);
     }
-    //public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-     //   UserModel user = userRepo.findUserByEmail(email);
-     //   if (user == null) {
-       //     throw new UsernameNotFoundException("User doesn't exist with email: " + email);
-     //   }
-      //  return UserDetailsImpl.build(user);
-   // }
 }
