@@ -9,6 +9,10 @@ import EditAcademy from './components/AdminAcademy/EditAcademy';
 import AdminHome from './components/dummydashboard/AdminHome';
 import Home from './components/dummydashboard/Home';
 import AdminInstitute from './components/AdminAcademy/AdminInstitute';
+import EditCourse from './Admincourse/EditCourse';
+import CourseForm from './Admincourse/CourseForm';
+import MainPage from './Admincourse/MainPage';
+
 function App() {
   return (
     <div className="App">
@@ -25,6 +29,9 @@ function App() {
             <Route element={<AdminInstitute/>} path="/AdminInstitute"/>
             <Route element={<AddAcademy/>} path ="/admin/addInstitute"/>
             <Route element={<EditAcademy/>} path="admin/editInstitute/:instituteId"/>
+            <Route path="/MainPage" element={<MainPage />} />
+           <Route path="/courseform" element={<CourseForm />} />
+           <Route path="/EditCourse/:id" element={<EditCourse />} />
           </Routes>
       </Router>
     </div>
