@@ -1,0 +1,267 @@
+.Homepage{
+    background: linear-gradient(to bottom right, #fafafa, #c6effa, #f4cde0);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    
+  }
+  .search-box {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      margin : 10px 10px;
+       width: 100%;
+    }
+    
+    .search_input {
+      flex:1;
+      width: 100%; 
+      border: 3px solid #529eb5;
+      border-right: none;
+      padding: 5px;
+      height: 30px;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      color: #00ffff;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    
+    .search_input:focus {
+      color: #00ffea48;
+    }
+    
+    ::placeholder {
+      color: black;
+    }
+    
+    .search-box button {
+      width: 45px;
+      height: 45px;
+      border: 1px solid #000000;
+      background: #3fc5ff;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E"); 
+      background-repeat: no-repeat;
+      background-size: 18px 18px;
+      background-position: center;
+      text-align: center;
+      color: #fff;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    
+    .wrap{
+      display: inline-flex;
+      align-items: center;
+      width:50%;
+    }
+    .filter-container  {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      background-color: #3fc5ff;
+      border:solid 1px;
+      height: 30px;
+      border-radius: 3px;
+      
+    }
+    
+    .filter-container select {
+      appearance: none;
+      background-color: transparent;
+      border: none;
+      color: black;
+      font-size: 14px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin-left: 5px;
+      padding: 3px 5px;
+      width: 90px;
+      text-align: center;
+      outline: none;
+      cursor: pointer;
+    }
+    
+    .filter-container select:hover option {
+      background-color: whitesmoke;
+    }
+    
+    /* grid cards */
+    
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); 
+      grid-gap: 50px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 1400px;
+    }
+    
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        padding: 10px;
+        max-width: 600px;
+      }
+    }
+    
+    .single-institute-card{
+      background-color: white;
+      width: 280px;
+      margin-top: 20px;
+      border:solid 1px;
+      border-radius: 15px;
+      box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      box-sizing: border-box;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 15px;
+      transition: transform 0.3s , box-shadow 0.3s ;
+    }
+    
+    
+    .bday-card:hover {
+      box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.4);
+      transform: translateY(-3px);
+    }
+    
+    .bday-card img {
+      position: relative;
+      object-fit: cover;
+      border-radius: 5px;
+      width:100%;
+      max-height: 500px;
+    }
+    
+    .place-rating-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding:0 5px;
+    }
+    
+    .institute-name{
+      text-align: center;
+      margin-top: 10px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    
+    }
+    
+    /* Rating stars styles */
+    
+    .checked {
+      color: orange;
+    }
+    
+    .rating-stars {
+      font-size: 20px;
+    }
+    
+   
+    .on {
+      color: gold;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    .off {
+      color: silver;
+      font-size: 24px;
+      cursor: pointer;
+    } 
+    
+  
+    /* modal css */
+    #container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to right, #ffffb3, #ffe6e6);
+    }
+    
+    .product-image,
+    .product-details {
+      flex: 1;
+      padding: 20px;
+    }
+    
+    .product-image {
+      text-align: center;
+    }
+    
+    .product-image img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 10px;
+    }
+    
+    .info {
+      background: rgba(27, 26, 26, 0.9);
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    
+    .product-details {
+      text-align: left;
+    }
+    
+    .product-details h1 {
+      font-size: 24px;
+      color: #344055;
+      margin: 0;
+    }
+    
+    .product-details p {
+      font-size: 18px;
+      color: #7d7d7d;
+    }
+    
+    .button-div {
+      text-align: left;
+      margin-top: 20px;
+    }
+    
+    .btn-book {
+      background: #809fff;
+      color: #eee;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .btn-book:hover {
+      background: #1a66ff;
+    }
+    
+    .btn-book span {
+      display: block;
+    }
+    
+    .btn-book .shopping-cart {
+      display: none;
+    }
+    
+    .btn-book:hover .price {
+      display: none;
+    }
+    
+    .btn-book:hover .shopping-cart {
+      display: inline-block;
+    }
+
+    .view-button {
+      margin-bottom: 10px;
+      background-color: rgb(119, 239, 241);
+      width: 150px;
+      height: 30px;
+      border-radius:5px;
+    }

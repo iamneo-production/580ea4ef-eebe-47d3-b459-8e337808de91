@@ -15,7 +15,9 @@ public class InstituteModel {
     private String instituteAddress;
     private String mobile;
     private String email;
+    private String imageurl;
 
+    
     public String getImageurl() {
         return imageurl;
     }
@@ -24,7 +26,7 @@ public class InstituteModel {
         this.imageurl = imageurl;
     }
 
-    private String imageurl;
+    
 
 
     public Long getInstituteId() {
