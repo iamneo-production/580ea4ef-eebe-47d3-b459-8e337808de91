@@ -6,7 +6,7 @@ import { LuEdit } from "react-icons/lu";
 import { FaTrash } from "react-icons/fa";
 import { GrAddCircle } from "react-icons/gr";
 import { Link, useNavigate,useParams } from 'react-router-dom';
-
+import { API_BASE_URL } from '../../utils/APIUtils';
 
 
 const Main =() => {
@@ -25,12 +25,21 @@ loadUsers();
   },[]);
 
   const loadUsers = async()=>{
-    const result=await axios.get("https://8080-aabbcbadccfbfcadcdaadecbbaeeaadadfcaea.project.examly.io/admin/viewInstitutes");
+    const result=await axios.get("/admin/viewInstitutes");
 setUsers(result.data);
   };
 
+  // const onSubmit = async (e) => {
+  //   e.preventDefault();
+  //   // const baseUrl = "https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io";
+    
+  //   const apiUrl = API_BASE_URL + "/admininstitute";
+  //   await axios.post(apiUrl, user);
+  //   navigate("/AdminInstitute");
+  // };
+
 const deleteUser=async (instituteId)=>{
-  await axios.delete(`https://8080-aabbcbadccfbfcadcdaadecbbaeeaadadfcaea.project.examly.io/admin/deleteInstitutes/${instituteId}`)
+  await axios.delete(`API_BASE_URL + /admin/deleteInstitutes/${instituteId}`)
   loadUsers()
 }
 
