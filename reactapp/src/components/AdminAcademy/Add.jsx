@@ -53,82 +53,128 @@ function goToHome(){
 
 
   
-  return (
-    <Container style={{marginTop:"20px",height:"500px",backgroundColor:"rgb(250, 213, 170)"}}>
-      
-    <Form onSubmit={(e)=> onSubmit(e)}>
-    <Row className="mb-3" style={{height:"120px",paddingTop:"20px"}}>
-
-        <Form.Group as={Col} md="6" id='academyName'>
-          <Form.Label  column="lg">Enter Academy Name</Form.Label>
-          <Form.Control size="lg"
+return (
+  <Container style={{ marginTop: '20px', minHeight: '500px', backgroundColor: 'rgb(250, 213, 170)' }}>
+    <Form onSubmit={(e) => onSubmit(e)}>
+      <Row className="mb-3" style={{ paddingTop: '20px' }}>
+        <Form.Group as={Col} md="6">
+          <Form.Label column="lg">Enter Academy Name</Form.Label>
+          <Form.Control
+            size="lg"
             required
             type="text"
             placeholder="Enter the Academy name"
             name="instituteName"
             value={instituteName}
-            onChange={(e)=>onInputChange(e)}
-            />
+            onChange={(e) => onInputChange(e)}
+          />
         </Form.Group>
 
-
-        <Form.Group as={Col} md="6" id='imageUrl'>
-          <Form.Label  column="lg">Enter the Academy Image URL</Form.Label>
-          <Form.Control size="lg"
+        <Form.Group as={Col} md="6">
+          <Form.Label column="lg">Enter the Academy Image URL</Form.Label>
+          <Form.Control
+            size="lg"
             required
             type="text"
             placeholder="Enter the Academy Image URL"
             name="imageurl"
             value={imageurl}
-            onChange={(e)=>onInputChange(e)}
-            
+            onChange={(e) => onInputChange(e)}
           />
-          </Form.Group>
-          </Row>
-          <Row className="mb-3" style={{height:"100px"}}>
-        
-        <Form.Group as={Col} md="6" id='academyLocation'>
-          <Form.Label  column="lg">Enter the Academy Location</Form.Label>
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} md="6">
+          <Form.Label column="lg">Enter the Academy Location</Form.Label>
           <InputGroup hasValidation>
-           
-          <Form.Control size="lg"
+            <Form.Control
+              size="lg"
               type="text"
               placeholder="Enter the Academy Location"
               name="instituteAddress"
               value={instituteAddress}
-              onChange={(e)=>onInputChange(e)}
+              onChange={(e) => onInputChange(e)}
               required
             />
           </InputGroup>
         </Form.Group>
-        
 
-        <Form.Group as={Col} md="6" id='contactNumber'>
-          <Form.Label  column="lg">Enter the contact number</Form.Label>
-          <Form.Control size="lg" type="number" placeholder="Enter the contact number" name="mobile" value={mobile} onChange={(e)=>onInputChange(e)} required />
+        <Form.Group as={Col} md="6">
+          <Form.Label column="lg">Enter the contact number</Form.Label>
+          <Form.Control
+            size="lg"
+            type="number"
+            placeholder="Enter the contact number"
+            name="mobile"
+            value={mobile}
+            onChange={(e) => onInputChange(e)}
+            required
+          />
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} md="6">
+          <Form.Label column="lg">Enter the Academy email</Form.Label>
+          <Form.Control
+            size="lg"
+            type="email"
+            placeholder="Enter the academy email"
+            name="email"
+            value={email}
+            onChange={(e) => onInputChange(e)}
+            required
+          />
         </Form.Group>
 
-        </Row>
-        <Row className="mb-3" style={{height:"100px"}}>
-        
-        <Form.Group as={Col} md="6" id='emailid'>
-          <Form.Label  column="lg">Enter the Academy email</Form.Label>
-          <Form.Control size="lg" type="email" placeholder="Enter the academy email" name="email" value={email} onChange={(e)=>onInputChange(e)} required />
+        <Form.Group as={Col} md="6">
+          <Form.Label column="lg">Enter the Academy Description</Form.Label>
+          <Form.Control
+            size="lg"
+            type="text"
+            placeholder="Enter the Academy Description"
+            name="instituteDescription"
+            value={instituteDescription}
+            onChange={(e) => onInputChange(e)}
+            required
+          />
         </Form.Group>
+      </Row>
 
-
-        <Form.Group as={Col} md="6" id='academyDescription'>
-          <Form.Label  column="lg">Enter the Academy Description</Form.Label>
-          <Form.Control size="lg" type="text" placeholder="Enter the Academy Description" name="instituteDescription" value={instituteDescription} onChange={(e)=>onInputChange(e)} required /></Form.Group>
-        
-        </Row>
-      
-        <button style={{marginTop:"20px",fontSize:"1.2rem",backgroundColor:"rgb(0, 204, 0)",marginLeft:"48.37rem",height:"50px",width:"180px",borderRadius:"10px",border:"1px solid green"}}>Add Academy</button>
-        <button style={{marginTop:"20px",fontSize:"1.2rem",backgroundColor:"rgb(240, 40, 24)",marginLeft:"1rem",marginRight:"0px",height:"50px",width:"140px",borderRadius:"10px",border:"1px solid red",color:"white"}} onClick={goToHome}>Cancel</button>  
-   
+      <div className="d-flex justify-content-center">
+        <button
+          style={{
+            marginTop: '20px',
+            fontSize: '1.2rem',
+            backgroundColor: 'rgb(0, 204, 0)',
+            width: '180px',
+            borderRadius: '10px',
+            border: '1px solid green',
+          }}
+        >
+          Add Academy
+        </button>
+        <button
+          style={{
+            marginTop: '20px',
+            fontSize: '1.2rem',
+            backgroundColor: 'rgb(240, 40, 24)',
+            marginLeft: '1rem',
+            height: '50px',
+            width: '140px',
+            borderRadius: '10px',
+            border: '1px solid red',
+            color: 'white',
+          }}
+          onClick={goToHome}
+        >
+          Cancel
+        </button>
+      </div>
     </Form>
-    </Container>
-  );
+  </Container>
+);
 }
 
 export default Add;
