@@ -25,9 +25,10 @@ function App() {
                 <Route element={<AdminHome/>} path="/adminhome"/>
             </Route> */}
             <Route element={<Login/>} path="/login"/>
+            <Route element={<Login/>} path="/"/>
             <Route element={<Signup/>} path="/signup"/>
             <Route element={<div>Page Not Found</div>} path="*"/>
-            <Route element={<AcademiesPage/>} path="/"/>
+            <Route element={<AcademiesPage/>} path="/academies"/>
             <Route path = "/course" element={<Course/>}/>
 
             <Route element={<Details/>} path="/Details"/>

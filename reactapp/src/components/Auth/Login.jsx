@@ -36,7 +36,7 @@ const Login = () => {
               setProcessing(false); 
               localStorage.setItem("token", data);
               if(data.userRole == "user"){
-                navigate(`/`); // add link of the student dashboard
+                navigate(`/academies`); // add link of the student dashboard
               }else{
                 navigate(`/admininstitute`);// when admin login in it will navaigate to admin Institute
               }
