@@ -29,7 +29,7 @@ const Signup = () => {
     }
 
     const validateConfirmPassword = (e) => {
-      if(e.target.value != form.password.value){
+      if(e.target.value !== form.password.value){
         alert("Password and Confirm password should be same")
       }
     }
@@ -39,7 +39,7 @@ const Signup = () => {
         alert("Password must be greater than 5 characters");
         return false;
       }
-      if(form.confirmpassword.value != form.password.value){
+      if(form.confirmpassword.value !== form.password.value){
         alert("Password and Confirm password should be same")
         return false;
       }
@@ -96,7 +96,7 @@ const Signup = () => {
           signup(signupRequest)
           .then(response => {
             console.log(response.message)
-            if(response.message == "Success"){
+            if(response.message === "Success"){
               alert("Registered sucesfully");
             }else{
               alert("Failed to register, Please try again");
