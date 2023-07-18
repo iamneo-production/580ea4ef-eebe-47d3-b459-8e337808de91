@@ -5,6 +5,9 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import axios from 'axios';
+import { API_BASE_URL } from '../../utils/APIUtils';
+
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
@@ -30,10 +33,18 @@ let navigate=useNavigate();
 setUser({ ...user, [e.target.name]:e.target.value});
   };
 
-const onSubmit =async (e) => {
+// const onSubmit =async (e) => {
+//   e.preventDefault();
+//   await axios.post("https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io/admininstitute",user)
+// navigate("/AdminInstitute");
+// };
+const onSubmit = async (e) => {
   e.preventDefault();
-  await axios.post("https://8080-aabbcbadccfbfcadcdaadecbbaeeaadadfcaea.project.examly.io/admininstitute",user)
-navigate("/AdminInstitute");
+  // const baseUrl = "https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io";
+  
+  const apiUrl = API_BASE_URL + "/admininstitute";
+  await axios.post(apiUrl, user);
+  navigate("/AdminInstitute");
 };
 
 function goToHome(){
