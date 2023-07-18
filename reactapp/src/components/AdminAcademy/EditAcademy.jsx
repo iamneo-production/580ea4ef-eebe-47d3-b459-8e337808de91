@@ -12,7 +12,7 @@ export default function EditAcademy(){
     </h2>
 </header>
 
-<body style={{backgroundColor:"gray"}}>
+<body style={{backgroundColor:"rgb(250, 213, 170)"}}>
 <Edit  />
 </body>
 
