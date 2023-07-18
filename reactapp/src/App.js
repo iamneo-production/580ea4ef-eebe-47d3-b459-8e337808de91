@@ -9,6 +9,8 @@ import EditAcademy from './components/AdminAcademy/EditAcademy';
 //import AdminHome from './components/dummydashboard/AdminHome';
 //import Home from './components/dummydashboard/Home';
 import AcademiesPage from "./components/UserAcademy/AcademiesPage";
+import Course from "./components/Usercourse/Course"
+
 import AdminInstitute from './components/AdminAcademy/AdminInstitute';
 import MainPage from './components/UserAcademy/MainPage';
 
@@ -20,12 +22,14 @@ function App() {
           <Routes>
             {/* <Route element={<PrivateRoutes />}>
                 <Route element={<MainPage/>} path="/" exact/>
-                 <Route element={<AdminHome/>} path="/adminhome"/>
+                <Route element={<AdminHome/>} path="/adminhome"/>
             </Route> */}
             <Route element={<Login/>} path="/login"/>
             <Route element={<Signup/>} path="/signup"/>
             <Route element={<div>Page Not Found</div>} path="*"/>
             <Route element={<AcademiesPage/>} path="/"/>
+            <Route path = "/course" element={<Course/>}/>
+
             <Route element={<Details/>} path="/Details"/>
 
 

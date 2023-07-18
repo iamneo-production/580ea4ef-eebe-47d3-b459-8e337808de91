@@ -22,9 +22,9 @@ export default function AcademiesPage() {
       try {
         const res = await axios.get(`${API_BASE_URL}/admin/viewInstitutes`);
         setData(res.data);
-        console.log("res", res);
+    
       } catch (e) {
-        console.log(e);
+        alert(e);
       }
     }
     getInstitutesFromDb();
@@ -65,7 +65,16 @@ export default function AcademiesPage() {
   return (
     <div className="blue-background">
       <Navbaar />
-      {data.length === 0 ? <div>loading... please check connection </div>  : (
+      {data.length === 0 ? <div>
+        <h1>!!!Please Read and follow The Instructions Carefully!!!</h1>
+        <h1>!!!Its Not The Error or Incomplete Work!!!</h1>
+
+        <h3>1.Create Your Own Database Using sql commands</h3>
+        <h3>2.Register as Admin then Login and Add Data(ex.Academy Details)</h3>
+        <h3>3.Now Register and Login as User and View Details</h3>
+        <h3>4.Then Perform the Respective Operations Like Enroll Course etc.</h3>
+        
+        </div>  : (
         
         <div className="Homepage">
           <div className="wrap">
