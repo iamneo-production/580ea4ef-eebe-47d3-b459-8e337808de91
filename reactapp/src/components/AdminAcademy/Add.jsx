@@ -54,7 +54,7 @@ function goToHome(){
 
   
   return (
-    <Container style={{marginTop:"20px",height:"500px",backgroundColor:"gray"}}>
+    <Container style={{marginTop:"20px",height:"500px",backgroundColor:"rgb(250, 213, 170)"}}>
       
     <Form onSubmit={(e)=> onSubmit(e)}>
     <Row className="mb-3" style={{height:"120px",paddingTop:"20px"}}>

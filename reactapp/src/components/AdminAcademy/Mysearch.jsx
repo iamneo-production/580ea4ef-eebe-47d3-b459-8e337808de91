@@ -12,7 +12,7 @@ const Mysearch= () => {
           />
           <button
           type="Submit"
-          style={{marginLeft:"30px",height:"50px",width:"100px",borderRadius:"10px",backgroundColor:"rgb(0, 204, 0)"}}>SEARCH
+          style={{marginLeft:"30px",height:"50px",width:"100px",borderRadius:"10px",backgroundColor:"rgb(73, 240, 7)"}}>SEARCH
           </button>
   
     </>
