@@ -41,7 +41,7 @@ const onSubmit =async (e) => {
   e.preventDefault();
   
   await axios.put(`https://8080-aabbcbadccfbfcadcdaadecbbaeeaadadfcaea.project.examly.io/admin/editInstitute/${instituteId}`,user);
-navigate("/");
+navigate("/AdminInstitute");
 };
 const loadUser=async () =>{
  
