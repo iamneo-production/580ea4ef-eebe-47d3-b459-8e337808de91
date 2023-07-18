@@ -41,12 +41,12 @@ useEffect(()=>{
 const onSubmit =async (e) => {
   e.preventDefault();
   
-  await axios.put(`http://localhost:8080/admin/editInstitute/${instituteId}`,user);
+  await axios.put(`API_BASE_URL+ /admin/editInstitute/${instituteId}`,user);
 navigate("/");
 };
 const loadUser=async () =>{
  
-  const result=await axios.get(`http://localhost:8080/admin/editInstitute/${instituteId}`);
+  const result=await axios.get(`API_BASE_URL+ /admin/editInstitute/${instituteId}`);
   setUser(result.data)
 };
 
