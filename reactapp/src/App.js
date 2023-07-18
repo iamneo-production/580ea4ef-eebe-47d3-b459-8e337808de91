@@ -12,6 +12,7 @@ import AcademiesPage from "./components/UserAcademy/AcademiesPage";
 import AdminInstitute from './components/AdminAcademy/AdminInstitute';
 import MainPage from './components/UserAcademy/MainPage';
 
+
 function App() {
   return (
     <div className="App">
@@ -24,11 +25,7 @@ function App() {
             <Route element={<Login/>} path="/login"/>
             <Route element={<Signup/>} path="/signup"/>
             <Route element={<div>Page Not Found</div>} path="*"/>
-            <Route element={<AcademiesPage/>} path="/academies"/>
-            
-            
-
-
+            <Route element={<AcademiesPage/>} path="/"/>
             <Route element={<Details/>} path="/Details"/>
 
 

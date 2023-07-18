@@ -24,9 +24,9 @@
    
   }
   
-  .navbar-link:hover {
+  /* .navbar-link:hover {
     color: pink;
-  }
+  } */
   
   .active {
     color: rgb(192, 254, 255);

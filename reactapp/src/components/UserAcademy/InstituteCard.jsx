@@ -7,11 +7,11 @@ export default function InstituteCard({ singleInstitute }) {
 
   return (
     <div className="single-institute-card">
-      <img height="200px" width="280px" src={singleInstitute.image} alt="image" />
-      <h2 className="institute-name">{singleInstitute.title}</h2>
+      <img height="200px" width="280px" src={singleInstitute.imageurl} alt="image" />
+      <h2 className="institute-name">{singleInstitute.instituteName}</h2>
       
       <button onClick={handleButtonClick} className="view-button">
-        Viewcademy
+        Viewacademy
       </button>
     </div>
   );
