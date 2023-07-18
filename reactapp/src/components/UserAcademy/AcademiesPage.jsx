@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-
+import React, { useState,useEffect } from "react";
+import axios from 'axios';
+import {API_BASE_URL} from "../../utils/APIUtils"
 import "./AcademyPage.css";
 
 
@@ -8,51 +9,7 @@ import Navbaar from "./Navbaar";
 
 
 export default function AcademiesPage() {
-  const [data, setData] = useState(
-    [
-    {
-      "id": "userAcademyGrid1",
-      "image": "https://cdn.unischolarz.com/blog/wp-content/uploads/2021/08/31051414/k-mitch-hodge-1jn6NuW0mG0-unsplash-min-1536x960.jpg",
-      "title": "Madras Academy"
-    },
-    {
-      "id": "userAcademyGrid2",
-      "image": "https://www.k-state.edu/media/images/oct19/Regnier_Hall-sm.jpg",
-      "title": "Bombay Academy"
-    },
-    {
-      "id": "userAcademyGrid3",
-      "image": "https://www.k-state.edu/media/images/oct19/Regnier_Hall-sm.jpg",
-      "title": "Delhi Academy"
-    },
-    {
-      "id": "userAcademyGrid4",
-      "image": "https://www.k-state.edu/media/images/oct19/Regnier_Hall-sm.jpg",
-      "title": "Hyderabad Academy"
-    },
-    {
-      "id": "userAcademyGrid5",
-      "image": "https://www.k-state.edu/media/images/oct19/Regnier_Hall-sm.jpg",
-      "title": "Pune Academy"
-    },
-    {
-      "id": "userAcademyGrid6",
-      "image": "https://www.k-state.edu/media/images/oct19/Regnier_Hall-sm.jpg",
-      "title": "Banglore Academy"
-    },
-    {
-      "id": "userAcademyGrid7",
-      "image": "https://www.k-state.edu/media/images/oct19/Regnier_Hall-sm.jpg",
-      "title": "Kolkata Academy"
-    },
-    {
-      "id": "userAcademyGrid8",
-      "image": "https://www.k-state.edu/media/images/oct19/Regnier_Hall-sm.jpg",
-      "title": "Gurgaon Academy"
-    }
-  ]
-  
-  );
+  const [data, setData] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [sortBy, setSortBy] = useState("");
   
@@ -60,46 +17,36 @@ export default function AcademiesPage() {
 
   //---fetching Institutes----//
 
-  // useEffect(() => {
-  //   async function getAllThemes() {
-  //     try {
-  //       const res = await axios.get(`${BASE_URL}/admin/theme`, { headers });
-  //       setData(res.data);
-  //       console.log("res", res);
-  //     } catch (e) {
-  //       console.log(e);
-  //     }
-  //   }
-  //   getAllThemes();
-  // }, []);
+  useEffect(() => {
+    async function getInstitutesFromDb() {
+      try {
+        const res = await axios.get(`${API_BASE_URL}/admin/viewInstitutes`);
+        setData(res.data);
+        console.log("res", res);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    getInstitutesFromDb();
+  }, []);
 
   function handleSearch(e) {
     setSearchText(e.target.value);
   }
-  //- ---------    UPDATE View ------//
-  
-    //-------View --------//
-    //   axios.patch(`${BASE_URL}/user/getAllThemes/${id}`, updatedData.find((event) => event.themeid === id))
-    //   .then((res) => {
-    //     console.log("updated", res.data.id, res.data);
-    //     setData(updatedData);
-    //   })
-    //   .catch((e) => {
-    //     console.log(e);
-    //   });
+
   
 
   const filterInstitutes = data.filter((singleInstitute) => {
-    return singleInstitute.title
+    return singleInstitute.instituteName
       .toLowerCase()
       .includes(searchText.toLowerCase());
   });
   // /Dropdown filter/
   const sortInstitutes = filterInstitutes.sort((a, b) => {
     if (sortBy === "nameAsc") {
-      return a.title.localeCompare(b.title);
+      return a.instituteName.localeCompare(b.instituteName);
     } else if (sortBy === "nameDesc") {
-      return b.title.localeCompare(a.title);
+      return b.instituteName.localeCompare(a.instituteName);
     }  else {
       return 0;
     }

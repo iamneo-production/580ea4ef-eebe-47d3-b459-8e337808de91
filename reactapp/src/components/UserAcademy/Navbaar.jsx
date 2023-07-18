@@ -18,7 +18,7 @@ function Navbaar() {
         <NavLink to="/user/Enrolledcourse" className="navbar-link" activeClassName="active" id="userEnrolledCourse">Enrolledcourse</NavLink>
       </div>
       <div>
-        <NavLink to="/user/login" className="navbar-link" activeClassName="active"  id="logout" onClick={handleLogout}>Logout</NavLink>
+        <NavLink to="/login" className="navbar-link" activeClassName="active"  id="logout" onClick={handleLogout}>Logout</NavLink>
       </div>
     </nav>
   );
