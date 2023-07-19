@@ -40,12 +40,12 @@ useEffect(()=>{
 const onSubmit =async (e) => {
   e.preventDefault();
   
-  await axios.put(`https://8080-aabbcbadccfbfcadcdaadecbbaeeaadadfcaea.project.examly.io/admin/editInstitute/${instituteId}`,user);
+  await axios.put(`https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io/admin/editInstitute/${instituteId}`,user);
 navigate("/AdminInstitute");
 };
 const loadUser=async () =>{
  
-  const result=await axios.get(`https://8080-aabbcbadccfbfcadcdaadecbbaeeaadadfcaea.project.examly.io/admin/editInstitute/${instituteId}`);
+  const result=await axios.get(`https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io/admin/editInstitute/${instituteId}`);
   setUser(result.data)
 };
 

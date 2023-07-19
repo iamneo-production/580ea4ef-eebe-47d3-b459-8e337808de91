@@ -1,8 +1,7 @@
 import React, { useState,useEffect } from "react";
 import axios from 'axios';
-import {API_BASE_URL} from "../../utils/APIUtils"
+import {API_BASE_URL} from "../../../utils/APIUtils";
 import "./AcademyPage.css";
-
 
 import InstituteCard from "./InstituteCard";
 import Navbaar from "./Navbaar";
