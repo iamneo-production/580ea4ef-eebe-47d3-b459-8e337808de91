@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import axios from 'axios';
-import { API_BASE_URL } from '../../utils/APIUtils';
+//import { API_BASE_URL } from '../../utils/APIUtils';
 
 
 
@@ -35,7 +35,7 @@ setUser({ ...user, [e.target.name]:e.target.value});
 
 const onSubmit =async (e) => {
   e.preventDefault();
-  await axios.post("https://8080-aabbcbadccfbfcadcdaadecbbaeeaadadfcaea.project.examly.io/admininstitute",user)
+  await axios.post("https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io/admininstitute",user)
 navigate("/AdminInstitute");
 };
 // const onSubmit = async (e) => {
