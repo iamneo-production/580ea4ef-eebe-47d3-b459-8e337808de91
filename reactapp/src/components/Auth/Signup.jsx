@@ -3,7 +3,7 @@ import { Button, Grid, TextField } from '@mui/material';
 import { useSnackbar } from 'notistack';
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { signup } from '../../utils/APIUtils';
+import { signUpUser } from "../../utils/APIUtils";
 
 
 
@@ -93,7 +93,7 @@ const Signup = () => {
             mobileNumber: form.mobilenumber.value,
             userRole:form.usertype.value
           };
-          signup(signupRequest)
+          signUpUser(signupRequest)
           .then(response => {
             console.log(response.message)
             if(response.message === "Success"){
