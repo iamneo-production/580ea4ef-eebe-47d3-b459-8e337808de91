@@ -12,7 +12,7 @@ function Navbaar() {
         <NavLink   className="navbar-link" activeClassName="active">IAS Academy</NavLink>
       </div>
       <div className="navbar-links">
-        <NavLink  to="/academies" className="navbar-link" activeClassName="active" id="userAcademy">Academy</NavLink>
+        <NavLink  to="/user/Academy" className="navbar-link" activeClassName="active" id="userAcademy">Academy</NavLink>
       </div>
       <div className="navbar-links">
         <NavLink to="/user/Enrolledcourse" className="navbar-link" activeClassName="active" id="userEnrolledCourse">Enrolledcourse</NavLink>
