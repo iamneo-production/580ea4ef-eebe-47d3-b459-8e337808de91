@@ -6,68 +6,37 @@ export const API_BASE_URL ="https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.
 
 
 const ACCESS_TOKEN ="";
+const request = (options) => {
+  const headers = new Headers({
+      'Content-Type': 'application/json',
+  })
 
-export async function signUpUser(email, mobileNumber, password, userType, userName) {
-    const user = {
-      "email":email,
-      "mobileNumber":mobileNumber,
-      "password":password,
-      "userRole":userType,
-      "username":userName
-    };
- 
-    try {
+  const defaults = {headers: headers};
+  options = Object.assign({}, defaults, options);
 
-      const response = await fetch(`${API_BASE_URL}/user/signup`, {
+  return fetch(options.url, options)
+  .then(response => 
+      response.json().then(json => {
+          if(!response.ok) {
+              return Promise.reject(json);
+          }
+          return json;
+      })
+  );
+};
 
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          mobileNumber: mobileNumber,
-          password: password,
-          userRole: userType,
-          username: userName,
-        }),
-      });
-      console.log(response);
-      const data = await response.text()
-      alert(data);
-      if(user.userRole==="admin"){
-        window.location.href = "/admin/login";
-      }else {
-        window.location.href = "/user/login";
-      }
-      return data; 
-    } catch (error) {
-      alert("Error registering user/admin"+error.message);
-      
-    }
-  }
+export function login(loginRequest) {
+  return request({
+      url: API_BASE_URL + "/user/login",
+      method: 'POST',
+      body: JSON.stringify(loginRequest)
+  });
+}
 
-export async function loginUser(email, password) {
-
-      try{
-
-        const res = await fetch(`${API_BASE_URL}/user/login`, {
-
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: email,
-            password: password,
-          }),
-        });
-        const data = await res.json();
-        console.log("utils use data",data);
-        return data;
-      }catch(error){
-          alert("Error logging user/admin" + error.message);
-          return error;
-      }
-    
+export function signup(signupRequest) {
+  return request({
+      url: API_BASE_URL + "/user/signup",
+      method: 'POST',
+      body: JSON.stringify(signupRequest)
+  });
 }
