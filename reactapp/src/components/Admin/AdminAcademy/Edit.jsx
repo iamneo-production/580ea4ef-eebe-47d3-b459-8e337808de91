@@ -7,6 +7,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import {API_BASE_URL} from "../../../utils/APIUtils";
 
 function Edit() {
   let navigate=useNavigate();
@@ -40,12 +41,12 @@ useEffect(()=>{
 const onSubmit =async (e) => {
   e.preventDefault();
   
-  await axios.put(`https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io/admin/editInstitute/${instituteId}`,user);
+  await axios.put(`${API_BASE_URL}/admin/editInstitute/${instituteId}`,user);
 navigate("/AdminInstitute");
 };
 const loadUser=async () =>{
  
-  const result=await axios.get(`https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io/admin/editInstitute/${instituteId}`);
+  const result=await axios.get(`${API_BASE_URL}/admin/editInstitute/${instituteId}`);
   setUser(result.data)
 };
 

@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import axios from 'axios';
+import {API_BASE_URL} from "../../../utils/APIUtils";
 
 const CourseItem = () => {
   const [users, setUsers] = useState([]);
@@ -12,12 +13,12 @@ const CourseItem = () => {
   }, []);
 
   const loadUsers = async () => {
-    const result = await axios.get('http://localhost:8080/users');
+    const result = await axios.get(`${API_BASE_URL}/users`);
     setUsers(result.data);
   };
 
   const deleteUsers = async (id) => {
-    await axios.delete(`http://localhost:8080/user/${id}`);
+    await axios.delete(`${API_BASE_URL}/user/${id}`);
     loadUsers();
   };
 

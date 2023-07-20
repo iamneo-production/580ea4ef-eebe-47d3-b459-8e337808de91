@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import {API_BASE_URL} from "../../../utils/APIUtils";
 
 const AddCourseForm = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const AddCourseForm = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/user",course)
+    await axios.post(`${API_BASE_URL}/user`,course)
     navigate("/")
     
   };
