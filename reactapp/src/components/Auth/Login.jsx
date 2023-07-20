@@ -1,7 +1,7 @@
 import React, {useState } from 'react';
 import { Button, Grid, TextField } from "@mui/material";
 import { NavLink, useNavigate } from 'react-router-dom';
-import { loginUser } from '../../utils/APIUtils';
+import { login } from '../../utils/APIUtils';
 
 const Login = () => {
     
@@ -29,7 +29,7 @@ const Login = () => {
                 email: form.email.value,
                 password: form.password.value
             };
-            let data = await loginUser(loginRequest);
+            let data = await login(loginRequest);
             console.log(data)
             if (data.status) {
               alert("Login successful")
