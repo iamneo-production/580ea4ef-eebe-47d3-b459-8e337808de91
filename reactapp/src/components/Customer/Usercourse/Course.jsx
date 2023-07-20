@@ -1,6 +1,8 @@
 import { Container, Row, Col, Navbar, FormControl, Button, Form } from "react-bootstrap";
 import { useState,useEffect } from "react";
 import CourseCard from "./CourseCard";
+import {API_BASE_URL} from "../../../utils/APIUtils";
+import axios from 'axios';
 
 const Course = () => {
 
@@ -16,41 +18,18 @@ const Course = () => {
     //connet to the backend and return all the course list to this variable
     const [courseList, setcourseList] = useState([]);
 
-    useEffect(()=>{
-
-        //connect your backend here using fetch or axios and return course list stored in the database
-
-        //temp variable
-        const examplelist = [
-            {
-                "id": 1,
-                "name": "Current Affairs",
-                "duration": "3 months",
-                "timings": "9 AM - 12 PM",
-                "students": 50,
-                "description": "Current Affairs description"
-            },
-            {
-                "id": 2,
-                "name": "History",
-                "duration": "2 months",
-                "timings": "2 PM - 4 PM",
-                "students": 30,
-                "description": "History description"
-            },
-            {
-                "id": 2,
-                "name": "History",
-                "duration": "2 months",
-                "timings": "2 PM - 4 PM",
-                "students": 30,
-                "description": "History description"
-            }
-        ];
-    
-        setcourseList(examplelist);
-    },[searchTerm]
-    )
+    useEffect(() => {
+        async function getCoursesFromDb() {
+          try {
+            const res = await axios.get(`${API_BASE_URL}/admin/viewCourses`);
+            setcourseList(res.data);
+        
+          } catch (e) {
+            alert(e);
+          }
+        }
+        getCoursesFromDb();
+      }, []);
 
     return (
         <Container fluid>
@@ -73,14 +52,14 @@ const Course = () => {
                     courseList.filter((item) => {
                         if (searchTerm === "") {
                             return item;
-                        } else if (item.name && item.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        } else if (item.courseName && item.courseName.toLowerCase().includes(searchTerm.toLowerCase())) {
                             return item;
                         }
                         return null;
                     }).map((item, index) => {
                         return (
                             <Col>
-                                <CourseCard name={item.name} description={item.description} duration={item.duration} students={item.students} timings={item.timings} />
+                                <CourseCard name={item.courseName} description={item.courseDescription} duration={item.courseDuration} students={item.noStudents} timings={item.courseTiming} />
                             </Col>
                         )
                     })
