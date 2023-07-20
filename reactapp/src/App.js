@@ -36,7 +36,7 @@ function App() {
 
             {/* USER ROUTES */}
             <Route element={<div>Page Not Found</div>} path="*"/>
-            <Route element={<AcademiesPage/>} path="/academies"/>
+            <Route element={<AcademiesPage/>} path="/user/Academy"/>
 
             <Route path = "/course" element={<Course/>}/>
 
