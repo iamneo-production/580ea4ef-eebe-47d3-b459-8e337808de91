@@ -1,7 +1,7 @@
 import React, {useState } from 'react';
 import { Button, Grid, TextField } from "@mui/material";
 import { NavLink, useNavigate } from 'react-router-dom';
-import { login } from '../../utils/APIUtils';
+import { loginUser } from '../../utils/APIUtils';
 
 const Login = () => {
     
@@ -29,13 +29,13 @@ const Login = () => {
                 email: form.email.value,
                 password: form.password.value
             };
-            let data = await login(loginRequest);
+            let data = await loginUser(loginRequest);
             console.log(data)
             if (data.status) {
               alert("Login successful")
               setProcessing(false); 
               localStorage.setItem("token", data);
-              if(data.userRole == "user"){
+              if(data.userRole === "user"){
                 navigate(`/academies`); // add link of the student dashboard
               }else{
                 navigate(`/admininstitute`);// when admin login in it will navaigate to admin Institute
