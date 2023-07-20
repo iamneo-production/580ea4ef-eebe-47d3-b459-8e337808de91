@@ -8,7 +8,7 @@ import { LuEdit } from "react-icons/lu";
 import { FaTrash } from "react-icons/fa";
 import { GrAddCircle } from "react-icons/gr";
 import { Link, useNavigate,useParams } from 'react-router-dom';
-
+import {API_BASE_URL} from "../../../utils/APIUtils";
 
 const Main =() => {
 
@@ -26,7 +26,7 @@ loadUsers();
   },[]);
 
   const loadUsers = async()=>{
-    const result=await axios.get("https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io/admin/viewInstitutes");
+    const result=await axios.get(`${API_BASE_URL}/admin/viewInstitutes`);
 setUsers(result.data);
   };
 
@@ -40,7 +40,7 @@ setUsers(result.data);
   // };
 
 const deleteUser=async (instituteId)=>{
-  await axios.delete(`https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io/admin/deleteInstitutes/${instituteId}`)
+  await axios.delete(`${API_BASE_URL}/admin/deleteInstitutes/${instituteId}`)
   loadUsers()
 }
 
@@ -70,7 +70,7 @@ return (<div>
         <div>
   
   <span style={{marginLeft:"120px"}}>
-   <button id="editAcademy"><Link to={`https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io/admin/editInstitute/${user.instituteId}`}><LuEdit/></Link></button>
+   <button id="editAcademy"><Link to={`${API_BASE_URL}/admin/editInstitute/${user.instituteId}`}><LuEdit/></Link></button>
     </span>
   
     <span style={{marginLeft:"20px"}}>

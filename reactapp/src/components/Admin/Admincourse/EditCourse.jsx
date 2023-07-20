@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import {API_BASE_URL} from "../../../utils/APIUtils";
 
 const EditCourse = () => {
   const [course, setCourse] = useState({
@@ -18,7 +19,7 @@ const EditCourse = () => {
   useEffect(() => {
     const loadUser = async () => {
       try {
-        const result = await axios.get(`http://localhost:8080/user/${id}`);
+        const result = await axios.get(`${API_BASE_URL}/user/${id}`);
         setCourse(result.data);
       } catch (error) {
         console.log('Error retrieving user:', error);
@@ -34,7 +35,7 @@ const EditCourse = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:8080/user/${id}`, course);
+    await axios.put(`${API_BASE_URL}/user/${id}`, course);
     navigate('/');
   };
 
