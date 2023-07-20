@@ -62,9 +62,7 @@ return (<div>
         <Card.Body>
   
         <Card.Text style={{fontSize:"15px"}}>
-              {"Place : " + user.instituteAddress}
-             
-  
+              {user.instituteName + " located at " + user.instituteAddress}
         </Card.Text>
   
         <div>
