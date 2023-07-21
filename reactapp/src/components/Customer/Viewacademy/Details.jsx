@@ -15,7 +15,7 @@ const Details = () => {
   const [phonenumber,setPhonenumber]=useState("");
   const [alternatenumber,setAlternatenumber]=useState("");
   const [mothername,setMothername]=useState("");
-  const [emailid,setEmailid]=useState("");
+  const [email,setEmail]=useState("");
   const [age,setAge]=useState("");
   const [houseno,setHouseno]=useState("");
   const [streetname,setStreetname]=useState("");
@@ -60,20 +60,22 @@ const Details = () => {
   return (
     <div className='background'>
 
-<Navbar className='custom-navbar' variant="dark" >
+
+<Navbar bg="primary" variant="primary" >
       <Container>
         
         <Nav className='mx-auto'>
-          <Nav.Link id="userAcademy" href="#Academy" onClick={handleClick} >Academy</Nav.Link>
-          <Nav.Link id="userEnrolledCourse" href="#EnrolledCourse " onClick={handle1click}  >Enrolledcourse</Nav.Link>
+          <Nav.Link href="#AcademiesPage" onClick={handleClick} >Academy</Nav.Link>
+          <Nav.Link href="#EnrolledCourse " onClick={handle1click}  >Enrolledcourse</Nav.Link>
           </Nav>
           <Nav className="ml-2">
-          <Nav.Link id="logout" href="Logout" className='mr-5' onClick={handlingClick} > <span className="fa fa-sign-out me-2" ></span>Logout</Nav.Link>
+          <Nav.Link href="Logout"  onClick={handlingClick} >Logout</Nav.Link>
           </Nav>
         
       </Container>
     </Navbar>
 
+    
     
 
 <Container className="mt-5">
@@ -174,7 +176,7 @@ const Details = () => {
         <Form className="row g-4">
         <div className="col-sm-4 top">
           <Form.Group controlId="emailid">
-            <Form.Control id="emailid" type="textarea"  placeholder="enter email Id" value={emailid} onChange={(e)=>setEmailid(e.target.value)} />
+            <Form.Control id="emailid" type="email"  placeholder="enter email Id" value={email} onChange={(e)=>setEmail(e.target.value)} />
           </Form.Group>
         </div>
 
@@ -189,9 +191,10 @@ const Details = () => {
           <Button variant="success" type="submit" onClick={adddata}>
           Enroll Now
           </Button>
+          
         </div>
       </Form>
-    </Container>
+  </Container>
 
     
 

@@ -1,8 +1,4 @@
-.text-left{
-    position: relative;
-    top:-80px;
-    left:1050px;
-  }
+
 
   .border-box{
     margin-left:27rem ;
@@ -35,7 +31,8 @@ label {
   .text-left{
     position: relative;
     top:-80px;
-    left:1050px;
+    left:550px;
+
   }
   
   
