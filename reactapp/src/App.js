@@ -18,6 +18,9 @@ import AcademiesPage from "./components/Customer/UserAcademy/AcademiesPage";
 import Course from "./components/Customer/Usercourse/Course"
 import Details from './components/Customer/Viewacademy/Details';
 import MainPage from './components/Customer/UserAcademy/MainPage';
+import Enrolledcourse from './components/Customer/EnrolledCourse/EnrolledCourse';
+import Mylearning from './components/Customer/EnrolledCourse/Mylearning';
+import FeedbackPage from './components/Customer/EnrolledCourse/FeedbackPage';
 
 
 function App() {
@@ -44,6 +47,10 @@ function App() {
             <Route path = "/course" element={<Course/>}/>
 
             <Route element={<Details/>} path="/Details"/>
+
+            <Route element={<Enrolledcourse/>} path ="/EnrolledCourse"/>
+            <Route element={<Mylearning/>} path="/Mylearning"/>
+            <Route element={<FeedbackPage/>} path="/FeedbackPage"/>
             
 
               {/* ADMIN ROUTES */}
