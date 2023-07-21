@@ -59,7 +59,7 @@ const Course = () => {
                     }).map((item, index) => {
                         return (
                             <Col>
-                                <CourseCard name={item.courseName} description={item.courseDescription} duration={item.courseDuration} students={item.noStudents} timings={item.courseTiming} />
+                                <CourseCard name={item.courseName} description={item.courseDescription} duration={item.courseDuration} students={item.courseEnrolled} timings={item.courseTiming} />
                             </Col>
                         )
                     })
