@@ -23,7 +23,7 @@ const CourseItem = () => {
   };
 
   return (
-    <div>
+    <div >
       <h1 className="my-5 text-center">Manage Course</h1>
       <div className="row justify-content-center">
         <div className="col-md-6">
@@ -35,19 +35,19 @@ const CourseItem = () => {
               className="mb-4"
             >
               <Card.Body>
-                <Card.Text>
+                <Card.Text style={{ textAlign: 'left' }}>
                   <strong>Course Name:</strong> {user.courseName}
                 </Card.Text>
-                <Card.Text>
+                <Card.Text style={{ textAlign: 'left' }}>
                   <strong>Course Duration:</strong> {user.courseDuration}
                 </Card.Text>
-                <Card.Text>
+                <Card.Text style={{ textAlign: 'left' }}>
                   <strong>Course Timing:</strong> {user.courseTiming}
                 </Card.Text>
-                <Card.Text>
+                <Card.Text style={{ textAlign: 'left' }} >
                   <strong>No of Students:</strong> {user.courseEnrolled}
                 </Card.Text>
-                <Card.Text>
+                <Card.Text style={{ textAlign: 'left' }}>
                   <strong>Course Description:</strong> {user.courseDescription}
                 </Card.Text>
                 <div style={{ position: 'absolute', bottom: '10px', right: '10px' }}>
