@@ -9,8 +9,8 @@ const AdminInstitute= () => {
   return(
     <div>
     <Navigbar />
-    <body style={{backgroundColor:"rgb(250, 213, 170)"}}>
-      <section style={{height:"100px",justifyContent:"center",marginTop:"0px",paddingTop:"18px",backgroundColor:"rgb(250, 213, 170)",color:"black"}}>MANAGE ACADEMY</section>
+    <body style={{backgroundColor:"rgb(230, 248, 250)"}}>
+      <section style={{height:"100px",justifyContent:"center",fontSize:"40px",paddingTop:"18px",backgroundColor:"rgb(230, 248, 250)",color:"black"}}>MANAGE ACADEMY</section>
     <section>
       <Main/>
     
