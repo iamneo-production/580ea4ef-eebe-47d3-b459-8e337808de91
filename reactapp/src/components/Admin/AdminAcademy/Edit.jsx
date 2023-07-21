@@ -51,7 +51,7 @@ const loadUser=async () =>{
 };
 
     return (
-        <Container style={{marginTop:"40px",height:"500px",backgroundColor:"gray"}}>
+        <Container style={{marginTop:"40px",height:"500px",backgroundColor:"rgb(230, 248, 250)"}}>
           
          
         <Form onSubmit={(e)=> onSubmit(e)}>

@@ -54,7 +54,7 @@ function goToHome(){
 
   
 return (
-  <Container style={{ marginTop: '20px', minHeight: '500px', backgroundColor: 'rgb(250, 213, 170)' }}>
+  <Container style={{ marginTop: '20px', minHeight: '500px', backgroundColor: 'rgb(230, 248, 250)' }}>
     <Form onSubmit={(e) => onSubmit(e)}>
       <Row className="mb-3" style={{ paddingTop: '20px' }}>
         <Form.Group as={Col} md="6">
