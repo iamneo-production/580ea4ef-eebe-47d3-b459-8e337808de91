@@ -1,17 +1,38 @@
 import React, {useState } from 'react';
 import { Button, Grid, TextField } from "@mui/material";
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, Navigate, Link } from 'react-router-dom';
 import { login } from '../../utils/APIUtils';
+import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
     
     const [processing, setProcessing] = useState(false);
     let navigate = useNavigate();
 
+    // const [loading, setLoading] = useState(false);
+    // const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+    // const dispatch = useDispatch();
+
+    
+
     const [form, setForm] = useState({
         email: { value: "" },
         password: { value: "" }
       });
+
+      // dispatch(login(form))
+      // .then(() => {
+      //   // Do any additional logic upon successful login
+      //   setLoading(false);
+      // })
+      // .catch(() => {
+      //   setLoading(false);
+      // });
+
+      // if (isLoggedIn) {
+      //   return <Navigate to="/academies" />;
+      // }
 
       const handleChange = (e) => {
         let _form = { ...form };
@@ -30,20 +51,38 @@ const Login = () => {
                 password: form.password.value
             };
             let data = await login(loginRequest);
-            console.log(data)
             if (data.status) {
-              alert("Login successful")
-              setProcessing(false); 
-              localStorage.setItem("token", data);
-              if(data.userRole === "user"){
-                navigate(`/user/Academy`); // add link of the student dashboard
-              }else{
-                navigate(`/admininstitute`);// when admin login in it will navaigate to admin Institute
+              const { token, tokenType, userRole } = data;
+      
+              // Save the token and tokenType in local storage
+              localStorage.setItem("token", `${tokenType} ${token}`);
+      
+              alert("Login successful");
+              setProcessing(false);
+      
+              if (userRole === "user") {
+                navigate(`/academies`); // add link of the student dashboard
+              } else {
+                navigate(`/admininstitute`); // when admin login, navigate to admin Institute
               }
             } else {
               setProcessing(false);
               alert("Failed to Login, Please validate credentials");
             }
+            // console.log(data)
+            // if (data.status) {
+            //   alert("Login successful")
+            //   setProcessing(false); 
+            //   localStorage.setItem("token", data);
+            //   if(data.userRole === "user"){
+            //     navigate(`/academies`); // add link of the student dashboard
+            //   }else{
+            //     navigate(`/admininstitute`);// when admin login in it will navaigate to admin Institute
+            //   }
+            // } else {
+            //   setProcessing(false);
+            //   alert("Failed to Login, Please validate credentials");
+            // }
           }
           catch (e) {
             console.log("e",e);

@@ -8,7 +8,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.examly.springapp.model.*;
 import com.examly.springapp.model.UserModel;
 import java.util.List;
-
+import java.util.Objects;
+import java.util.*;
 
 public class UserDetailsImpl implements UserDetails {
     private Integer id;
@@ -71,4 +72,16 @@ public class UserDetailsImpl implements UserDetails {
     public String getEmail() {
         return email;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        UserDetailsImpl user = (UserDetailsImpl) o;
+        return Objects.equals(id, user.id);
+    }
+
+    
 }

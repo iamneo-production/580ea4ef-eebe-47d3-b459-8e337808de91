@@ -1,4 +1,4 @@
-export const API_BASE_URL ="https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io";
+export const API_BASE_URL ="https://8080-edcfceeaaadeeedcdaadecbbaeeaadadfcaea.project.examly.io";
 
 
 // export const API_BASE_URL ="https://8080-daefebfdcdcdaadecbbaeeaadadfcaea.project.examly.io";   
@@ -25,12 +25,50 @@ const request = (options) => {
   );
 };
 
-export function login(loginRequest) {
-  return request({
-      url: API_BASE_URL + "/user/login",
-      method: 'POST',
-      body: JSON.stringify(loginRequest)
-  });
+// export function login(loginRequest) {
+//   return request({
+//       url: API_BASE_URL + "/user/login",
+//       method: 'POST',
+//       body: JSON.stringify(loginRequest)
+//   });
+// }
+
+export async function login(loginRequest) {
+  try {
+    const response = await fetch(API_BASE_URL + "/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginRequest),
+    });
+
+    if (!response.ok) {
+      throw new Error("Login failed. Invalid credentials.");
+    }
+
+    const data = await response.json();
+    const { token, tokenType, userRole } = data;
+
+    // Save the token and tokenType in local storage
+    localStorage.setItem("token", `${tokenType} ${token}`);
+
+    // Return the object containing status, token, tokenType, and userRole
+    return {
+      status: true,
+      token,
+      tokenType,
+      userRole,
+    };
+  } catch (error) {
+    console.error("Error during login:", error);
+    return {
+      status: false,
+      token: null,
+      tokenType: null,
+      userRole: null,
+    };
+  }
 }
 
 export function signup(signupRequest) {

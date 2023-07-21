@@ -9,12 +9,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import com.examly.springapp.model.LoginModel;
 import com.examly.springapp.model.UserModel;
 import com.examly.springapp.repository.UserRepository;
 import com.examly.springapp.response.LoginResponse;
 import com.examly.springapp.response.SignupResponse;
+import com.examly.springapp.security.securityconfig.JwtUtils;
+import com.examly.springapp.response.JwtResponse;
+import com.examly.springapp.services.AuthService;
+import com.examly.springapp.response.AuthResponse;
+
+import com.examly.springapp.security.securityservice.UserDetailsImpl;
+import com.examly.springapp.security.securityservice.UserDetailsServiceImpl;
+
 import java.util.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -29,6 +42,15 @@ public class AuthController {
 
 	@Autowired
 	PasswordEncoder passwordEncoder;
+
+	@Autowired
+	private AuthenticationManager authenticationManager;
+
+	@Autowired
+    JwtUtils jwtUtils;
+
+	@Autowired
+	AuthService authService;
 
 	@PostMapping("/user/login")
 	public LoginResponse userlogin(@RequestBody LoginModel data) throws Exception {
@@ -128,6 +150,46 @@ public class AuthController {
 		return "Failed";
 		
 	}
+
+	@PostMapping("/signin")
+    public ResponseEntity<?> authenticateuser
+               (@RequestBody LoginModel loginModel) {
+
+        Authentication authentication = authenticationManager
+              .authenticate
+                 (new UsernamePasswordAuthenticationToken
+                        (loginModel.getEmail(), 
+						loginModel.getPassword()));
+
+        SecurityContextHolder.getContext()
+               .setAuthentication(authentication);
+        String token = jwtUtils.generateJwt(authentication);
+		String email = jwtUtils.getUsernameFromToken(token);
+		UserModel user = userRepository.findUserByEmail(email).orElse(null);
+		String userRole="";
+		if(user!=null)
+			userRole = user.getUserRole();
+		return ResponseEntity.ok(new JwtResponse(token,userRole));
+
+        // UserDetailsImpl userDetails = (UserDetailsImpl) 
+        //                       authentication.getPrincipal();
+
+        // return ResponseEntity
+        //         .ok(new JwtResponse(jwt, userDetails.getId(),
+        //            userDetails.getUsername(), 
+        //                     userDetails.getEmail()));
+    }
+
+	@PostMapping("/validate")
+	public ResponseEntity<?> validateUser(@RequestBody String token) {
+		String actualToken = token.substring(7,token.length());
+		AuthResponse authResponse = authService.validateTokenAndGetUserRole(actualToken);
+		return ResponseEntity.ok(authResponse);
+	}
+
+
+
+
 	// @PostMapping("/login")
 	// public ResponseEntity<JWTAuthResponse> loginUser(@RequestBody LoginModel loginModel){
 	// 	Authentication authentication=authenticationManager.authenticate(
