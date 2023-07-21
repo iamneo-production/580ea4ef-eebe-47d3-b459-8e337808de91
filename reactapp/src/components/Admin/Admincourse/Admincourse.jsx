@@ -1,9 +1,10 @@
 import React from 'react';
 import Navbarcomp from './Navbarcomp';
 import CourseItem from './CourseItem';
+import './Admincourse.css';
 
 
-function MainPage() {
+function Admincourse() {
   return (
     <div>
         
@@ -15,3 +16,4 @@ function MainPage() {
     </div>
   );
 }
+export default Admincourse;

@@ -25,31 +25,31 @@ public class CourseController {
     }
 
 
-    @GetMapping("/user/{id}")
-    CourseModel editCourse(@PathVariable Long id){
-        return userRepository.findById(id)
-                .orElseThrow(()->new UserNotFoundException(id));
+    @GetMapping("/user/{courseId}")
+    CourseModel editCourse(@PathVariable Long courseId){
+        return userRepository.findById(courseId)
+                .orElseThrow(()->new UserNotFoundException(courseId));
     }
-    @PutMapping("/user/{id}")
-    CourseModel editCourse(@RequestBody CourseModel newCourseModel, @PathVariable Long id){
-        return userRepository.findById(id)
+    @PutMapping("/user/{courseId}")
+    CourseModel editCourse(@RequestBody CourseModel newCourseModel, @PathVariable Long courseId){
+        return userRepository.findById(courseId)
                 .map(courseModel -> {
                     courseModel.setCourseName(newCourseModel.getCourseName());
-                    courseModel.setDescription(newCourseModel.getDescription());
-                    courseModel.setDuration(newCourseModel.getDuration());
-                    courseModel.setNoStudents(newCourseModel.getNoStudents());
+                    courseModel.setCourseDescription(newCourseModel.getCourseDescription());
+                    courseModel.setCourseDuration(newCourseModel.getCourseDuration());
+                    courseModel.setCourseEnrolled(newCourseModel.getCourseEnrolled());
                     courseModel.setCourseTiming(newCourseModel.getCourseTiming());
                     return userRepository.save(courseModel);
 
-                }).orElseThrow(()->new UserNotFoundException(id));
+                }).orElseThrow(()->new UserNotFoundException(courseId));
     }
-    @DeleteMapping("/user/{id}")
-    String deleteCourse(@PathVariable Long id){
-        if(!userRepository.existsById(id)){
-            throw new UserNotFoundException(id);
+    @DeleteMapping("/user/{courseId}")
+    String deleteCourse(@PathVariable Long courseId){
+        if(!userRepository.existsById(courseId)){
+            throw new UserNotFoundException(courseId);
         }
-        userRepository.deleteById(id);
-        return "user with id "+id+"has been deleted success,";
+        userRepository.deleteById(courseId);
+        return "user with id "+courseId+"has been deleted success,";
     }
 
 }
