@@ -2,26 +2,28 @@ package com.examly.springapp.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-
 public class CourseModel {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long courseId;
     private String courseName;
-    private String description;
-    private String duration;
+    private String courseDescription;
+    private String courseDuration;
     private String courseTiming;
-    private Long noStudents;
+    private Long courseEnrolled;
 
-    public Long getId() {
-        return id;
+    // Getters and setters for all fields
+
+    public Long getCourseId() {
+        return courseId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
     }
 
     public String getCourseName() {
@@ -32,20 +34,20 @@ public class CourseModel {
         this.courseName = courseName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCourseDescription() {
+        return courseDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCourseDescription(String courseDescription) {
+        this.courseDescription = courseDescription;
     }
 
-    public String getDuration() {
-        return duration;
+    public String getCourseDuration() {
+        return courseDuration;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
+    public void setCourseDuration(String courseDuration) {
+        this.courseDuration = courseDuration;
     }
 
     public String getCourseTiming() {
@@ -56,11 +58,12 @@ public class CourseModel {
         this.courseTiming = courseTiming;
     }
 
-    public Long getNoStudents() {
-        return noStudents;
+    public Long getCourseEnrolled() {
+        return courseEnrolled;
     }
 
-    public void setNoStudents(Long noStudents) {
-        this.noStudents = noStudents;
+    public void setCourseEnrolled(Long courseEnrolled) {
+        this.courseEnrolled = courseEnrolled;
     }
 }
+

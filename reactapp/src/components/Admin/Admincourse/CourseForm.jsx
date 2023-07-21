@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Form, Button, Nav, Navbar } from 'react-bootstrap';
+import { useNavigate ,Link, Outlet} from 'react-router-dom';
 import axios from "axios";
 import {API_BASE_URL} from "../../../utils/APIUtils";
 
@@ -9,20 +9,21 @@ const AddCourseForm = () => {
 
   const [course, setCourse] = useState({
     courseName: '',
-    description: '',
-    duration: '',
+    courseDescription: '',
+    courseDuration: '',
     courseTiming: '',
-    noStudents: ''
+    courseEnrolled: ''
   });
 
   const handleChange = (e) => {
     setCourse({ ...course, [e.target.name]: e.target.value });
+    console.log({ ...course, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async(e) => {
+  const onSubmit = async(e) => {
     e.preventDefault();
     await axios.post(`${API_BASE_URL}/user`,course)
-    navigate("/")
+    navigate("/Admincourse")
     
   };
 
@@ -31,20 +32,42 @@ const AddCourseForm = () => {
   };
 
   return (
+    <div>
+      <div><Navbar expand="lg" style={{backgroundColor: "rgb(17, 178, 247)" }}>
+        <Navbar.Brand>IAS Academy</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav.Link id="adminAcademy" as={Link} to="/AdminInstitute" className="academy" style={{ color: "black", paddingRight: "30px" }}>
+                  Academy
+                </Nav.Link>
+                <Nav.Link id="AdminCourse" as={Link} to="/Admincourse" className="courses" style={{ color: "black", paddingRight: "30px" }}>
+                  Courses
+                </Nav.Link>
+                <Nav.Link id="adminStudents" as={Link} to="/Students" className="students" style={{ color: "black" }}>
+                  Students
+                </Nav.Link>
+                <Nav.Link id="logout" as={Link} to="/login" className="logout" style={{ fontWeight: "bold", color: "black"}}>
+                  Logout
+                  </Nav.Link>
+        </Navbar.Collapse>
+      </Navbar>
+
+      <Outlet /></div>
+    
     <div className="formContainer">
       <h2 className="text-center">Add Course</h2>
-      <Form onSubmit={handleSubmit}>
+      <Form  onSubmit={(e) => onSubmit(e)}>
         <Form.Group controlId="courseName" id="CourseName">
           <Form.Label>Course Name:</Form.Label>
-          <Form.Control type="text" name="courseName" value={course.courseName} onChange={handleChange} required className="formInput" />
+          <Form.Control type="text" name="courseName" value={course.courseName} onChange={(e) => handleChange(e)} required className="formInput" />
         </Form.Group>
         <Form.Group controlId="description" id="courseDescriptions">
           <Form.Label>Course Description:</Form.Label>
-          <Form.Control as="textarea" name="description" value={course.courseDescription} onChange={handleChange} required className="formInput" />
+          <Form.Control as="textarea" name="courseDescription" value={course.courseDescription} onChange={handleChange} required className="formInput" />
         </Form.Group>
         <Form.Group controlId="duration" id="courseDurations">
           <Form.Label>Course Duration:</Form.Label>
-          <Form.Control type="text" name="duration" value={course.courseDuration} onChange={handleChange} required className="formInput" />
+          <Form.Control type="text" name="courseDuration" value={course.courseDuration} onChange={handleChange} required className="formInput" />
         </Form.Group>
         <Form.Group controlId="courseTiming" id="coursetiming">
           <Form.Label>Course Timing:</Form.Label>
@@ -52,10 +75,10 @@ const AddCourseForm = () => {
         </Form.Group>
         <Form.Group controlId="noStudents" id="enrolledCourses">
           <Form.Label>Number of Students Enrolled for Courses:</Form.Label>
-          <Form.Control type="number" name="noStudents" value={course.numberOfEnrolledCourses} onChange={handleChange} required className="formInput" />
+          <Form.Control type="number" name="courseEnrolled" value={course.courseEnrolled} onChange={handleChange} required className="formInput" />
         </Form.Group>
         <div className="buttonContainer">
-          <Button variant="primary" type="submit" onClick={handleSubmit} id="addCourses" style={{ marginRight: '10px', borderRadius: '5px' }}>
+          <Button variant="primary" type="submit" id="addCourses" style={{ marginRight: '10px', borderRadius: '5px' }}>
             Add Course
           </Button>
           <Button variant="primary" onClick={handleBack} style={{ borderRadius: '5px' }}>
@@ -63,6 +86,7 @@ const AddCourseForm = () => {
           </Button>
         </div>
       </Form>
+    </div>
     </div>
   );
 };

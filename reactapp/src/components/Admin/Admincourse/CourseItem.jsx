@@ -17,8 +17,8 @@ const CourseItem = () => {
     setUsers(result.data);
   };
 
-  const deleteUsers = async (id) => {
-    await axios.delete(`${API_BASE_URL}/user/${id}`);
+  const deleteUsers = async (courseId) => {
+    await axios.delete(`${API_BASE_URL}/user/${courseId}`);
     loadUsers();
   };
 
@@ -30,7 +30,7 @@ const CourseItem = () => {
           <div className="mb-4"></div>
           {users.map((user) => (
             <Card
-              key={user.id} 
+              key={user.courseId} 
               style={{ width: '600px', backgroundColor: 'grey', position: 'relative' }}
               className="mb-4"
             >
@@ -39,16 +39,16 @@ const CourseItem = () => {
                   <strong>Course Name:</strong> {user.courseName}
                 </Card.Text>
                 <Card.Text>
-                  <strong>Course Duration:</strong> {user.duration}
+                  <strong>Course Duration:</strong> {user.courseDuration}
                 </Card.Text>
                 <Card.Text>
                   <strong>Course Timing:</strong> {user.courseTiming}
                 </Card.Text>
                 <Card.Text>
-                  <strong>No of Students:</strong> {user.noStudents}
+                  <strong>No of Students:</strong> {user.courseEnrolled}
                 </Card.Text>
                 <Card.Text>
-                  <strong>Course Description:</strong> {user.description}
+                  <strong>Course Description:</strong> {user.courseDescription}
                 </Card.Text>
                 <div style={{ position: 'absolute', bottom: '10px', right: '10px' }}>
                   <Button
@@ -58,14 +58,14 @@ const CourseItem = () => {
                     style={{ color: 'white', textDecoration: 'none' }}
                   >
                     <Link
-                      to={`/EditCourse/${user.id}`}
+                      to={`/editcourse/${user.courseId}`}
                       className="link-no-underline"
                       style={{ color: 'inherit', textDecoration: 'none' }}
                     >
                       Edit
                     </Link>
                   </Button>
-                  <Button variant="danger" id="deleteCourse" onClick={() => deleteUsers(user.id)}>
+                  <Button variant="danger" id="deleteCourse" onClick={() => deleteUsers(user.courseId)}>
                     Delete
                   </Button>
                 </div>
