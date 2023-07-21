@@ -68,7 +68,7 @@ return (<div>
         <div>
   
   <span style={{marginLeft:"120px"}}>
-   <button id="editAcademy"><Link to={`${API_BASE_URL}/admin/editInstitute/${user.instituteId}`}><LuEdit/></Link></button>
+   <button id="editAcademy"><Link to={`/admin/editInstitute/${user.instituteId}`}><LuEdit/></Link></button>
     </span>
   
     <span style={{marginLeft:"20px"}}>
