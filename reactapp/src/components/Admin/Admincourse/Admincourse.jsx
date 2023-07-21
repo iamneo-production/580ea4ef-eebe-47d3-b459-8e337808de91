@@ -6,7 +6,7 @@ import './Admincourse.css';
 
 function Admincourse() {
   return (
-    <div>
+    <div style={{ backgroundColor: 'rgb(230, 248, 250)' }}>
         
         <Navbarcomp />
         <CourseItem />

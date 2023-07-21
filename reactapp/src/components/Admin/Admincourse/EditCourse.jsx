@@ -48,14 +48,15 @@ const EditCourse = () => {
 
   return (
     <div>
-    <div><Navbar expand="lg" style={{backgroundColor: "rgb(17, 178, 247)" }}>
+      <div>
+      <Navbar expand="lg" style={{backgroundColor: "rgb(17, 178, 247)" }}>
         <Navbar.Brand>IAS Academy</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav.Link id="adminAcademy" as={Link} to="/AdminInstitute" className="academy" style={{ color: "black", paddingRight: "30px" }}>
+          <Nav.Link id="adminAcademy" as={Link} to="/" className="academy" style={{ color: "black"}}>
                   Academy
                 </Nav.Link>
-                <Nav.Link id="AdminCourse" as={Link} to="/Courses" className="courses" style={{ color: "black", paddingRight: "30px" }}>
+                <Nav.Link id="adminCourse" as={Link} to="/Courses" className="courses" style={{ color: "black"}}>
                   Courses
                 </Nav.Link>
                 <Nav.Link id="adminStudents" as={Link} to="/Students" className="students" style={{ color: "black" }}>
@@ -63,9 +64,11 @@ const EditCourse = () => {
                 </Nav.Link>
                 <Nav.Link id="logout" as={Link} to="/logout" className="logout" style={{ fontWeight: "bold", color: "black"}}>
                   Logout
-                  </Nav.Link>
+                </Nav.Link>
         </Navbar.Collapse>
-      </Navbar></div>
+      </Navbar>
+
+    </div>
     <div className="formContainer">
       <h2 className="text-center">Edit Course</h2>
       <Form onSubmit={handleSubmit}>
