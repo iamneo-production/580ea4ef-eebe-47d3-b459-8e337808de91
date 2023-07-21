@@ -61,7 +61,7 @@ return (
       <Container>
         
         <Nav className='mx-auto'>
-          <Nav.Link href="#Academy" onClick={handleClick} >Academy</Nav.Link>
+          <Nav.Link href="#AcademiesPage" onClick={handleClick} >Academy</Nav.Link>
           <Nav.Link href="#EnrolledCourse " onClick={handle1click}  >Enrolledcourse</Nav.Link>
           </Nav>
           <Nav className="ml-2">
