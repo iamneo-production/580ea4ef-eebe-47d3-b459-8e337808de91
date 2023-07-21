@@ -53,7 +53,7 @@ return (
             ) : (data 
          .map((values,index)=>{
             const{courseName,endDate,admissionid}=(values);
-            const remainingDays = calculateRemainingDays(endDate);
+            //const remainingDays = calculateRemainingDays(endDate);
             return(
                <>
                <div className='col-md-3' key={admissionid} >
@@ -62,7 +62,7 @@ return (
                <div className='card-body'>
                
                   <h5 className='card-title'>Course:{courseName}</h5>
-                  <h6 className='card-text'> RemainingDays:{remainingDays}</h6>
+                  {/*<h6 className='card-text'> RemainingDays:{remainingDays}</h6>*/}
 
                </div>
             </div>

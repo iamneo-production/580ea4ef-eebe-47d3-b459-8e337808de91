@@ -50,7 +50,7 @@ const handleDelete = (admissionid) => {
  
   console.log('Delete clicked for image with ID:', admissionid);
   
-  setData(prevData => prevData.filter(item => item.id !== id));
+  setData(prevData => prevData.filter(item => item.admissionid !== admissionid));
 };
 
 return (
