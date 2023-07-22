@@ -6,19 +6,6 @@
     font-size: medium;
 }
 
-
-#searchButton {
-    font-size: large;
-    text-align: center;
-
-}
-
-#searchButton:hover{
-    background-color: green;
-    color: black;    
-    outline:none;
-}
-
 .addbtn {
     display: flex;
     float: right;
@@ -56,18 +43,30 @@
 
 #addstudentbtn:hover {
     background-color: green;
-    color: black;
-}
-
-#adminEditStudent:hover {
-    background-color: green;
-    color: aliceblue;
+    
+    border-radius: 10px;
 }
 
 #adminEditStudent {
     margin-right: 2px;
     border: none;
     outline: none;
+    background-color: rgba(255, 255, 255, 0.693);
+    padding: 3px;
+}
+#adminEditStudent:hover {  
+   outline: none;
+   border: none;    
+}
+
+#adminDeleteStudent{
+   
+    border: none;
+    outline: none;
+    padding-block: 5px;
+    padding-right: 7px;
+    padding-left: 7px;
+    border-radius: 5px;
 }
 
 #updateStudent {
@@ -100,16 +99,24 @@
 }
 
 input {
-    font-size-adjust: inherit;
+    font-size:medium;
     text-align: center;
     padding: 7px;
     margin: 2rem;
-    font-size: larger;
 }
 
 input[type=text]:focus {
     border: 3px solid #555;
 }
+/* #phoneNumber1{
+    outline:0;
+}
+#phoneNumber1:valid{
+    border-color: green;
+}
+#phoneNumber1:invalid{
+    border-color: red;
+} */
 
 .Address {
     margin-top: 1rem;
@@ -124,8 +131,28 @@ input[type=text]:focus {
 }
 
 .Address input {
-    font-size: small;
+    font-size: medium;
+    font-family:'Times New Roman', Times, serif;
     margin-left: 1rem;
-    margin-right: 1rem;
+    margin-right: 3rem;
     margin-bottom: 0.79rem;
+}
+.areaName{
+    margin-left:0.5;
+}
+.pincode{
+    margin-left:2.1rem;
+}
+.state{
+    margin-left: 2.6rem;
+}
+.nationality{
+    margin-left:.5rem;
+}
+.table{
+    width: 100%;
+}
+.tr:col{
+    margin: 1rem;
+    padding: 30px;
 }

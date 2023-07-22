@@ -1,11 +1,14 @@
-import React from 'react';
+import React from 'react'
 import Navbar from './Navbar';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import axios from 'axios';
 
+export default function EditStudent() {
+  const { studentId } = useParams();
 
-const AddStudent = () => {
   let navigate = useNavigate();
 
   const [user, setUser] = useState({
@@ -28,24 +31,38 @@ const AddStudent = () => {
 
   const { firstName, lastName, gender, fatherName, phnNo1, phnNo2, motherName,
     email, age, houseNo, streetName, areaName, pinCode, state, nationality } = user;
-    
+
+
+
   const onInputChange = (e) => {
 
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  useEffect(() => {
+    loadUser();
+  }, []);
+
+  //To load the data about a specific Student
+
+  const loadUser = async () => {
+     await axios.get(`http://localhost:8080/user/${studentId}`)
+      .then((response) => {
+        console.log(response);
+        setUser(response.data);
+
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    //setUser(result.data);
+
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/user", user)
-    .then((response) => {
-      console.log(response);
-      setUser(response.data);
-      navigate("/admin/viewStudent");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-   
+    await axios.put(`http://localhost:8080/user/${studentId}`, user);
+    navigate("/admin/viewStudent");
   };
 
   return (
@@ -65,44 +82,44 @@ const AddStudent = () => {
             <input
               type={"text"}
               name="firstName"
-              id='firstName'
+              id='editFirstName'
               placeholder="Enter your First Name"
               autoComplete="off"
               size="40"
               value={firstName}
-              required 
+              required
               onChange={(e) => onInputChange(e)}
             />
 
             <input
               type={"text"}
               name="lastName"
-              id='lastName'
+              id='editLastName'
               placeholder="Enter your Last Name"
               size="40"
               value={lastName}
-              required 
+              required
               onChange={(e) => onInputChange(e)}
             />
 
             <input
               type={"text"}
               name="gender"
-              id='gender'
+              id='editGender'
               placeholder="Enter male or female"
               size="40"
               value={gender}
-              required 
+              required
               onChange={(e) => onInputChange(e)}
             />
 
             <input
               type={"text"}
               name="fatherName"
-              id='fatherName'
+              id='editFatherName'
               placeholder="Enter your Father Name"
               size="40"
-              required 
+              required
               value={fatherName}
               onChange={(e) => onInputChange(e)}
             />
@@ -110,11 +127,11 @@ const AddStudent = () => {
             <input
               type="tel"
               name="phnNo1"
-              id='phoneNumber1'
-              placeholder="Enter Phone Number"
+              id='editPhoneNumber1'
+              placeholder="xxxx-xxx-xxx"
               size="40"
               pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
-              required 
+              required
               value={phnNo1}
               onChange={(e) => onInputChange(e)}
             />
@@ -122,61 +139,63 @@ const AddStudent = () => {
             <input
               type="tel"
               name="phnNo2"
-              id='phoneNumber2'
+              id='editPhoneNumber2'
               placeholder="Enter Alternate Phone Number"
               size="40"
               value={phnNo2}
-              required 
+              required
               onChange={(e) => onInputChange(e)}
             /><br />
 
             <input type={"text"}
               name="motherName"
-              id='motherName'
+              id='editMotherName'
               placeholder="Enter your Mother Name"
               size="40"
               value={motherName}
-              required 
+              required
               onChange={(e) => onInputChange(e)}
             /><br />
 
             <input
               type="email"
               name="email"
-              id='emailId'
-              placeholder="Enter your Email-ID"
+              id='editEmailstudentId'
+              placeholder="Enter your Email-studentId"
               autoComplete="off" size="40"
               value={email}
-              required 
+              required
               onChange={(e) => onInputChange(e)}
             /><br />
 
             <input
               type="number"
               name="age"
-              id='age'
-              placeholder= "Enter your Age"
-              size="40"
-              value={age}             
-              required 
+              id='editAge'
+              placeholder="Enter your Age"
+              size="60"
+              value={age}
+              required
               onChange={(e) => onInputChange(e)}
             />
+
           </form>
         </div>
 
         <div className="Address">
-          <form>          
-              <b>Address Information</b><br />
+          <form>
+
+            <b>Address Information</b><br />
             <label>
-            <b>House No :</b>
+              <b>House No :</b>
             </label>
             <input
               type={"text"}
               name="houseNo"
-              id='houseNo'
+              id='editHouseNo'
               size="25"
               value={houseNo}
-              required 
+              required
               onChange={(e) => onInputChange(e)}
             />
 
@@ -186,10 +205,10 @@ const AddStudent = () => {
             <input
               type={"text"}
               name="streetName"
-              id='streetName' 
+              id='editStreetName'
               size="25"
               value={streetName}
-              required 
+              required
               onChange={(e) => onInputChange(e)}
             /><br />
 
@@ -199,10 +218,10 @@ const AddStudent = () => {
             <input
               type={"text"}
               name="areaName"
-              id='areaName'
+              id='editAreaName'
               size="24"
               value={areaName}
-              required 
+              required
               onChange={(e) => onInputChange(e)}
             />
 
@@ -212,11 +231,11 @@ const AddStudent = () => {
             <input
               type={"text"}
               name="PinCode"
-              id='pinCode'
+              id='editPinCode'
               size="25"
               value={pinCode}
-              
-              required 
+
+              required
               onChange={(e) => onInputChange(e)}
             /><br />
 
@@ -226,10 +245,10 @@ const AddStudent = () => {
             <input
               type={"text"}
               name="state"
-              id='state'
+              id='editState'
               size="25"
               value={state}
-              required 
+              required
               onChange={(e) => onInputChange(e)}
             />
 
@@ -239,20 +258,19 @@ const AddStudent = () => {
             <input
               type={"text"}
               name="nationality"
-              id='nationality'
+              id='editNationality'
               size="25"
               value={nationality}
-              required 
+              required
               onChange={(e) => onInputChange(e)}
             />
           </form>
         </div >
       </div >
-      
-      <div className="addbtn2">
-        <button type="submit" className="btn btn-light btn-lg" id="addstudentbtn" onClick={(e) => onSubmit(e)} >Add Student</button>
+      <div className="updatestudentbtn">
+        <button className="btn btn-light btn-lg" id="updateStudent" onClick={(e) => onSubmit(e)}>Update Student</button>
       </div>
     </>
-  );
+
+  )
 }
-export default AddStudent;
