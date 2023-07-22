@@ -89,7 +89,8 @@ const AddStudent = () => {
               type={"text"}
               name="gender"
               id='gender'
-              placeholder="Enter male or female"
+              // placeholder="Enter male or female"
+              placeholder="Enter Gender"
               size="40"
               value={gender}
               required 
@@ -248,7 +249,7 @@ const AddStudent = () => {
           </form>
         </div >
       </div >
-      //button
+      {/* //button */}
       <div className="addbtn2">
         <button type="submit" className="btn btn-light btn-lg" id="addstudentbtn" onClick={(e) => onSubmit(e)} >Add Student</button>
       </div>

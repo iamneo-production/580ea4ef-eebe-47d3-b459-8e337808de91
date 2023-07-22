@@ -44,13 +44,14 @@ function App() {
 
           {/* USER ROUTES */}
           <Route element={<div>Page Not Found</div>} path="*" />
-          <Route element={<AcademiesPage />} path="/academies" />
+          <Route element={<AcademiesPage />} path="/user/Academy" />
 
           <Route path="/course" element={<Course />} />
 
           <Route element={<Details />} path="/Details" />
 
-          <Route element={<Enrolledcourse />} path="/EnrolledCourse" />
+          {/* <Route element={<Enrolledcourse />} path="/EnrolledCourse" /> */}
+          <Route element={<Enrolledcourse />} path="/user/Enrolledcourse" />
           <Route element={<Mylearning />} path="/Mylearning" />
           <Route element={<FeedbackPage />} path="/FeedbackPage" />
 

@@ -61,7 +61,8 @@ const Login = () => {
               setProcessing(false);
       
               if (userRole === "user") {
-                navigate(`/academies`); // add link of the student dashboard
+                // navigate(`/academies`); // add link of the student dashboard
+                navigate(`/user/Academy`);
               } else {
                 navigate(`/admininstitute`); // when admin login, navigate to admin Institute
               }
