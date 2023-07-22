@@ -7,7 +7,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
-
+import {API_BASE_URL} from "../../../utils/APIUtils";
 
 
 export default function Student() {
@@ -22,7 +22,7 @@ export default function Student() {
   },[]);
 
   const loadUsers = async () => {
-     await axios.get("http://localhost:8080/users")
+     await axios.get(`${API_BASE_URL}/users`)
     .then((response) => {
       console.log(response);
       setUsers(response.data);
@@ -35,7 +35,7 @@ export default function Student() {
 
 
   const deleteUser = async (studentId) => {
-    await axios.delete(`http://localhost:8080/user/${studentId}`)
+    await axios.delete(`${API_BASE_URL}/user/${studentId}`)
     .then((response) => {
       console.log(response);
       loadUsers();

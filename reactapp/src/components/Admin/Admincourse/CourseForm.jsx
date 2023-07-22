@@ -41,10 +41,10 @@ const AddCourseForm = () => {
           <Nav.Link id="adminAcademy" as={Link} to="/AdminInstitute" className="academy" style={{ color: "black", paddingRight: "30px" }}>
                   Academy
                 </Nav.Link>
-                <Nav.Link id="adminCourse" as={Link} to="/Courses" className="courses" style={{ color: "black", paddingRight: "30px" }}>
+                <Nav.Link id="adminCourse" as={Link} to="/Admincourse" className="courses" style={{ color: "black", paddingRight: "30px" }}>
                   Courses
                 </Nav.Link>
-                <Nav.Link id="adminStudents" as={Link} to="/Students" className="students" style={{ color: "black" }}>
+                <Nav.Link id="adminStudents" as={Link} to="/Admin/viewStudent" className="students" style={{ color: "black" }}>
                   Students
                 </Nav.Link>
                 <Nav.Link id="logout" as={Link} to="/login" className="logout" style={{ fontWeight: "bold", color: "black"}}>
