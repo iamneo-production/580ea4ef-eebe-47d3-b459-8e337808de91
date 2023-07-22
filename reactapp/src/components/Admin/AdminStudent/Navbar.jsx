@@ -31,7 +31,7 @@ export default function Navbar(props) {
             <li className="nav-item active">
               <Link
                 className="nav-link"
-                to="/academy"
+                to="/AdminInstitute"
               >
                 {props.Academy}
               </Link >
@@ -39,7 +39,7 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/course"
+                to="/Admincourse"
               >
                 {props.Courses}
               </Link >
@@ -55,7 +55,7 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/logout"
+                to="/login"
               >
                 {props.Logout}
               </Link >

@@ -59,7 +59,7 @@ const EditCourse = () => {
                 <Nav.Link id="adminCourse" as={Link} to="/Courses" className="courses" style={{ color: "black", paddingRight: "30px" }}>
                   Courses
                 </Nav.Link>
-                <Nav.Link id="adminStudents" as={Link} to="/Students" className="students" style={{ color: "black" }}>
+                <Nav.Link id="adminStudents" as={Link} to="/admin/viewStudent" className="students" style={{ color: "black" }}>
                   Students
                 </Nav.Link>
                 <Nav.Link id="logout" as={Link} to="/login" className="logout" style={{ fontWeight: "bold", color: "black"}}>
