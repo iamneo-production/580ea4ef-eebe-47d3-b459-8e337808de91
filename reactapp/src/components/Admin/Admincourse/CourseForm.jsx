@@ -38,10 +38,10 @@ const AddCourseForm = () => {
         <Navbar.Brand>IAS Academy</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav.Link id="adminAcademy" as={Link} to="/" className="academy" style={{ color: "black"}}>
+          <Nav.Link id="adminAcademy" as={Link} to="/" className="academy" style={{ color: "black", paddingRight: "30px" }}>
                   Academy
                 </Nav.Link>
-                <Nav.Link id="adminCourse" as={Link} to="/Courses" className="courses" style={{ color: "black"}}>
+                <Nav.Link id="adminCourse" as={Link} to="/Courses" className="courses" style={{ color: "black", paddingRight: "30px" }}>
                   Courses
                 </Nav.Link>
                 <Nav.Link id="adminStudents" as={Link} to="/Students" className="students" style={{ color: "black" }}>
@@ -54,7 +54,6 @@ const AddCourseForm = () => {
       </Navbar>
 
     </div>
-    
     <div className="formContainer">
       <h2 className="text-center">Add Course</h2>
       <Form  onSubmit={(e) => onSubmit(e)}>
