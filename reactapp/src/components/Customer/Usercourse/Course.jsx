@@ -39,7 +39,8 @@ const Course = () => {
                         {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav"> */}
                         <Form inline className="d-flex m-2 w-100" >
-                            <FormControl type="text" placeholder="Search Academy" className=" mr-sm-2 m-1" onChange={handleSearch} />
+                            {/* <FormControl type="text" placeholder="Search Academy" className=" mr-sm-2 m-1" onChange={handleSearch} /> */}
+                            <FormControl type="text" placeholder="Search Courses" className=" mr-sm-2 m-1" onChange={handleSearch} />
                             <Button variant="success" className="m-1">Search</Button>
                         </Form>
                         {/* </Navbar.Collapse> */}
