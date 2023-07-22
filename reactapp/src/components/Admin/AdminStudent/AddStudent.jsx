@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {API_BASE_URL} from "../../../utils/APIUtils";
+import './Studentdetails.css';
 
 const AddStudent = () => {
   let navigate = useNavigate();
