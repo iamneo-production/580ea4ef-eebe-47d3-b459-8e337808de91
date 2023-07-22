@@ -105,9 +105,9 @@ input {
     margin: 2rem;
 }
 
-input[type=text]:focus {
+/* input[type=text]:focus {
     border: 3px solid #555;
-}
+} */
 /* #phoneNumber1{
     outline:0;
 }
@@ -156,4 +156,3 @@ input[type=text]:focus {
     margin: 1rem;
     padding: 30px;
 }
-//student
