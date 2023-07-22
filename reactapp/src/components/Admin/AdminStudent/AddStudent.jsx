@@ -248,7 +248,7 @@ const AddStudent = () => {
           </form>
         </div >
       </div >
-      
+      //button
       <div className="addbtn2">
         <button type="submit" className="btn btn-light btn-lg" id="addstudentbtn" onClick={(e) => onSubmit(e)} >Add Student</button>
       </div>
