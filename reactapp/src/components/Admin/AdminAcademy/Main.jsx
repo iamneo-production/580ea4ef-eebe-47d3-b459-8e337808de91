@@ -51,7 +51,7 @@ return (<div>
     <div style={{display:"flex",flexDirection:"row",justifyContent:"space-around"}}>
   
     
-  <Card key ={user.instituteId} style={{backgroundColor:"rgb(250, 213, 170)",borderStyle:"none"}}>
+  <Card key ={user.instituteId} style={{backgroundColor:"rgb(230, 248, 250)",borderStyle:"none"}}>
             
   
            <div style={{height:"fit-content",width:"fit-content",margin:"40px 20px",padding:"10px",backgroundColor:"white",border:"1px solid black",borderRadius:"25px"}}>
