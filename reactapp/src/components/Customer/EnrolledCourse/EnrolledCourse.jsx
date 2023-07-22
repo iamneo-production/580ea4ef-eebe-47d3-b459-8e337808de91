@@ -18,7 +18,8 @@ const history=useNavigate();
   const handleClick = (e) => {
     e.preventDefault();
 
-    history("/Academy")
+    // history("/Academy")
+    history("/user/Academy")
     
   }
   const handlingClick = (e) => {
@@ -29,7 +30,8 @@ const history=useNavigate();
  }
  const handle1click=(e)=>{
    e.preventDefault();
-   history("/EnrolledCourse")
+  //  history("/EnrolledCourse")
+   history("/user/Enrolledcourse")
  }
  const clickChange = () => {
   history("/Mylearning")

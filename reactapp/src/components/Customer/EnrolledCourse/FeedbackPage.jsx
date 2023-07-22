@@ -20,7 +20,8 @@ const FeedbackPage = () => {
 
         const handleClick = (e) => {
             e.preventDefault();
-            history("/Academy")
+            // history("/Academy")
+            history("/user/Academy")
         
         }
         const handlingClick = (e) => {
@@ -31,7 +32,9 @@ const FeedbackPage = () => {
         }
         const handle1click=(e)=>{
             e.preventDefault();
-            history("/EnrolledCourse1")
+            // history("/EnrolledCourse1")
+            history("/user/Enrolledcourse1")
+
         }
     
     return (
