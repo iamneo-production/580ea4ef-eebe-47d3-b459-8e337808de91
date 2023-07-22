@@ -7,18 +7,18 @@ function Navbaar() {
     localStorage.setItem("userModel",null);
     }
   return (
-    <nav className="navbar">
+    <nav className="navbaar">
       <div>
-        <NavLink   className="navbar-link" activeClassName="active">IAS Academy</NavLink>
+        <NavLink   className="navbaar-link" activeClassName="active">IAS Academy</NavLink>
       </div>
-      <div className="navbar-links">
-        <NavLink  to="/user/Academy" className="navbar-link" activeClassName="active" id="userAcademy">Academy</NavLink>
+      <div className="navbaar-links">
+        <NavLink  to="/user/Academy" className="navbaar-link" activeClassName="active" id="userAcademy">Academy</NavLink>
       </div>
-      <div className="navbar-links">
-        <NavLink to="/user/Enrolledcourse" className="navbar-link" activeClassName="active" id="userEnrolledCourse">Enrolledcourse</NavLink>
+      <div className="navbaar-links">
+        <NavLink to="/user/Enrolledcourse" className="navbaar-link" activeClassName="active" id="userEnrolledCourse">Enrolledcourse</NavLink>
       </div>
       <div>
-        <NavLink to="/login" className="navbar-link" activeClassName="active"  id="logout" onClick={handleLogout}>Logout</NavLink>
+        <NavLink to="/login" className="navbaar-link" activeClassName="active"  id="logout" onClick={handleLogout}>Logout</NavLink>
       </div>
     </nav>
   );
