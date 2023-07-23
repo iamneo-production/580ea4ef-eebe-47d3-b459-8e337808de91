@@ -55,13 +55,13 @@ export default function Student() {
         Students="Students"
         Logout="Logout"
       />
-      <div className="search-bar">
+      {/* <div className="search-bar">
         <label>
           <input
             type="search"
             id="search"
             placeholder='Enter studentId to search here'
-            size="40"
+            size="30"
           />
         </label>
         <label>
@@ -72,8 +72,8 @@ export default function Student() {
             value="Search">
             Search
           </button>
-        </label>
-      </div>
+        </label> */}
+      {/* </div> */}
       <table className="table table-striped">
         <thead>
           <tr className="col">

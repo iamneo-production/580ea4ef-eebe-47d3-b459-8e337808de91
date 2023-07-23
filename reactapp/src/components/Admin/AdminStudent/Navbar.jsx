@@ -1,17 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-
-  
-
-
 export default function Navbar(props) {
-  // const navstyle={
-  //   display:'flex',
-  //   justifyContent: 'space-between',
-  //   marginBottom: '4rem',
-  //   width: '100%'
-  // }
+
 
 
   return (
@@ -19,7 +10,7 @@ export default function Navbar(props) {
       <nav className="navbar navbar-expand-lg  bg-info id=navbar1 ">
         <Link
           className="navbar-brand"
-          to="/home">
+          to="/AdminInstitute">
           {props.Home}
         </Link >
         <button
@@ -40,7 +31,7 @@ export default function Navbar(props) {
             <li className="nav-item active">
               <Link
                 className="nav-link"
-                to="/academy"
+                to="/AdminInstitute"
               >
                 {props.Academy}
               </Link >
@@ -49,7 +40,7 @@ export default function Navbar(props) {
               <Link
                 className="nav-link"
                
-                to="/course"
+                to="/Admincourse"
               >
                 {props.Courses}
               </Link >
@@ -65,9 +56,9 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/logout"
+                to="/Login"
               >
-                {props.Logout}
+                <b>{props.Logout}</b>
               </Link >
             </li>
           </ul>
