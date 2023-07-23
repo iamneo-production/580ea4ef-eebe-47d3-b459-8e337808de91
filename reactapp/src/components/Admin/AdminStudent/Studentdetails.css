@@ -1,10 +1,28 @@
-#search {
-    margin-right: 1.5rem;
-    margin-left: 33rem;
-    margin-bottom: 5rem;
-    padding: -20px;
-    font-size: medium;
+/* .search-bar {
+    display: flex;
+    flex: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+} */
+
+
+
+
+/* #searchButton {
+    display: flex;
+    justify-content: center;
+    float: center;
+    translate: 1rem 3rem;
 }
+
+#search {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: large;
+
+} */
+
 
 .addbtn {
     display: flex;
@@ -19,7 +37,7 @@
     border-radius: 10px;
     background-color: green;
     color: white;
-    padding:-40px;
+    padding: -40px;
 }
 
 #addStudent:hover {
@@ -27,13 +45,14 @@
     color: black;
 }
 
-.addbtn2{
+.addbtn2 {
     display: flex;
     float: right;
-    margin:0%
+    margin: 0%
 }
+
 #addstudentbtn {
-   
+
     margin: 0%;
     translate: -3rem -32rem;
     border-radius: 10px;
@@ -42,9 +61,9 @@
 }
 
 #addstudentbtn:hover {
-    background-color: green;   
+    background-color: green;
     border-radius: 10px;
-    color:black
+    color: black
 }
 
 #adminEditStudent {
@@ -54,13 +73,14 @@
     background-color: rgba(255, 255, 255, 0.693);
     padding: 3px;
 }
-#adminEditStudent:hover {  
-   outline: none;
-   border: none;    
+
+#adminEditStudent:hover {
+    outline: none;
+    border: none;
 }
 
-#adminDeleteStudent{
-   
+#adminDeleteStudent {
+
     border: none;
     outline: none;
     padding-block: 5px;
@@ -86,52 +106,56 @@
 
 .details {
     display: flex;
-    flex: wrap ;
+    flex: wrap;
     justify-content: space-between;
     margin-top: 7rem;
-    margin-left: 25rem;   
-    padding:2rem;
-    width:100%;
+    margin-left: 25rem;
+    padding: 2rem;
+    width: 100%;
     translate: 2rem -5rem;
 }
 
 .details input {
-    font-size:medium;
+    font-size: medium;
     text-align: center;
     padding: 7px;
-    margin:2rem
-   /* margin-left:2rem;
+    margin: 2rem
+        /* margin-left:2rem;
    margin-top:2rem ;
    margin-bottom:2rem ;
    margin-right:1.5rem ; */
 }
-.container {
+
+.container1 {
     display: flex;
-    
-    flex-direction: column; 
+
+    flex-direction: column;
     justify-content: space-between;
     margin-top: 1rem;
     margin-left: 3rem;
-    padding:1rem; 
-    width:100%;
+    padding: 1rem;
+    width: 100%;
     translate: 2rem -9rem;
 }
-.container > form {
+
+.container1>form {
     display: flex;
-  flex-direction: column;
-}
-.container input{
-    display: flex;  
     flex-direction: column;
-    font-size:medium;
-    text-align: center;
-    padding: 7px;
-    margin:2rem
 }
 
-.details >form>input[type=text]:focus {
+.container1 input {
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    text-align: center;
+    padding: 7px;
+    margin: 2rem
+}
+
+.details>form>input[type=text]:focus {
     border: 3px solid #555;
 }
+
 /* #phoneNumber1{
     outline:0;
 }
@@ -143,13 +167,13 @@
 } */
 
 .Address {
-    display:flex;
-    flex:wrap;
+    display: flex;
+    flex: wrap;
     flex-direction: row;
     /* margin-top: 1rem;
     margin-left: 5rem;
     margin-bottom: 1.8rem; */
-    margin:2rem;
+    margin: 2rem;
     font-size: medium;
     padding-left: 20px;
     padding-top: 30px;
@@ -157,50 +181,64 @@
     background-color: aliceblue;
     translate: 31.8rem -32rem;
     width: 49.5%;
-    text-align: left
-} 
+    text-align: left;
+    overflow:hidden;
+    box-shadow:  0px 0px 10px -5px;
+    
+}
 
- .Address input {
-    font-size: medium;   
+.Address input {
+    font-size: medium;
     margin-left: 0rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
     margin-top: 1rem;
- }
+}
+
 /* #firstName{
     margin-left: 20rem;
 } */
-#age{
-    width:21rem;
-   
+#age {
+    width: 21rem;
+
 }
-.houseNo{
+
+.houseNo {
     margin-right: 1rem;
 }
-.streetName{
+
+.streetName {
     margin-right: 1rem;
 
 }
-.areaName{
-    margin-left:0.1rem;
-    margin-right:0.6rem;
+
+.areaName {
+    margin-left: 0.1rem;
+    margin-right: 0.6rem;
 }
-.pincode{
-    margin-left:2.2rem;
+
+.pincode {
+    margin-left: 2.2rem;
     margin-right: 1rem;
 }
-.state{
+
+.state {
     margin-left: 2.6rem;
     margin-right: 1rem;
 }
-.nationality{
-    margin-left:.9rem;
+
+.nationality {
+    margin-left: .9rem;
     margin-right: 1rem;
 }
-.table{
+
+.table {
     width: 100%;
+    margin-top:5rem;
+    border:-5px solid;
+    box-shadow:  0px 0px 10px -5px;
+   
+    margin-right: 5rem;
+    
 }
-.tr:col{
-    margin: 1rem;
-    padding: 30px;
-}
+
