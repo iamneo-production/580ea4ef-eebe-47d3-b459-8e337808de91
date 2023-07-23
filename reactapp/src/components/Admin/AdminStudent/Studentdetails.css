@@ -1,4 +1,4 @@
-/* #search {
+#search {
     margin-right: 1.5rem;
     margin-left: 33rem;
     margin-bottom: 5rem;
@@ -35,16 +35,16 @@
 #addstudentbtn {
    
     margin: 0%;
-    translate: -0.75rem -22rem;
+    translate: -3rem -32rem;
     border-radius: 10px;
     background-color: green;
     color: white;
 }
 
 #addstudentbtn:hover {
-    background-color: green;
-    
+    background-color: green;   
     border-radius: 10px;
+    color:black
 }
 
 #adminEditStudent {
@@ -86,28 +86,52 @@
 
 .details {
     display: flex;
-    flex: wrap;
-    margin-top: 5rem;
-    margin-left: 5rem;
-    margin-bottom: 2rem;
-    
+    flex: wrap ;
+    justify-content: space-between;
+    margin-top: 7rem;
+    margin-left: 25rem;   
+    padding:2rem;
+    width:100%;
+    translate: 2rem -5rem;
 }
 
 .details input {
-    font-size: large;
-
-}
-
-.input {
     font-size:medium;
     text-align: center;
     padding: 7px;
-    margin: 2rem;
+    margin:2rem
+   /* margin-left:2rem;
+   margin-top:2rem ;
+   margin-bottom:2rem ;
+   margin-right:1.5rem ; */
+}
+.container {
+    display: flex;
+    
+    flex-direction: column; 
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    padding:1rem; 
+    width:100%;
+    translate: 2rem -9rem;
+}
+.container > form {
+    display: flex;
+  flex-direction: column;
+}
+.container input{
+    display: flex;  
+    flex-direction: column;
+    font-size:medium;
+    text-align: center;
+    padding: 7px;
+    margin:2rem
 }
 
-input[type=text]:focus {
+.details >form>input[type=text]:focus {
     border: 3px solid #555;
-} */
+}
 /* #phoneNumber1{
     outline:0;
 }
@@ -116,38 +140,62 @@ input[type=text]:focus {
 }
 #phoneNumber1:invalid{
     border-color: red;
-}
+} */
 
 .Address {
-    margin-top: 1rem;
+    display:flex;
+    flex:wrap;
+    flex-direction: row;
+    /* margin-top: 1rem;
     margin-left: 5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.8rem; */
+    margin:2rem;
     font-size: medium;
     padding-left: 20px;
-    padding-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 0.6rem;
     background-color: aliceblue;
-    translate: 30rem -22rem;
-    width: 55.3%;
-}
+    translate: 31.8rem -32rem;
+    width: 49.5%;
+    text-align: left
+} 
 
-.Address input {
-    font-size: medium;
-    font-family:'Times New Roman', Times, serif;
-    margin-left: 1rem;
-    margin-right: 3rem;
-    margin-bottom: 0.79rem;
+ .Address input {
+    font-size: medium;   
+    margin-left: 0rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+ }
+/* #firstName{
+    margin-left: 20rem;
+} */
+#age{
+    width:21rem;
+   
+}
+.houseNo{
+    margin-right: 1rem;
+}
+.streetName{
+    margin-right: 1rem;
+
 }
 .areaName{
-    margin-left:0.5;
+    margin-left:0.1rem;
+    margin-right:0.6rem;
 }
 .pincode{
-    margin-left:2.1rem;
+    margin-left:2.2rem;
+    margin-right: 1rem;
 }
 .state{
     margin-left: 2.6rem;
+    margin-right: 1rem;
 }
 .nationality{
-    margin-left:.5rem;
+    margin-left:.9rem;
+    margin-right: 1rem;
 }
 .table{
     width: 100%;
@@ -156,4 +204,3 @@ input[type=text]:focus {
     margin: 1rem;
     padding: 30px;
 }
-/* //student */

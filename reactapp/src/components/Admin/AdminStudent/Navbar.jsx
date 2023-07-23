@@ -1,13 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './NavStyles.css'
 
+
+  
 
 
 export default function Navbar(props) {
+  // const navstyle={
+  //   display:'flex',
+  //   justifyContent: 'space-between',
+  //   marginBottom: '4rem',
+  //   width: '100%'
+  // }
+
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+      <nav className="navbar navbar-expand-lg  bg-info id=navbar1 ">
         <Link
           className="navbar-brand"
           to="/home">
@@ -31,7 +40,7 @@ export default function Navbar(props) {
             <li className="nav-item active">
               <Link
                 className="nav-link"
-                to="/AdminInstitute"
+                to="/academy"
               >
                 {props.Academy}
               </Link >
@@ -39,12 +48,13 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/Admincourse"
+               
+                to="/course"
               >
                 {props.Courses}
               </Link >
             </li>
-            <li className="nav-item">
+            <li className="nav-item" >
               <Link
                 className="nav-link"
                 to="/admin/viewStudent"
@@ -55,7 +65,7 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/login"
+                to="/logout"
               >
                 {props.Logout}
               </Link >
