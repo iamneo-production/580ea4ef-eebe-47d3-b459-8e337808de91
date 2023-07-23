@@ -30,12 +30,14 @@ const Students = () => {
   const handleClick = (e) => {
     e.preventDefault();
 
-    history('/Academy')
+    // history('/Academy')
+    history('/user/Academy')
     
   }
   const handle1click=(e)=>{
     e.preventDefault();
-    history("/EnrolledCourse ")
+    // history("/EnrolledCourse ")
+    history("/user/EnrolledCourse ")
   }
   
   const handlingClick = (e) => {
