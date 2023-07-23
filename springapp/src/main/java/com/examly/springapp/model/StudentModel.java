@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.*;
 import javax.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.util.Date;
 
 
 
@@ -49,6 +51,52 @@ public class StudentModel{
     private String state;
     @Column(name = "nationality")
     private String nationality;
+
+
+    //newly added
+    @Column(name = "StudentName")
+    private String studentName;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "StudentDOB")
+    private Date studentDOB;
+
+    @Column(name = "Address")
+    private String address;
+
+    @Column(name = "CompleteAddress")
+    private String completeaddress;
+
+    @Column(name = "Mobile")
+    private String mobile ;
+
+    @Column(name = "AlternamteNumber")
+    private String alternatenumber ;
+
+    @Column(name = "Malefemale")
+    private String malefemale;
+
+    public StudentModel(long studentId,String firstName,String lastName, String studentName, Date studentDOB, String address, String mobile, String email,String gender , String fatherName,  String motherName ,String alternatenumber,String completeaddress) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.studentDOB = studentDOB;
+        this.address = address;
+        this.mobile = mobile;
+        this.email = email;
+        this.gender=gender;
+        this.fatherName=fatherName;
+        this.motherName=motherName;
+        this.alternatenumber=alternatenumber;
+        this.completeaddress=completeaddress;
+
+    }
+    public StudentModel() {
+    }
+
+
+
 
     public Long getStudentId() {
         return studentId;
@@ -177,6 +225,57 @@ public class StudentModel{
     public void setNationality(String nationality) {
         this.nationality = nationality;
     }
+
+    //newly added
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public Date getStudentDOB() {
+        return studentDOB;
+    }
+
+    public void setStudentDOB(Date studentDOB) {
+        this.studentDOB = studentDOB;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getCompleteaddress() {
+        return completeaddress;
+    }
+
+    public void setCompleteaddress(String completeaddress) {
+        this.completeaddress = completeaddress;
+    }
+
+    public String getAlternatenumber() {
+        return alternatenumber;
+    }
+
+    public void setAlternatenumber(String alternatenumber) {
+        this.alternatenumber = alternatenumber;
+    }
+
 }
 
 
