@@ -1,0 +1,11 @@
+.table-striped tbody tr:nth-of-type(odd) td{
+    background-color: #e2e8ec; /* Alternate color for odd rows */
+  }
+  
+  .table-striped tbody tr:nth-of-type(even) td{
+    background-color: #ffffff; /* Alternate color for even rows */
+  }
+  .details{
+    position:relative;
+    left:-480px;
+  }
