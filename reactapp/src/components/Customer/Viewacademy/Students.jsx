@@ -3,7 +3,7 @@ import { Button, Container } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import './Student.css';
+import './Students.css';
 import StudentServices from './StudentServices';
 
 const Students = () => {
@@ -30,7 +30,7 @@ const Students = () => {
   const handleClick = (e) => {
     e.preventDefault();
 
-    history("/Academy")
+    history('/Academy')
     
   }
   const handle1click=(e)=>{
@@ -71,7 +71,7 @@ const Students = () => {
     <div>
     <div className="container">
       <h2 className="text-center">Details </h2>
-      <Button  className="btn-btn-primary mb-2" onClick={handledetails}>Add Details</Button>
+      <Button  className="btn-btn-primary mb-4 details" onClick={handledetails}>Add Details</Button>
       <table className="table table-striped">
         <thead>
           
