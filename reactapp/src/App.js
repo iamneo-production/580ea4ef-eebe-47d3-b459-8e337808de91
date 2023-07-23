@@ -23,7 +23,7 @@ import MainPage from './components/Customer/UserAcademy/MainPage';
 import Enrolledcourse from './components/Customer/EnrolledCourse/EnrolledCourse';
 import Mylearning from './components/Customer/EnrolledCourse/Mylearning';
 import FeedbackPage from './components/Customer/EnrolledCourse/FeedbackPage';
-import Student from './components/Customer/Viewacademy/Student';
+import Students from './components/Customer/Viewacademy/Students';
 
 
 function App() {
@@ -50,7 +50,7 @@ function App() {
           <Route path="/course" element={<Course />} />
 
           <Route element={<Details />} path="/Details" />
-          <Route element={<Student/>} path="/Student"/>
+          <Route element={<Students/>} path="/Students"/>
           <Route  element={<Details/>} path='/UpdateStudent1/:studentId'/>
 
           {/* <Route element={<Enrolledcourse />} path="/EnrolledCourse" /> */}
