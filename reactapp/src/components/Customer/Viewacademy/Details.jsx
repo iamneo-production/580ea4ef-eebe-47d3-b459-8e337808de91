@@ -45,7 +45,7 @@ const Details = () => {
   const handleClick = (e) => {
     e.preventDefault();
 
-    history("/Academy")
+    history("/user/Academy")
   }
   const handlingClick = (e) => {
     e.preventDefault();
@@ -54,7 +54,7 @@ const Details = () => {
   }
   const handle1click=(e)=>{
     e.preventDefault();
-    history("/EnrolledCourse")
+    history("/user/EnrolledCourse")
   }
   
   const adddata=(e)=>{
