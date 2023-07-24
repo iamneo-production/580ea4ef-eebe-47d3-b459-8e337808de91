@@ -272,4 +272,4 @@ const AddStudent = () => {
     </>
   );
 }
-export default AddStudent;
+export default AddStudent;

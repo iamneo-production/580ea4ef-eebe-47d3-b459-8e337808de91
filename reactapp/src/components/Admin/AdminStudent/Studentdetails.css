@@ -175,8 +175,8 @@
     margin-bottom: 1.8rem; */
     margin: 2rem;
     font-size: medium;
-    padding-left: 20px;
-    padding-top: 30px;
+    padding-left: 2rem;
+    padding-top: 2rem;
     padding-bottom: 0.6rem;
     background-color: aliceblue;
     translate: 31.8rem -32rem;
@@ -241,4 +241,5 @@
     margin-right: 5rem;
     
 }
+
 

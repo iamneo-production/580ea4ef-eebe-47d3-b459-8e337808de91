@@ -286,7 +286,7 @@ export default function EditStudent() {
       <div className="updatestudentbtn">
         <button className="btn btn-light btn-lg" id="updateStudent" onClick={(e) => onSubmit(e)}>Update Student</button>
       </div>
-    </>
+    </>
 
-  )
+  )
 }

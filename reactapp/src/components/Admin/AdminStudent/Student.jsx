@@ -22,7 +22,7 @@ export default function Student() {
   },[]);
 
   const loadUsers = async () => {
-     await axios.get(`${API_BASE_URL}/users`)
+     await axios.get(`${API_BASE_URL}/students`)
     .then((response) => {
       console.log(response);
       setUsers(response.data);
@@ -35,7 +35,7 @@ export default function Student() {
 
 
   const deleteUser = async (studentId) => {
-    await axios.delete(`${API_BASE_URL}/user/${studentId}`)
+    await axios.delete(`${API_BASE_URL}/student/${studentId}`)
     .then((response) => {
       console.log(response);
       loadUsers();
