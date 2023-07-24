@@ -167,6 +167,7 @@ const Signup = () => {
                   ? "Password should contain atleast 8 characters"
                   : ""
               }
+              error={form.password.value.length > 0 && form.password.value.length < 8}
             />
              <TextField variant="standard" margin="normal" id="confirmPassword" 
               label="Confirm Password*" type={"password"}  fullWidth name="confirmpassword"
