@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Studentdetails.css';
-
+import {API_BASE_URL} from "../../../utils/APIUtils";
 
 const AddStudent = () => {
   let navigate = useNavigate();
@@ -37,7 +37,7 @@ const AddStudent = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/user", user)
+    await axios.post(`${API_BASE_URL}/user`, user)
       .then((response) => {
         console.log(response);
         setUser(response.data);
