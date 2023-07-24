@@ -45,7 +45,7 @@ const Details = () => {
   const handleClick = (e) => {
     e.preventDefault();
 
-    history("/Academy")
+    history("/user/Academy")
   }
   const handlingClick = (e) => {
     e.preventDefault();
@@ -54,7 +54,7 @@ const Details = () => {
   }
   const handle1click=(e)=>{
     e.preventDefault();
-    history("/EnrolledCourse")
+    history("/user/EnrolledCourse")
   }
   
   const adddata=(e)=>{
@@ -80,7 +80,7 @@ const Details = () => {
     }else{
     StudentServices.saveStudent(student).then((response)=>{
       console.log(response.data)
-      history("/user/Students ")
+      history("/user/EnrolledCourse ")
     }).catch(error=>{
       console.log(error)
     })

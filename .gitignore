@@ -12,8 +12,17 @@ target
 .vscode/
 react
 puppeteer
+node_modules/
+done
+junit
+target
+.vscode/
+react
+puppeteer
 puppeteer/
 
+node_modules/
+node_modules/
 node_modules/
 node_modules/
 node_modules/
