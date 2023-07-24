@@ -80,7 +80,7 @@ const Details = () => {
     }else{
     StudentServices.saveStudent(student).then((response)=>{
       console.log(response.data)
-      history("/user/Students ")
+      history("/user/EnrolledCourse ")
     }).catch(error=>{
       console.log(error)
     })
