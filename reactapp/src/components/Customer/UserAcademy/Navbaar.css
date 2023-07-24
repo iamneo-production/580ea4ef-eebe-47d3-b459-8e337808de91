@@ -1,0 +1,104 @@
+/* .navbaar {
+  background-color: black;
+  color: white;
+  height: 60px;
+  display: flex;
+  justify-content:none;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+.navbaar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbaar-link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  margin-right: 20px;
+  transition: color 0.3s ease-in-out;
+ 
+} */
+
+/* .navbaar-link:hover {
+  color: pink;
+} */
+
+/* .active {
+  color: rgb(192, 254, 255);
+} */
+/* #logout {
+  margin-left: 1000px;
+  margin-right: 5px;
+} */
+
+/* Base styles for the Navbar */
+.navbaar {
+  background-color: black;
+  color: white;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-family: system-ui ;
+  font-size: 20px;
+}
+
+.navbaar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbaar-link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  margin-right: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+#logout {
+  margin-left: 20px;
+}
+
+/* Media Queries for responsiveness */
+
+/* For devices with screen width less than 768px */
+@media (max-width: 768px) {
+  .navbaar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+  
+  .navbaar-links {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .navbaar-link {
+    margin: 5px 0;
+  }
+  
+  #logout {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+/* For devices with screen width less than 480px */
+@media (max-width: 480px) {
+  .navbaar {
+    padding: 0 10px;
+  }
+  
+  .navbaar-link {
+    font-size: 16px;
+  }
+}

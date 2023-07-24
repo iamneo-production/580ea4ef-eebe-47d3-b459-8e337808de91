@@ -1,0 +1,244 @@
+/* .search-bar {
+    display: flex;
+    flex: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+} */
+
+
+
+
+/* #searchButton {
+    display: flex;
+    justify-content: center;
+    float: center;
+    translate: 1rem 3rem;
+}
+
+#search {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: large;
+
+} */
+
+
+.addbtn {
+    display: flex;
+    float: right;
+    margin-bottom: 3rem;
+    margin-right: .5rem;
+    margin-top: 2rem;
+}
+
+#addStudent {
+    margin: 0%;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    padding: -40px;
+}
+
+#addStudent:hover {
+    background-color: green;
+    color: black;
+}
+
+.addbtn2 {
+    display: flex;
+    float: right;
+    margin: 0%
+}
+
+#addstudentbtn {
+
+    margin: 0%;
+    translate: -3rem -32rem;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
+#addstudentbtn:hover {
+    background-color: green;
+    border-radius: 10px;
+    color: black
+}
+
+#adminEditStudent {
+    margin-right: 2px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.693);
+    padding: 3px;
+}
+
+#adminEditStudent:hover {
+    outline: none;
+    border: none;
+}
+
+#adminDeleteStudent {
+
+    border: none;
+    outline: none;
+    padding-block: 5px;
+    padding-right: 7px;
+    padding-left: 7px;
+    border-radius: 5px;
+}
+
+#updateStudent {
+    float: right;
+    margin: 0%;
+    translate: -0.75rem -22rem;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
+#updateStudent:hover {
+    background-color: green;
+    color: black;
+}
+
+
+.details {
+    display: flex;
+    flex: wrap;
+    justify-content: space-between;
+    margin-top: 7rem;
+    margin-left: 25rem;
+    padding: 2rem;
+    width: 100%;
+    translate: 2rem -5rem;
+}
+
+.details input {
+    font-size: medium;
+    text-align: center;
+    padding: 7px;
+    margin: 2rem
+        /* margin-left:2rem;
+   margin-top:2rem ;
+   margin-bottom:2rem ;
+   margin-right:1.5rem ; */
+}
+
+.container1 {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    padding: 1rem;
+    width: 100%;
+    translate: 2rem -9rem;
+}
+
+.container1>form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container1 input {
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    text-align: center;
+    padding: 7px;
+    margin: 2rem
+}
+
+.details>form>input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+/* #phoneNumber1{
+    outline:0;
+}
+#phoneNumber1:valid{
+    border-color: green;
+}
+#phoneNumber1:invalid{
+    border-color: red;
+} */
+
+.Address {
+    display: flex;
+    flex: wrap;
+    flex-direction: row;
+    /* margin-top: 1rem;
+    margin-left: 5rem;
+    margin-bottom: 1.8rem; */
+    margin: 2rem;
+    font-size: medium;
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 0.6rem;
+    background-color: aliceblue;
+    translate: 31.8rem -32rem;
+    width: 49.5%;
+    text-align: left;
+    overflow:hidden;
+    box-shadow:  0px 0px 10px -5px;
+    
+}
+
+.Address input {
+    font-size: medium;
+    margin-left: 0rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+/* #firstName{
+    margin-left: 20rem;
+} */
+#age {
+    width: 21rem;
+
+}
+
+.houseNo {
+    margin-right: 1rem;
+}
+
+.streetName {
+    margin-right: 1rem;
+
+}
+
+.areaName {
+    margin-left: 0.1rem;
+    margin-right: 0.6rem;
+}
+
+.pincode {
+    margin-left: 2.2rem;
+    margin-right: 1rem;
+}
+
+.state {
+    margin-left: 2.6rem;
+    margin-right: 1rem;
+}
+
+.nationality {
+    margin-left: .9rem;
+    margin-right: 1rem;
+}
+
+.table {
+    width: 100%;
+    margin-top:5rem;
+    border:-5px solid;
+    box-shadow:  0px 0px 10px -5px;
+   
+    margin-right: 5rem;
+    
+}
+
