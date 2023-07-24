@@ -8,11 +8,11 @@ class StudentServices {
     }
     saveStudent(student){
         // return axios.post('https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io/user/addAdmission',student)
-        return axios.get(`${API_BASE_URL}/user/addAdmission`)
+        return axios.post(`${API_BASE_URL}/user/addAdmission`,student)
     }
     getStudents(studentId){
         // return axios.get('https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io/user/viewAdmissions'+'/'+studentId)
-        return axios.get(`${API_BASE_URL}/user/viewAdmissions`+'/'+studentId) 
+        return axios.get(`${API_BASE_URL}/user/viewAdmissions/${studentId}`) 
     }
     updateStudent(studentId,student){
         // return axios.put('https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io/user/editAdmission'+'/'+studentId,student)
