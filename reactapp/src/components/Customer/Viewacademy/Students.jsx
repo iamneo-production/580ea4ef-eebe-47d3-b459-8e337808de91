@@ -49,7 +49,7 @@ const Students = () => {
   const handledetails=(e)=>
 {
   e.preventDefault();
-  history("/Details")
+  history("/user/Details")
 }
 
   return (
@@ -73,8 +73,8 @@ const Students = () => {
     <div>
     <div className="container">
       <h2 className="text-center">Details </h2>
-      <Button  className="btn-btn-primary mb-4 details" onClick={handledetails}>Add Details</Button>
-      <table className="table table-striped">
+      <Button  className="btn btn-primary  details" onClick={handledetails}>Add Details</Button>
+      <table className="table table-striped mt-0">
         <thead>
           
             <th> Student ID</th>
@@ -101,7 +101,7 @@ const Students = () => {
                 <td>{student. email}</td>
                 <td>{student. malefemale}</td>
                 <td>{student.completeaddress}</td>
-                <td><Link className='btn-btn-info' to={`/UpdateStudent1/${student.studentId}`}>Update</Link></td>
+                <td><Link className='btn-btn-info' to={`/user/UpdateStudent1/${student.studentId}`}>Update</Link></td>
               </tr>
             )
           }
