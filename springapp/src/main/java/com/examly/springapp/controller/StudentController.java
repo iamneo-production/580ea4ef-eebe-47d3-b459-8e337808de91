@@ -59,7 +59,7 @@ public class StudentController {
                 }).orElseThrow(() -> new StudentNotFoundException(id));
     }
     //For deleting the user data using Student ID
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping("/admin/deleteStudent/{studentId}")
     String deleteUser(@PathVariable Long id){
         if(!studentRepository.existsById(id)){             //If the StudentModel ID does not exist
             throw new StudentNotFoundException(id);
