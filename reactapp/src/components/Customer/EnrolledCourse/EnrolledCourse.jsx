@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, {  useState,useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -6,10 +6,25 @@ import Navbar from 'react-bootstrap/Navbar';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import './EnrolledCourse.css';
+import {API_BASE_URL} from "../../../utils/APIUtils";
 
 
 const Enrolledcourse = () => {
 const[data,setData]=useState([]);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/user/viewAdmission`);
+      const jsonData = await response.json();
+      setData(jsonData);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  fetchData();
+}, []);
  
 
 const history=useNavigate();
@@ -40,19 +55,38 @@ const history=useNavigate();
 };
 
 
-const handleEdit = (enrolled) => {
+/*const handleEdit = (enrolled) => {
   
   console.log('Edit clicked for image with ID:', enrolled);
  
   
   history(`/Details`);
   
+};*/
+
+
+const fetchDelete = async (enrolled) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/user/deleteAdmission/${enrolled}`, {
+      method: 'DELETE'
+    });
+
+    if (response.ok) {
+      window.location.reload();
+    } else {
+      console.log('Delete request failed');
+    }
+  } catch (error) {
+    console.log('Error:', error);
+  }
 };
+
+
 const handleDelete = (admissionid) => {
  
   console.log('Delete clicked for image with ID:', admissionid);
-  
-  setData(prevData => prevData.filter(item => item.admissionid !== admissionid));
+  fetchDelete(admissionid);
+  //setData(prevData => prevData.filter(item => item.admissionid !== admissionid));
 };
 
 return (
@@ -96,7 +130,7 @@ return (
                   <Button className='btn btn-danger' onClick={clickChange}>My Learning
                         </Button>
                         <div className=' icons-container '>
-                <FaEdit className='edit-icon' onClick={() => handleEdit(admissionid)} />
+                {/*<FaEdit className='edit-icon' onClick={() => handleEdit(admissionid)} />*/}
                 <FaTrash className='delete-icon' onClick={() => handleDelete(admissionid)} />
             </div>
                         
