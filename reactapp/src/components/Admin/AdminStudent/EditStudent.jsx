@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
+import {API_BASE_URL} from "../../../utils/APIUtils";
 
 export default function EditStudent() {
   const { studentId } = useParams();
@@ -46,7 +47,7 @@ export default function EditStudent() {
   //To load the data about a specific Student
 
   const loadUser = async () => {
-     await axios.get(`http://localhost:8080/user/${studentId}`)
+     await axios.get(`${API_BASE_URL}/user/${studentId}`)
       .then((response) => {
         console.log(response);
         setUser(response.data);
@@ -61,7 +62,7 @@ export default function EditStudent() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:8080/user/${studentId}`, user);
+    await axios.put(`${API_BASE_URL}/user/${studentId}`, user);
     navigate("/admin/viewStudent");
   };
 
