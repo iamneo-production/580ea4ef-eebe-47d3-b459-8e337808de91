@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useNavigate } from 'react-router-dom';
 import './EnrolledCourse.css';
+import { API_BASE_URL } from "../../../utils/APIUtils";
 
 const FeedbackPage = () => {
 
@@ -35,6 +36,18 @@ const FeedbackPage = () => {
             // history("/EnrolledCourse1")
             history("/user/Enrolledcourse1")
 
+        }
+
+        const clickChange=(e)=>{
+            e.preventDefault();
+            const review={name,email,question1,question2,question3,question4,feedback}
+            fetch(`${API_BASE_URL}/user/addreviews`,{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(review)
+        }).then(()=>{
+            console.log("New review added")
+        })
         }
     
     return (
@@ -115,7 +128,7 @@ const FeedbackPage = () => {
                     </Form.Group>
                 </div>
                 <div className="col-lg-6 mb-2">
-              <Button type="submit">Submit Feedback</Button>
+              <Button type="submit" onClick={clickChange}>Submit Feedback</Button>
             </div>
             </Form>
             </Container>

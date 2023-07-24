@@ -92,12 +92,18 @@
     overflow-x: hidden; 
   }
   
-  body {
-    
-    
-  
-    padding-bottom: 15px;
-  }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(230, 248, 250);
+  padding-bottom: 15px;
+}
+
+.fullpage {
+  min-height: 100vh; 
+}
+
 
   
   

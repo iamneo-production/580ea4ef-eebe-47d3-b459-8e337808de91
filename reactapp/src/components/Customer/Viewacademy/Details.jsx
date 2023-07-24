@@ -45,7 +45,7 @@ const Details = () => {
   const handleClick = (e) => {
     e.preventDefault();
 
-    history("/Academy")
+    history("/user/Academy")
   }
   const handlingClick = (e) => {
     e.preventDefault();
@@ -54,7 +54,7 @@ const Details = () => {
   }
   const handle1click=(e)=>{
     e.preventDefault();
-    history("/EnrolledCourse")
+    history("/user/EnrolledCourse")
   }
   
   const adddata=(e)=>{
@@ -73,21 +73,22 @@ const Details = () => {
       StudentServices.updateStudent(studentId,student).then((response)=>{
 
         console.log(response.data)
-          history("/Student ")
+          history("/user/Students ")
       }).catch(error =>{
         console.log(error)
       })
     }else{
     StudentServices.saveStudent(student).then((response)=>{
       console.log(response.data)
-      history("/Student ")
+      history("/user/EnrolledCourse ")
     }).catch(error=>{
       console.log(error)
     })
   }
 }
   useEffect(()=>{
-    StudentServices.getStudents(studentId).then((response)=>{
+    const id = parseInt(studentId);
+    StudentServices.getStudents(id).then((response)=>{
       setStudentName(response.data.studentName);
           setStudentDOB(response.data.studentDOB);
           setGender(response.data.malefemale);
@@ -98,13 +99,13 @@ const Details = () => {
     }).catch(error=>{
       console.log(error)
     })
-  },[])
+  },[studentId])
   
     
 
   const form1=()=>{
     
-    if(0){
+    if(studentId){
       return (
       <Container className="mt-5">
       <Form  className="row g-4">
