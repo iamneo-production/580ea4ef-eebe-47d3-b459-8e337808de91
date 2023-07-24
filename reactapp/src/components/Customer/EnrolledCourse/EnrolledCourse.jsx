@@ -49,7 +49,7 @@ const history=useNavigate();
    history("/user/Enrolledcourse")
  }
  const clickChange = () => {
-  history("/Mylearning")
+  history("/user/Mylearning")
   
   console.log('The link was clicked.');
 };
