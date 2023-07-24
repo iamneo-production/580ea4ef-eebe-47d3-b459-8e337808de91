@@ -119,7 +119,7 @@ return (
             const{admissionid,courseName,joinedDate,endDate}=(values)
             return(
                <>
-               <React.Fragment key={admissionid} >
+               <div className='col-md-4' key={admissionid} >
             <div className='card mb-4'>
                
                <div className='card-body'>
@@ -137,7 +137,7 @@ return (
 
                </div>
             </div>
-         </React.Fragment>
+         </div>
                </>
             );
          }))}
