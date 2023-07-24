@@ -34,11 +34,16 @@ const Signup = () => {
       }
     }
 
-    const validatePassword = () => {
-      if(form.password.value.length <5){
-        alert("Password must be greater than 5 characters");
-        return false;
-      }
+    //const validatePassword = () => {
+      //if(form.password.value.length <5){
+        //alert("Password must be greater than 5 characters");
+        //return false;
+      //}
+      const validatePassword = () => {
+        if(form.password.value.length <8){
+          alert("Password should contain atleast 8 characters");
+          return false;
+        }
       if(form.confirmpassword.value !== form.password.value){
         alert("Password and Confirm password should be same")
         return false;
