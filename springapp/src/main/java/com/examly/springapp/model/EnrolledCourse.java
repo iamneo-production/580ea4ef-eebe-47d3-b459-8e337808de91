@@ -5,6 +5,7 @@ package com.examly.springapp.model;
 import javax.persistence.*;
 
 import javax.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -22,8 +23,12 @@ public class EnrolledCourse {
     private String courseName;
     @Column(name = "CourseDuration")
     private String courseDuration;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "JoinedDate")
     private Date joinedDate;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "EndDate")
     private Date endDate;
     @Column(name = "RemainingDays")
