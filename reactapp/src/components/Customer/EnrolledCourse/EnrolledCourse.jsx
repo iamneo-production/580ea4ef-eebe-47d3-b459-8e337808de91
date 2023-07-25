@@ -154,6 +154,8 @@ return (
 
 export default Enrolledcourse;
 
+//Enrollment is successful
+
 
  
 
