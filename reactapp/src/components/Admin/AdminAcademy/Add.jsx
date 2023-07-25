@@ -38,14 +38,6 @@ const onSubmit =async (e) => {
   await axios.post(`${API_BASE_URL}/admininstitute`,user)
 navigate("/AdminInstitute");
 };
-// const onSubmit = async (e) => {
-//   e.preventDefault();
-//   // const baseUrl = "https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io";
-  
-//   const apiUrl = API_BASE_URL + "/admininstitute";
-//   await axios.post(apiUrl, user);
-//   navigate("/AdminInstitute");
-// };
 
 function goToHome(){
   navigate("/AdminInstitute")
@@ -104,12 +96,13 @@ return (
           <Form.Label column="lg">Enter the contact number</Form.Label>
           <Form.Control
             size="lg"
-            type="number"
+            type="text"
             placeholder="Enter the contact number"
             name="mobile"
             value={mobile}
             onChange={(e) => onInputChange(e)}
             required
+            pattern="[1-9]{1}[0-9]{9}"
           />
         </Form.Group>
       </Row>
