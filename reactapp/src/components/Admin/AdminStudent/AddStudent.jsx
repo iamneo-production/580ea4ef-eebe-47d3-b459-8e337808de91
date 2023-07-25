@@ -55,7 +55,8 @@ const AddStudent = () => {
       }
     }
   };
-  const onCancel = () => {
+  const onCancel = (e) => {
+    e.preventDefault();
     navigate("/admin/viewStudent");
   }
   return (
