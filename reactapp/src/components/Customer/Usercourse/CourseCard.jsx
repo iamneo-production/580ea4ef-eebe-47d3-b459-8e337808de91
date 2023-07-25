@@ -21,13 +21,19 @@ const CourseCard = (props) => {
         //window.location.href = "/Details"; //Enrollment form page link path
         e.preventDefault();
         console.log('The link was clicked.');
+
+        
         const course = {
             courseId: courseId,
             courseName: props.name,
             courseDuration: props.duration,
             joinedDate: new Date(),
             endDate: new Date(new Date().getFullYear(), new Date().getMonth() + parseInt(props.duration), new Date().getDate()),
+            
+            
+
         };
+        
 
         axios.post(`${API_BASE_URL}/user/addAdmissions`, course)
             .then(() => {

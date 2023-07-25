@@ -21,16 +21,17 @@ label {
     position: relative;
   top: -315px;
   }
-  .left{
+  /*.left{
     position: relative;
     left:-370px;
     top: -250px;
 
-  }
+  }*/
   .calendar{
     position: relative;
-    left:-740px;
-    top:-190px;
+    left:-370px;
+    top: -250px;
+    
     
   }
 
