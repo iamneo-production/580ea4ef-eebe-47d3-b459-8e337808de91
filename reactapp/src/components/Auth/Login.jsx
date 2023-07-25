@@ -95,7 +95,7 @@ const Login = () => {
         } else {
           alert("All fields are required.");
         }
-        handleLogin(form);
+        // handleLogin(form);
     
       }
     
