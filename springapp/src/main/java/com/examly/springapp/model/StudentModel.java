@@ -73,8 +73,8 @@ public class StudentModel{
     @Column(name = "AlternamteNumber")
     private String alternatenumber ;
 
-    @Column(name = "Malefemale")
-    private String malefemale;
+    //@Column(name = "Malefemale")
+    //private String malefemale;
 
     public StudentModel(long studentId,String firstName,String lastName, String studentName, Date studentDOB, String address, String mobile, String email,String gender , String fatherName,  String motherName ,String alternatenumber,String completeaddress) {
         this.studentId = studentId;

@@ -46,6 +46,11 @@ public class UserController {
     {
         return new  ResponseEntity<> (feedbackRepository.save(feedback), HttpStatus.CREATED);
     }
+    /*@PostMapping("/user/getuserid")
+    public ResponseEntity<StudentModel>  getuserid(@RequestBody String email)
+    {
+        return new ResponseEntity<> (studentRepository.findByEmail(email),HttpStatus.OK);
+    }*/
    
 
    /* @GetMapping("/user/viewAdmission")
@@ -64,8 +69,13 @@ public class UserController {
 
     @GetMapping("/user/viewAdmissions")
     public ResponseEntity<List<StudentModel>> getStudent1(){
+
+        //List<StudentModel> studentsForUser = studentRepository.findByEmail(UserEmail);
+        //return new ResponseEntity<>(studentsForUser, HttpStatus.OK);
         return new ResponseEntity<>(studentRepository.findAll(),HttpStatus.OK);
     }
+    
+
 
     @GetMapping("/user/viewStatus")
     public ResponseEntity<List<EnrolledCourse>> getEnrolledCourse(){
