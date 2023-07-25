@@ -30,6 +30,15 @@ loadUsers();
 setUsers(result.data);
   };
 
+  // const onSubmit = async (e) => {
+  //   e.preventDefault();
+  //   // const baseUrl = "https://8080-bafcabaebbdbfcfdcdaadecbbaeeaadadfcaea.project.examly.io";
+    
+  //   const apiUrl = API_BASE_URL + "/admininstitute";
+  //   await axios.post(apiUrl, user);
+  //   navigate("/AdminInstitute");
+  // };
+
 const deleteUser=async (instituteId)=>{
   await axios.delete(`${API_BASE_URL}/admin/deleteInstitutes/${instituteId}`)
   loadUsers()

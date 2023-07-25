@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
-import { API_BASE_URL } from "../../../utils/APIUtils";
+import {API_BASE_URL} from "../../../utils/APIUtils";
 
 export default function EditStudent() {
   const { studentId } = useParams();
@@ -47,7 +47,7 @@ export default function EditStudent() {
   //To load the data about a specific Student
 
   const loadUser = async () => {
-    await axios.get(`${API_BASE_URL}/admin/viewStudent/${studentId}`)
+     await axios.get(`${API_BASE_URL}/user/${studentId}`)
       .then((response) => {
         console.log(response);
         setUser(response.data);
@@ -62,38 +62,23 @@ export default function EditStudent() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`${API_BASE_URL}/admin/editStudent/${studentId}`, user);
+    await axios.put(`${API_BASE_URL}/user/${studentId}`, user);
     navigate("/admin/viewStudent");
   };
-
-
-  const onCancel = () => {
-    navigate("/admin/viewStudent");
-  }
-
-
-  // const requiredFields = ["firstName", "lastName", "gender", "fatherName", "phnNo1", "motherName", "email", "age", "houseNo", "streetName", "areaName", "pinCode", "state", "nationality"];
-  // for (const field of requiredFields) {
-  //   if (!user[field].trim()) {
-  //     alert(`Please fill in all required fields.`);
-  //     return;
-  //   }
-  // }
 
   return (
 
     <>
-
-      <Navbar
-        Home="IAS Academy"
-        Academy="Academy"
-        Courses="Course"
-        Students="Students"
-        Logout="Logout"
-      />
-      <div className="yashdetails">
+      
+        <Navbar
+          Home="IAS Academy"
+          Academy="Academy"
+          Courses="Course"
+          Students="Students"
+          Logout="Logout"
+        />
+         <div className="details">
         <form>
-
           <label>
             <input
               type={"text"}
@@ -107,7 +92,6 @@ export default function EditStudent() {
               onChange={(e) => onInputChange(e)}
             />
           </label>
-
           <label>
             <input
               type={"text"}
@@ -120,7 +104,6 @@ export default function EditStudent() {
               onChange={(e) => onInputChange(e)}
             />
           </label>
-
           <label>
             <input
               type={"text"}
@@ -133,7 +116,6 @@ export default function EditStudent() {
               onChange={(e) => onInputChange(e)}
             />
           </label>
-
           <label>
             <input
               type={"text"}
@@ -146,7 +128,6 @@ export default function EditStudent() {
               onChange={(e) => onInputChange(e)}
             />
           </label>
-
           <label>
             <input
               type="tel"
@@ -160,7 +141,6 @@ export default function EditStudent() {
               onChange={(e) => onInputChange(e)}
             />
           </label>
-
           <label>
             <input
               type="tel"
@@ -173,7 +153,6 @@ export default function EditStudent() {
               onChange={(e) => onInputChange(e)}
             />
           </label>
-
         </form>
       </div>
       <div className="container1">
@@ -204,7 +183,6 @@ export default function EditStudent() {
               onChange={(e) => onInputChange(e)}
             />
           </label>
-
           <label>
             <input
               type="number"
@@ -219,12 +197,12 @@ export default function EditStudent() {
             />
           </label>
         </form>
-      </div>
+        </div>
 
-      <div className="Address">
+        <div className="Address">
         <form>
           <b>Address Information</b>
-          <br />
+          <br/>
           <label className='houseNo'>
             <b>House No :</b>
           </label>
@@ -276,8 +254,7 @@ export default function EditStudent() {
             required
             onChange={(e) => onInputChange(e)}
           />
-          <br />
-
+          <br/>
           <label className='state'>
             <b>State:</b>
           </label>
@@ -308,9 +285,6 @@ export default function EditStudent() {
 
       <div className="updatestudentbtn">
         <button className="btn btn-light btn-lg" id="updateStudent" onClick={(e) => onSubmit(e)}>Update Student</button>
-      </div>
-      <div className="cancelbtn">
-        <button type="button" className="btn btn-danger btn-lg" id="cancelBtn" onClick={(e) => onCancel(e)} >Cancel</button>
       </div>
     </>
 

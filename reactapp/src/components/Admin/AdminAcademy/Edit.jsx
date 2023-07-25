@@ -102,7 +102,7 @@ const loadUser=async () =>{
     
             <Form.Group as={Col} md="6" id='editContactNumber'>
               <Form.Label column="lg">Enter the contact number</Form.Label>
-              <Form.Control size="lg" type="text" placeholder="Enter the contact number" name="mobile" value={mobile} onChange={(e)=>onInputChange(e)} required pattern="[1-9]{1}[0-9]{9}" />
+              <Form.Control size="lg" type="number" placeholder="Enter the contact number" name="mobile" value={mobile} onChange={(e)=>onInputChange(e)} required />
             </Form.Group>
     
             </Row>

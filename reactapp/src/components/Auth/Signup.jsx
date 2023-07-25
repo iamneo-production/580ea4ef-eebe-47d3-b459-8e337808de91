@@ -163,7 +163,7 @@ const Signup = () => {
               onChange={handleChange}
               value={form.password.value}
               helperText={
-                form.password.value.length > 0 && form.password.value.length < 8
+                form.password.value.length < 8
                   ? "Password should contain atleast 8 characters"
                   : ""
               }

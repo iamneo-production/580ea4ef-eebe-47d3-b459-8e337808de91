@@ -22,7 +22,7 @@ export default function Student() {
   },[]);
 
   const loadUsers = async () => {
-     await axios.get(`${API_BASE_URL}/admin/viewStudent`)
+     await axios.get(`${API_BASE_URL}/users`)
     .then((response) => {
       console.log(response);
       setUsers(response.data);
@@ -35,7 +35,7 @@ export default function Student() {
 
 
   const deleteUser = async (studentId) => {
-    await axios.delete(`${API_BASE_URL}/admin/deleteStudent/${studentId}`)
+    await axios.delete(`${API_BASE_URL}/user/${studentId}`)
     .then((response) => {
       console.log(response);
       loadUsers();
@@ -75,7 +75,7 @@ export default function Student() {
         </label> */}
       {/* </div> */}
       <table className="table table-striped">
-        <thead className='table1'>
+        <thead>
           <tr className="col">
             <th scope="col">studentId</th>
             <th scope="col">Student Name</th>
