@@ -38,6 +38,7 @@ public class UserController {
     @PostMapping("/user/addAdmissions")
     public ResponseEntity<EnrolledCourse> saveEnrolledCourse(@RequestBody EnrolledCourse enrolledCourse)
     {
+        
         return new  ResponseEntity<> (enrolledCourseRepository.save(enrolledCourse), HttpStatus.CREATED);
     }
 
@@ -64,6 +65,7 @@ public class UserController {
 
     @GetMapping("/user/viewAdmission")
     public ResponseEntity<List<EnrolledCourse>> getEnrolledCourses(){
+        
         return new ResponseEntity<>(enrolledCourseRepository.findAll(),HttpStatus.OK);
     }
 
@@ -99,15 +101,19 @@ public class UserController {
 
         Optional <StudentModel> student =studentRepository.findById(studentId);
         if(student.isPresent()) {
-            student.get().setStudentName(stud.getStudentName());
+            /*student.get().setStudentName(stud.getStudentName());*/
+            student.get().setFirstName(stud.getFirstName());
+            student.get().setLastName(stud.getLastName());
             student.get().setStudentDOB(stud.getStudentDOB());
             student.get().setAddress(stud.getAddress());
-            student.get(). setMobile(stud.getMobile());
+            /*student.get(). setMobile(stud.getMobile());*/
+            student.get().setPhnNo1(stud.getPhnNo1());
             student.get(). setEmail(stud.getEmail());
             student.get(). setGender(stud. getGender());
             student.get(). setFatherName(stud.getFatherName());
             student.get(). setMotherName(stud.getMotherName());
-            student.get().setAlternatenumber(stud.getAlternatenumber());
+            /*student.get().setAlternatenumber(stud.getAlternatenumber());*/
+            student.get().setPhnNo2(stud.getPhnNo2());
             student.get().setCompleteaddress(stud.getCompleteaddress());
 
 
