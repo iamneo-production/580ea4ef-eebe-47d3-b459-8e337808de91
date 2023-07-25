@@ -21,7 +21,7 @@ const Course = () => {
     useEffect(() => {
         async function getCoursesFromDb() {
           try {
-            const res = await axios.get(`${API_BASE_URL}/admin/viewCourses`);
+            const res = await axios.get(`${API_BASE_URL}/users`);
             setcourseList(res.data);
         
           } catch (e) {
