@@ -24,7 +24,7 @@ const AddStudent = () => {
     areaName: "",
     pinCode: "",
     state: "",
-    nationality: ""
+    nationality: "",
   });
 
   const { firstName, lastName, gender, fatherName, phnNo1, phnNo2, motherName,
@@ -279,7 +279,7 @@ const AddStudent = () => {
         <button type="submit" className="btn btn-light btn-lg" id="addstudentbtn" onClick={(e) => onSubmit(e)} >Add Student</button>
       </div>
       <div className="cancelbtn">
-        <button type="button" class="btn btn-danger btn-lg" id="cancelBtn" onClick={(e) => onCancel(e)} >Cancel</button>
+        <button type="button" className="btn btn-danger btn-lg" id="cancelBtn" onClick={(e) => onCancel(e)} >Cancel</button>
       </div>
     </>
   );

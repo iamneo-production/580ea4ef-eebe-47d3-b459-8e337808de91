@@ -72,13 +72,13 @@ export default function EditStudent() {
   }
 
 
-  const requiredFields = ["firstName", "lastName", "gender", "fatherName", "phnNo1", "motherName", "email", "age", "houseNo", "streetName", "areaName", "pinCode", "state", "nationality"];
-  for (const field of requiredFields) {
-    if (!user[field].trim()) {
-      alert(`Please fill in all required fields.`);
-      return;
-    }
-  }
+  // const requiredFields = ["firstName", "lastName", "gender", "fatherName", "phnNo1", "motherName", "email", "age", "houseNo", "streetName", "areaName", "pinCode", "state", "nationality"];
+  // for (const field of requiredFields) {
+  //   if (!user[field].trim()) {
+  //     alert(`Please fill in all required fields.`);
+  //     return;
+  //   }
+  // }
 
   return (
 
@@ -310,7 +310,7 @@ export default function EditStudent() {
         <button className="btn btn-light btn-lg" id="updateStudent" onClick={(e) => onSubmit(e)}>Update Student</button>
       </div>
       <div className="cancelbtn">
-        <button type="button" class="btn btn-danger btn-lg" id="cancelBtn" onClick={(e) => onCancel(e)} >Cancel</button>
+        <button type="button" className="btn btn-danger btn-lg" id="cancelBtn" onClick={(e) => onCancel(e)} >Cancel</button>
       </div>
     </>
 
