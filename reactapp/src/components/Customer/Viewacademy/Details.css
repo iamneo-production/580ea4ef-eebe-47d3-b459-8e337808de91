@@ -3,7 +3,7 @@
   .border-box{
     margin-left:27rem ;
     width: 650px;
-      height: 320px;
+      height: 340px;
       background-color: #f2f2f2;
       border: 1px solid #ccc;
       padding: 20px;
@@ -17,9 +17,9 @@ label {
     justify-self: end;
   }
 
-  .top{
+  .calendar{
     position: relative;
-  top: -315px;
+  top: -325px;
   }
   /*.left{
     position: relative;
@@ -27,13 +27,13 @@ label {
     top: -250px;
 
   }*/
-  .calendar{
+  /*.calendar{
     position: relative;
     left:-370px;
     top: -250px;
     
     
-  }
+  }*/
 
   .text-left{
     position: relative;

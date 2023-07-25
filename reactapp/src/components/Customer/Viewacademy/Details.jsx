@@ -18,7 +18,9 @@ const Details = () => {
   const [gender,setGender]=useState("");
   const [fatherName,setFatherName]=useState("");
   /*const [phonenumber,setPhonenumber]=useState("");*/
-  const [alternatenumber,setAlternatenumber]=useState("");
+  //const [alternatenumber,setAlternatenumber]=useState("");
+  const[phnNo1,setPhnNo1]=useState("");
+  const[phnNo2,setPhnNo2] =useState("");
   const [motherName,setMotherName]=useState("");
   const [email,setEmail]=useState("");
   const [age,setAge]=useState("");
@@ -31,7 +33,7 @@ const Details = () => {
   const [studentName,setStudentName]=useState("")
   const [studentDOB,setStudentDOB]=useState("")
   const [completeaddress,setCompleteaddress]=useState("")
-  const [mobile,setMobile]=useState("")
+  //const [mobile,setMobile]=useState("")
   const {studentId}=useParams();
   const {courseId}=useParams();
 
@@ -74,7 +76,8 @@ const Details = () => {
     //const studentName=`${firstName} ${lastName}`
       const address= `${houseno} ${streetname} ${areaname} ${pincode} ${state} ${nationality}`
       //const mobile = `${phonenumber} - ${alternatenumber}`
-    const student={studentName,studentDOB,completeaddress,mobile,alternatenumber,email,gender,fatherName,motherName,address}
+      //in the below line i should add mobile and alternate number and studentName
+    const student={firstName,lastName,studentDOB,phnNo1,phnNo2 ,completeaddress,email,gender,fatherName,motherName,address}
     if(studentId){
       StudentServices.updateStudent(studentId,student).then((response)=>{
 
@@ -95,11 +98,15 @@ const Details = () => {
   useEffect(()=>{
     const id = parseInt(studentId);
     StudentServices.getStudents(id).then((response)=>{
-          setStudentName(response.data.studentName);
+          /*setStudentName(response.data.studentName);*/
+          setFirstName(response.data.firstName);
+          setLastName(response.data.lastName);
           setStudentDOB(response.data.studentDOB);
           setGender(response.data.gender);
-          setMobile(response.data.mobile);
-          setAlternatenumber(response.data.alternatenumber);
+          //setMobile(response.data.mobile);
+          //setAlternatenumber(response.data.alternatenumber);
+          setPhnNo1(response.data.phnNo1);
+          setPhnNo2(response.data.phnNo2)
           setCompleteaddress(response.data.completeaddress);
           setEmail(response.data.email);
     }).catch(error=>{
@@ -116,10 +123,22 @@ const Details = () => {
       <Container className="mt-5">
       <Form  className="row g-4">
 
-        <div className="col-lg-4">
+        {/*<div className="col-lg-4">
 
     <Form.Group controlId="studentname">
             <Form.Control type="text" placeholder="enter Student Name" value={studentName} onChange={(e)=>setStudentName(e.target.value.trim())} />
+          </Form.Group>
+      </div>*/}
+
+<div className="col-lg-4">
+          <Form.Group controlId="firstname">
+            <Form.Control type="text" placeholder="enter first Name" value={firstName} onChange={(e)=>setFirstName(e.target.value)} />
+          </Form.Group>
+        </div>
+
+        <div className="col-lg-4">
+          <Form.Group controlId="lastname">
+            <Form.Control type="text" placeholder="enter last name" value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
           </Form.Group>
         </div>
       
@@ -135,18 +154,28 @@ const Details = () => {
           </Form.Group>
         </div>
 
-        <div className="col-lg-4">
+        {/*<div className="col-lg-4">
           <Form.Group controlId="MobileNumber">
             <Form.Control type="text" placeholder="enter Mobile Number " value={mobile} onChange={(e)=>setMobile(e.target.value.trim())} />
           </Form.Group>
-        </div>
+      </div>*/}
+      <div className="col-lg-4">
+          <Form.Group controlId="MobileNumber">
+            <Form.Control type="text" placeholder="enter Mobile Number " value={phnNo1} onChange={(e)=>setPhnNo1(e.target.value.trim())} />
+          </Form.Group>
+      </div>
 
-        <div className="col-lg-4">
+        {/*<div className="col-lg-4">
           <Form.Group controlId="MobileNumber">
           
             <Form.Control type="text" placeholder="enter Alternate Number " value={alternatenumber} onChange={(e)=>setAlternatenumber(e.target.value.trim())} />
           </Form.Group>
-        </div>
+    </div>*/}
+    {/*<div className="col-lg-4">
+          <Form.Group controlId="MobileNumber">
+            <Form.Control type="text" placeholder="enter Mobile Number " value={phnNo2} onChange={(e)=>setPhnNo2(e.target.value.trim())} />
+          </Form.Group>
+  </div>*/}
 
         <div className="col-lg-4">
           <Form.Group controlId="Email">
@@ -178,8 +207,6 @@ const Details = () => {
         <Container className="mt-5">
       <Form  className="row g-4">
         <div className="col-lg-4">
-          
-
           <Form.Group controlId="firstname">
             <Form.Control type="text" placeholder="enter first Name" value={firstName} onChange={(e)=>setFirstName(e.target.value)} />
           </Form.Group>
@@ -191,11 +218,11 @@ const Details = () => {
           </Form.Group>
         </div>
 
-          <div className="col-lg-4" >
+         {/* <div className="col-lg-4" >
           <Form.Group controlId="studentname">
             <Form.Control type="text" placeholder="Confirm Your Full Name" value={studentName} onChange={(e)=>setStudentName(e.target.value.trim())} />
           </Form.Group>
-      </div>
+      </div>*/}
 
 
         <div className="col-lg-4">
@@ -210,17 +237,27 @@ const Details = () => {
           </Form.Group>
         </div>
 
-        <div className="col-lg-4">
+        {/*<div className="col-lg-4">
           <Form.Group controlId="phonenumber">
             <Form.Control type="text" placeholder="enter phone number" value={mobile} onChange={(e)=>setMobile(e.target.value)} />        
           </Form.Group>
-        </div>
+      </div>*/}
+      <div className="col-lg-4">
+          <Form.Group controlId="MobileNumber">
+            <Form.Control type="text" placeholder="enter Mobile Number " value={phnNo1} onChange={(e)=>setPhnNo1(e.target.value.trim())} />
+          </Form.Group>
+      </div>
+      <div className="col-lg-4">
+          <Form.Group controlId="MobileNumber">
+            <Form.Control type="text" placeholder="enter Mobile Number " value={phnNo2} onChange={(e)=>setPhnNo2(e.target.value.trim())} />
+          </Form.Group>
+      </div>
 
-        <div className="col-lg-4">
+        {/*<div className="col-lg-4">
           <Form.Group controlId="MobileNumber">
             <Form.Control type="text" placeholder="enter Alternate Number " value={alternatenumber} onChange={(e)=>setAlternatenumber(e.target.value.trim())} />
           </Form.Group>
-        </div>
+    </div>*/}
 
 
            
@@ -230,9 +267,17 @@ const Details = () => {
           </Form.Group>
         </div>
 
+        
+
         <div className="col-lg-4">
           <Form.Group controlId="Adress">
             <Form.Control type="text" placeholder="enter Permanent Address with state and pincode " value={completeaddress} onChange={(e)=>setCompleteaddress(e.target.value.trim())} />
+          </Form.Group>
+        </div>
+
+        <div className="col-lg-4 ">
+          <Form.Group controlId="emailid">
+            <Form.Control type="textarea"  placeholder="enter email id"value={email} onChange={(e)=>setEmail(e.target.value)} />
           </Form.Group>
         </div>
         </Form>
@@ -286,11 +331,11 @@ const Details = () => {
         </div>
       
         <Form className="row g-4">
-        <div className="col-lg-4 top">
+        {/*<div className="col-lg-4 top">
           <Form.Group controlId="emailid">
             <Form.Control type="textarea"  placeholder="enter email id"value={email} onChange={(e)=>setEmail(e.target.value)} />
           </Form.Group>
-        </div>
+  </div>*/}
         {/*<div className="col-md-4 left">
           <Form.Group controlId="age">
             <Form.Control type="textarea"  placeholder="enter age" value={age} onChange={(e)=>setAge(e.target.value)} />
