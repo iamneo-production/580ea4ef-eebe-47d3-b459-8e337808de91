@@ -6,10 +6,13 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import './Students.css';
 import StudentServices from './StudentServices';
 
+
 const Students = () => {
 
+ 
   const [student,setStudent]=useState([])
   const {studentId}=useParams();
+  //const [userEmail, setUserEmail] = useState("");
   useEffect(()=>{
   StudentServices.getStudent1().then((response)=>{
     setStudent(response.data)
@@ -99,7 +102,7 @@ const Students = () => {
                 <td>{student. mobile}</td>
                 <td>{student.alternatenumber}</td>
                 <td>{student. email}</td>
-                <td>{student. malefemale}</td>
+                <td>{student. gender}</td>
                 <td>{student.completeaddress}</td>
                 <td><Link className='btn-btn-info' to={`/user/UpdateStudent1/${student.studentId}`}>Update</Link></td>
               </tr>
