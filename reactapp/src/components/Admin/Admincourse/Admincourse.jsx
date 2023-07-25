@@ -6,7 +6,7 @@ import './Admincourse.css';
 
 function Admincourse() {
   return (
-    <div>
+    <div className='fullpage'>
         
         <Navbarcomp />
         <CourseItem />

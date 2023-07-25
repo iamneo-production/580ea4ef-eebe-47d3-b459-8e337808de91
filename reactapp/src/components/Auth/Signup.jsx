@@ -34,11 +34,16 @@ const Signup = () => {
       }
     }
 
-    const validatePassword = () => {
-      if(form.password.value.length <5){
-        alert("Password must be greater than 5 characters");
-        return false;
-      }
+    //const validatePassword = () => {
+      //if(form.password.value.length <5){
+        //alert("Password must be greater than 5 characters");
+        //return false;
+      //}
+      const validatePassword = () => {
+        if(form.password.value.length <8){
+          alert("Password should contain atleast 8 characters");
+          return false;
+        }
       if(form.confirmpassword.value !== form.password.value){
         alert("Password and Confirm password should be same")
         return false;
@@ -157,6 +162,12 @@ const Signup = () => {
               label="Password*" type={"password"} fullWidth name="password"
               onChange={handleChange}
               value={form.password.value}
+              helperText={
+                form.password.value.length > 0 && form.password.value.length < 8
+                  ? "Password should contain atleast 8 characters"
+                  : ""
+              }
+              error={form.password.value.length > 0 && form.password.value.length < 8}
             />
              <TextField variant="standard" margin="normal" id="confirmPassword" 
               label="Confirm Password*" type={"password"}  fullWidth name="confirmpassword"

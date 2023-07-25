@@ -1,12 +1,14 @@
-import React, {useState } from 'react';
+import React, {useState,useContext } from 'react';
 import { Button, Grid, TextField } from "@mui/material";
 import { NavLink, useNavigate, Navigate, Link } from 'react-router-dom';
 import { login } from '../../utils/APIUtils';
 import { connect } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
+//import AuthContext from '../../context/AuthContext';
 
 const Login = () => {
     
+   // const { handleLogin } = useContext(AuthContext);
     const [processing, setProcessing] = useState(false);
     let navigate = useNavigate();
 
@@ -61,7 +63,8 @@ const Login = () => {
               setProcessing(false);
       
               if (userRole === "user") {
-                navigate(`/academies`); // add link of the student dashboard
+                // navigate(`/academies`); // add link of the student dashboard
+                navigate(`/user/Academy`);
               } else {
                 navigate(`/admininstitute`); // when admin login, navigate to admin Institute
               }
@@ -92,6 +95,7 @@ const Login = () => {
         } else {
           alert("All fields are required.");
         }
+        // handleLogin(form);
     
       }
     
@@ -121,3 +125,4 @@ export default Login;
 
 
 //login is working fine 
+//jwt token is generated

@@ -1,12 +1,15 @@
-import React from 'react';
+import React from 'react'
 import Navbar from './Navbar';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import axios from 'axios';
-import './Studentdetails.css';
 import { API_BASE_URL } from "../../../utils/APIUtils";
 
-const AddStudent = () => {
+export default function EditStudent() {
+  const { studentId } = useParams();
+
   let navigate = useNavigate();
 
   const [user, setUser] = useState({
@@ -24,40 +27,59 @@ const AddStudent = () => {
     areaName: "",
     pinCode: "",
     state: "",
-    nationality: "",
+    nationality: ""
   });
 
   const { firstName, lastName, gender, fatherName, phnNo1, phnNo2, motherName,
     email, age, houseNo, streetName, areaName, pinCode, state, nationality } = user;
+
+
 
   const onInputChange = (e) => {
 
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    await axios.post(`${API_BASE_URL}/admin/addStudent`, user)
+  useEffect(() => {
+    loadUser();
+  }, []);
+
+  //To load the data about a specific Student
+
+  const loadUser = async () => {
+    await axios.get(`${API_BASE_URL}/admin/viewStudent/${studentId}`)
       .then((response) => {
         console.log(response);
         setUser(response.data);
-        navigate("/admin/viewStudent");
+
       })
       .catch((error) => {
         console.log(error);
       });
-    const requiredFields = ["firstName", "lastName", "gender", "fatherName", "phnNo1", "motherName", "email", "age", "houseNo", "streetName", "areaName", "pinCode", "state", "nationality"];
-    for (const field of requiredFields) {
-      if (!user[field].trim()) {
-        
-        alert(`Please fill in all required fields.`);
-        return;
-      }
-    }
+    //setUser(result.data);
+
   };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    await axios.put(`${API_BASE_URL}/admin/editStudent/${studentId}`, user);
+    navigate("/admin/viewStudent");
+  };
+
+
   const onCancel = () => {
     navigate("/admin/viewStudent");
   }
+
+
+  // const requiredFields = ["firstName", "lastName", "gender", "fatherName", "phnNo1", "motherName", "email", "age", "houseNo", "streetName", "areaName", "pinCode", "state", "nationality"];
+  // for (const field of requiredFields) {
+  //   if (!user[field].trim()) {
+  //     alert(`Please fill in all required fields.`);
+  //     return;
+  //   }
+  // }
+
   return (
 
     <>
@@ -69,8 +91,9 @@ const AddStudent = () => {
         Students="Students"
         Logout="Logout"
       />
-      <div className="yashdetails" >
-        <form >
+      <div className="yashdetails">
+        <form>
+
           <label>
             <input
               type={"text"}
@@ -84,6 +107,7 @@ const AddStudent = () => {
               onChange={(e) => onInputChange(e)}
             />
           </label>
+
           <label>
             <input
               type={"text"}
@@ -96,6 +120,7 @@ const AddStudent = () => {
               onChange={(e) => onInputChange(e)}
             />
           </label>
+
           <label>
             <input
               type={"text"}
@@ -108,6 +133,7 @@ const AddStudent = () => {
               onChange={(e) => onInputChange(e)}
             />
           </label>
+
           <label>
             <input
               type={"text"}
@@ -120,6 +146,7 @@ const AddStudent = () => {
               onChange={(e) => onInputChange(e)}
             />
           </label>
+
           <label>
             <input
               type="tel"
@@ -133,6 +160,7 @@ const AddStudent = () => {
               onChange={(e) => onInputChange(e)}
             />
           </label>
+
           <label>
             <input
               type="tel"
@@ -145,6 +173,7 @@ const AddStudent = () => {
               onChange={(e) => onInputChange(e)}
             />
           </label>
+
         </form>
       </div>
       <div className="container1">
@@ -175,6 +204,7 @@ const AddStudent = () => {
               onChange={(e) => onInputChange(e)}
             />
           </label>
+
           <label>
             <input
               type="number"
@@ -239,7 +269,7 @@ const AddStudent = () => {
           </label>
           <input
             type={"text"}
-            name="pinCode"
+            name="PinCode"
             id='pinCode'
             size="20"
             value={pinCode}
@@ -247,6 +277,7 @@ const AddStudent = () => {
             onChange={(e) => onInputChange(e)}
           />
           <br />
+
           <label className='state'>
             <b>State:</b>
           </label>
@@ -275,13 +306,13 @@ const AddStudent = () => {
         </form>
       </div >
 
-      <div className="addbtn2">
-        <button type="submit" className="btn btn-light btn-lg" id="addstudentbtn" onClick={(e) => onSubmit(e)} >Add Student</button>
+      <div className="updatestudentbtn">
+        <button className="btn btn-light btn-lg" id="updateStudent" onClick={(e) => onSubmit(e)}>Update Student</button>
       </div>
       <div className="cancelbtn">
         <button type="button" className="btn btn-danger btn-lg" id="cancelBtn" onClick={(e) => onCancel(e)} >Cancel</button>
       </div>
     </>
-  );
+
+  )
 }
-export default AddStudent;

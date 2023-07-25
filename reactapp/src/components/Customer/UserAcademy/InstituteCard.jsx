@@ -20,7 +20,8 @@ export default function InstituteCard({ singleInstitute }) {
         handleButtonClick()
       }} 
       className="view-button">
-        Viewacademy
+        {/* Viewacademy */}
+        View Courses
       </button>
     </div>
   );

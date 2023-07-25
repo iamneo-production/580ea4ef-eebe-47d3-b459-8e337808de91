@@ -75,12 +75,12 @@ export default function AcademiesPage() {
         
         </div>  : (
         
-        <div className="Homepage">
+        <div className="academies_Homepage">
           <div className="wrap">
             
-            <div className="search-box">
+            <div className="academies_search-box">
               <input
-                className="search_input"
+                className="academies_search_input"
                 type="text"
                 placeholder="Type here to Search"
                 name="searchText"
@@ -107,7 +107,7 @@ export default function AcademiesPage() {
             </div>
           </div>
 
-          <div className="grid-container">{institutes}</div>
+          <div className="academies_grid-container">{institutes}</div>
         </div>
       )}
     </div>

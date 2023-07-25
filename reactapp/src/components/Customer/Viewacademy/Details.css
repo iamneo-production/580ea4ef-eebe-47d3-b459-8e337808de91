@@ -1,8 +1,4 @@
-.text-left{
-    position: relative;
-    top:-80px;
-    left:1050px;
-  }
+
 
   .border-box{
     margin-left:27rem ;
@@ -13,7 +9,7 @@
       padding: 20px;
       box-sizing: border-box;
       position: relative;
-  top: -50px;
+      top: 10px;
 }
 /* data modified*/
 
@@ -25,17 +21,25 @@ label {
     position: relative;
   top: -315px;
   }
-  .left{
+  /*.left{
     position: relative;
-    left:-380px;
+    left:-370px;
     top: -250px;
 
+  }*/
+  .calendar{
+    position: relative;
+    left:-370px;
+    top: -250px;
+    
+    
   }
 
   .text-left{
     position: relative;
-    top:-80px;
-    left:1050px;
+    top:-60px;
+    left:530px;
+
   }
   
   

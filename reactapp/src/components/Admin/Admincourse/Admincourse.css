@@ -1,7 +1,13 @@
 #addCourse {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
+  position: fixed;
+  
+  bottom: "20";
+  left: '50%';
+  transform: 'translateX(-50%)';
+  zIndex: 99999;
+  bottom: 0px;
+  right: 0px;
+
   
    }
    .link-no-underline {
@@ -12,44 +18,12 @@
     text-decoration: none !important;
   }
   
-  #courseName {
-    width: 100%; 
-    border: 2px solid #000;
-    padding: 8px;
-  }
-  #courseDescription{
-    width: 100%; 
-    border: 2px solid #000;
-    padding: 8px;
-  
-  }
-  #courseDuration{
-    width: 100%;
-    border: 2px solid #000;
-    padding: 8px;
-  
-  }
-  #courseTiming{
-    width: 100%;
-    border: 2px solid #000;
-    
-    
-    padding: 8px;
-  
-  }
-  #courseEnrolled{
-    width: 100%;
-    border: 2px solid #000;
-    
-    
-    padding: 8px;
-  
-  }
+
   
   .cardContainer{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
    
     
   }
@@ -83,9 +57,9 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-   background-color:rgb(250, 213, 170) ;
+   background-color:rgb(230, 248, 250) ;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: auto;
   }
   
   .buttonContainer {
@@ -96,7 +70,7 @@
   }
   
   .text-center {
-    text-align: center;
+    text-align: left;
   }
   
   .form-control {
@@ -107,4 +81,29 @@
   .form-label {
     color: black;
   }
+  .card {
+    width: auto; 
+    height: auto; 
+    background-color: #f0f0f0; 
+    border-radius: 10px;
+    padding: 10px;
+  }
+  html {
+    overflow-x: hidden; 
+  }
+  
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(230, 248, 250);
+  padding-bottom: 15px;
+}
+
+.fullpage {
+  min-height: 100vh; 
+}
+
+
+  
   
