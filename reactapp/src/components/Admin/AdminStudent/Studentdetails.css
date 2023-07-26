@@ -1,0 +1,233 @@
+/* .search-bar {
+    display: flex;
+    flex: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+} */
+
+
+
+
+/* #searchButton {
+    display: flex;
+    justify-content: center;
+    float: center;
+    translate: 1rem 3rem;
+}
+
+#search {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: large;
+
+} */
+
+
+.addbtn {
+    display: flex;
+    float: right;
+    margin-bottom: 3rem;
+    margin-right: .5rem;
+    margin-top: 2rem;
+}
+
+#addStudent {
+    margin: 0%;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    padding: -40px;
+}
+
+#addStudent:hover {
+    background-color: green;
+    color: black;
+}
+
+.addbtn2 {
+    display: flex;
+    float: right;
+    margin: 0%
+}
+
+#addstudentbtn {
+
+    margin: 0%;
+    transform: translate(-20rem, -27rem);
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
+#addstudentbtn:hover {
+    background-color: green;
+    border-radius: 10px;
+    color: black
+}
+#cancelBtn {
+    float: right;
+    transform: translate(-3rem, -27rem);
+}
+
+#adminEditStudent {
+    margin-right: 2px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.693);
+    padding: 3px;
+}
+
+#adminEditStudent:hover {
+    outline: none;
+    border: none;
+}
+
+#adminDeleteStudent {
+
+    border: none;
+    outline: none;
+    padding-block: 5px;
+    padding-right: 7px;
+    padding-left: 7px;
+    border-radius: 5px;
+}
+
+#updateStudent {
+    float: right;
+    margin: 0%;
+    transform:translate(-22rem,-27rem);
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
+#updateStudent:hover {
+    background-color: green;
+    color: black;
+}
+
+
+
+.yashdetails {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+
+}
+
+.yashdetails label {
+    margin-right: 1rem;
+}
+
+
+.yashdetails input {
+    font-size: large;
+    padding: 7px;
+    text-align: center;
+    padding: 7px;
+    margin: 2rem;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 3.8rem;
+    padding: 1rem;
+    transform: translate(0rem, -3.3rem);
+}
+
+.container1>form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container1 input {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    text-align: center;
+    padding: 7px;
+    margin: 2rem;
+}
+
+.Address {
+    display: flex;
+    flex: wrap;
+    flex-direction: row;
+    margin: 2rem;
+    font-size: medium;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 0.6rem;
+    background-color: white;
+    transform: translate(33.2rem, -26.5rem);
+    width: 54.5%;
+    text-align: left;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px -5px;
+
+}
+
+.Address input {
+    font-size: medium;
+    margin-left: 0rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+/* #firstName{
+    margin-left: 20rem;
+} */
+#age {
+    width: 23.3rem;
+
+}
+
+.houseNo {
+    margin-right: 1rem;
+}
+
+.streetName {
+    margin-right: 1rem;
+
+}
+
+.areaName {
+    margin-left: 0.1rem;
+    margin-right: 0.6rem;
+}
+
+.pincode {
+    margin-left: 2.2rem;
+    margin-right: 1rem;
+}
+
+.state {
+    margin-left: 2.6rem;
+    margin-right: 1rem;
+}
+
+.nationality {
+    margin-left: .9rem;
+    margin-right: 1rem;
+}
+
+.table {
+    width: 100%;
+    margin-top: 10rem;
+    border: -5px solid;
+    box-shadow: 0px 0px 10px -5px;
+    margin-right: 5rem;
+
+}
+.table1{
+    margin-top: 10rem;   
+}

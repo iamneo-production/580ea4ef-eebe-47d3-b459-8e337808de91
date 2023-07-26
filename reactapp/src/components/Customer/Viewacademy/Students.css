@@ -1,0 +1,17 @@
+.table-striped tbody tr:nth-of-type(odd) td{
+    background-color: #e2e8ec; /* Alternate color for odd rows */
+  }
+  
+  .table-striped tbody tr:nth-of-type(even) td{
+    background-color: #ffffff; /* Alternate color for even rows */
+  }
+  .table{
+    margin-top:0.5px
+  }
+  .details{
+    position:relative;
+    left:-480px;
+    width:170px;
+    height:40px;
+    
+  }
