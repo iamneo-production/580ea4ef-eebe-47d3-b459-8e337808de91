@@ -3,7 +3,7 @@ import './App.css';
 import PrivateRoutes from './utils/PrivateRoutes'
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
-
+import Auth from './components/Auth/Auth';
 // Admin
 import AddAcademy from './components/Admin/AdminAcademy/AddAcademy';
 import EditAcademy from './components/Admin/AdminAcademy/EditAcademy';
@@ -40,6 +40,7 @@ function App() {
           <Route element={<Login />} path="/login" />
           <Route element={<Login />} path="/" />
           <Route element={<Signup />} path="/signup" />
+          <Route element={<Auth />} path="/auth" />
 
 
 
