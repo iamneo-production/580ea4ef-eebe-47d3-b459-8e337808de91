@@ -1,16 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './NavStyles.css'
-
-
 
 export default function Navbar(props) {
+
+
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+      <nav className="navbar navbar-expand-lg  bg-info id=navbar1 ">
         <Link
           className="navbar-brand"
-          to="/home">
+          to="/AdminInstitute">
           {props.Home}
         </Link >
         <button
@@ -39,12 +39,13 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link
                 className="nav-link"
+               
                 to="/Admincourse"
               >
                 {props.Courses}
               </Link >
             </li>
-            <li className="nav-item">
+            <li className="nav-item" >
               <Link
                 className="nav-link"
                 to="/admin/viewStudent"
@@ -55,9 +56,9 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/login"
+                to="/Login"
               >
-                {props.Logout}
+                <b>{props.Logout}</b>
               </Link >
             </li>
           </ul>

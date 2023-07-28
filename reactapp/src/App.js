@@ -3,7 +3,7 @@ import './App.css';
 import PrivateRoutes from './utils/PrivateRoutes'
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
-
+import Auth from './components/Auth/Auth';
 // Admin
 import AddAcademy from './components/Admin/AdminAcademy/AddAcademy';
 import EditAcademy from './components/Admin/AdminAcademy/EditAcademy';
@@ -20,9 +20,10 @@ import AcademiesPage from "./components/Customer/UserAcademy/AcademiesPage";
 import Course from "./components/Customer/Usercourse/Course"
 import Details from './components/Customer/Viewacademy/Details';
 import MainPage from './components/Customer/UserAcademy/MainPage';
-import Enrolledcourse from './components/Customer/EnrolledCourse/EnrolledCourse';
+import EnrolledCourse from './components/Customer/EnrolledCourse/EnrolledCourse';
 import Mylearning from './components/Customer/EnrolledCourse/Mylearning';
 import FeedbackPage from './components/Customer/EnrolledCourse/FeedbackPage';
+import Students from './components/Customer/Viewacademy/Students';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route element={<Login />} path="/login" />
           <Route element={<Login />} path="/" />
           <Route element={<Signup />} path="/signup" />
+          <Route element={<Auth />} path="/auth" />
 
 
 
@@ -48,12 +50,14 @@ function App() {
 
           <Route path="/course" element={<Course />} />
 
-          <Route element={<Details />} path="/Details" />
+          <Route element={<Details />} path="/user/Details" />
+          <Route element={<Students/>} path="/user/Students/:courseId"/>
+          <Route  element={<Details/>} path='/user/UpdateStudent1/:studentId'/>
 
           {/* <Route element={<Enrolledcourse />} path="/EnrolledCourse" /> */}
-          <Route element={<Enrolledcourse />} path="/user/Enrolledcourse" />
-          <Route element={<Mylearning />} path="/Mylearning" />
-          <Route element={<FeedbackPage />} path="/FeedbackPage" />
+          <Route element={<EnrolledCourse />} path="/user/EnrolledCourse" />
+          <Route element={<Mylearning />} path="/user/Mylearning" />
+          <Route element={<FeedbackPage />} path="/user/FeedbackPage" />
 
 
           {/* ADMIN ROUTES */}

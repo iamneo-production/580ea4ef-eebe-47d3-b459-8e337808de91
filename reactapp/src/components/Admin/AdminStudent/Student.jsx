@@ -22,7 +22,7 @@ export default function Student() {
   },[]);
 
   const loadUsers = async () => {
-     await axios.get(`${API_BASE_URL}/users`)
+     await axios.get(`${API_BASE_URL}/admin/viewStudent`)
     .then((response) => {
       console.log(response);
       setUsers(response.data);
@@ -35,7 +35,7 @@ export default function Student() {
 
 
   const deleteUser = async (studentId) => {
-    await axios.delete(`${API_BASE_URL}/user/${studentId}`)
+    await axios.delete(`${API_BASE_URL}/admin/deleteStudent/${studentId}`)
     .then((response) => {
       console.log(response);
       loadUsers();
@@ -55,13 +55,13 @@ export default function Student() {
         Students="Students"
         Logout="Logout"
       />
-      <div className="search-bar">
+      {/* <div className="search-bar">
         <label>
           <input
             type="search"
             id="search"
             placeholder='Enter studentId to search here'
-            size="40"
+            size="30"
           />
         </label>
         <label>
@@ -72,10 +72,10 @@ export default function Student() {
             value="Search">
             Search
           </button>
-        </label>
-      </div>
+        </label> */}
+      {/* </div> */}
       <table className="table table-striped">
-        <thead>
+        <thead className='table1'>
           <tr className="col">
             <th scope="col">studentId</th>
             <th scope="col">Student Name</th>

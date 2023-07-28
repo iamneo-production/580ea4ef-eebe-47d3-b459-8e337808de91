@@ -1,10 +1,28 @@
-#search {
-    margin-right: 1.5rem;
-    margin-left: 33rem;
-    margin-bottom: 5rem;
-    padding: -20px;
-    font-size: medium;
+/* .search-bar {
+    display: flex;
+    flex: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+} */
+
+
+
+
+/* #searchButton {
+    display: flex;
+    justify-content: center;
+    float: center;
+    translate: 1rem 3rem;
 }
+
+#search {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: large;
+
+} */
+
 
 .addbtn {
     display: flex;
@@ -19,7 +37,7 @@
     border-radius: 10px;
     background-color: green;
     color: white;
-    padding:-40px;
+    padding: -40px;
 }
 
 #addStudent:hover {
@@ -27,15 +45,16 @@
     color: black;
 }
 
-.addbtn2{
+.addbtn2 {
     display: flex;
     float: right;
-    margin:0%
+    margin: 0%
 }
+
 #addstudentbtn {
-   
+
     margin: 0%;
-    translate: -0.75rem -22rem;
+    transform: translate(-20rem, -27rem);
     border-radius: 10px;
     background-color: green;
     color: white;
@@ -43,8 +62,12 @@
 
 #addstudentbtn:hover {
     background-color: green;
-    
     border-radius: 10px;
+    color: black
+}
+#cancelBtn {
+    float: right;
+    transform: translate(-3rem, -27rem);
 }
 
 #adminEditStudent {
@@ -54,13 +77,14 @@
     background-color: rgba(255, 255, 255, 0.693);
     padding: 3px;
 }
-#adminEditStudent:hover {  
-   outline: none;
-   border: none;    
+
+#adminEditStudent:hover {
+    outline: none;
+    border: none;
 }
 
-#adminDeleteStudent{
-   
+#adminDeleteStudent {
+
     border: none;
     outline: none;
     padding-block: 5px;
@@ -72,7 +96,7 @@
 #updateStudent {
     float: right;
     margin: 0%;
-    translate: -0.75rem -22rem;
+    transform:translate(-22rem,-27rem);
     border-radius: 10px;
     background-color: green;
     color: white;
@@ -84,76 +108,126 @@
 }
 
 
-.details {
+
+.yashdetails {
+    align-items: center;
     display: flex;
-    flex: wrap;
-    margin-top: 5rem;
-    margin-left: 5rem;
-    margin-bottom: 2rem;
-    
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+
 }
 
-.details input {
+.yashdetails label {
+    margin-right: 1rem;
+}
+
+
+.yashdetails input {
     font-size: large;
-
-}
-
-input {
-    font-size:medium;
+    padding: 7px;
     text-align: center;
     padding: 7px;
     margin: 2rem;
 }
 
-input[type=text]:focus {
-    border: 3px solid #555;
+.container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 3.8rem;
+    padding: 1rem;
+    transform: translate(0rem, -3.3rem);
 }
-/* #phoneNumber1{
-    outline:0;
+
+.container1>form {
+    display: flex;
+    flex-direction: column;
 }
-#phoneNumber1:valid{
-    border-color: green;
+
+.container1 input {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    text-align: center;
+    padding: 7px;
+    margin: 2rem;
 }
-#phoneNumber1:invalid{
-    border-color: red;
-} */
 
 .Address {
-    margin-top: 1rem;
-    margin-left: 5rem;
-    margin-bottom: 1rem;
+    display: flex;
+    flex: wrap;
+    flex-direction: row;
+    margin: 2rem;
     font-size: medium;
-    padding-left: 20px;
-    padding-top: 20px;
-    background-color: aliceblue;
-    translate: 30rem -22rem;
-    width: 55.3%;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 0.6rem;
+    background-color: white;
+    transform: translate(33.2rem, -26.5rem);
+    width: 54.5%;
+    text-align: left;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px -5px;
+
 }
 
 .Address input {
     font-size: medium;
-    font-family:'Times New Roman', Times, serif;
-    margin-left: 1rem;
-    margin-right: 3rem;
-    margin-bottom: 0.79rem;
+    margin-left: 0rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
-.areaName{
-    margin-left:0.5;
+
+/* #firstName{
+    margin-left: 20rem;
+} */
+#age {
+    width: 23.3rem;
+
 }
-.pincode{
-    margin-left:2.1rem;
+
+.houseNo {
+    margin-right: 1rem;
 }
-.state{
+
+.streetName {
+    margin-right: 1rem;
+
+}
+
+.areaName {
+    margin-left: 0.1rem;
+    margin-right: 0.6rem;
+}
+
+.pincode {
+    margin-left: 2.2rem;
+    margin-right: 1rem;
+}
+
+.state {
     margin-left: 2.6rem;
+    margin-right: 1rem;
 }
-.nationality{
-    margin-left:.5rem;
+
+.nationality {
+    margin-left: .9rem;
+    margin-right: 1rem;
 }
-.table{
+
+.table {
     width: 100%;
+    margin-top: 10rem;
+    border: -5px solid;
+    box-shadow: 0px 0px 10px -5px;
+    margin-right: 5rem;
+
 }
-.tr:col{
-    margin: 1rem;
-    padding: 30px;
+.table1{
+    margin-top: 10rem;   
 }
-/* //student */

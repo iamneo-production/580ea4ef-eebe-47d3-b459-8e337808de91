@@ -3,13 +3,13 @@
   .border-box{
     margin-left:27rem ;
     width: 650px;
-      height: 320px;
+      height: 340px;
       background-color: #f2f2f2;
       border: 1px solid #ccc;
       padding: 20px;
       box-sizing: border-box;
       position: relative;
-  top: -50px;
+      top: 10px;
 }
 /* data modified*/
 
@@ -17,21 +17,28 @@ label {
     justify-self: end;
   }
 
-  .top{
+  .calendar{
     position: relative;
-  top: -315px;
+  top: -325px;
   }
-  .left{
+  /*.left{
     position: relative;
-    left:-380px;
+    left:-370px;
     top: -250px;
 
-  }
+  }*/
+  /*.calendar{
+    position: relative;
+    left:-370px;
+    top: -250px;
+    
+    
+  }*/
 
   .text-left{
     position: relative;
-    top:-80px;
-    left:550px;
+    top:-60px;
+    left:530px;
 
   }
   
