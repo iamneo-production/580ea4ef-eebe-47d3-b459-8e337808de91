@@ -1,0 +1,38 @@
+
+
+  .border-box{
+    margin-left:27rem ;
+    width: 650px;
+      height: 320px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+  top: -50px;
+}
+/* data modified*/
+
+label {
+    justify-self: end;
+  }
+
+  .top{
+    position: relative;
+  top: -315px;
+  }
+  .left{
+    position: relative;
+    left:-380px;
+    top: -250px;
+
+  }
+
+  .text-left{
+    position: relative;
+    top:-80px;
+    left:550px;
+
+  }
+  
+  

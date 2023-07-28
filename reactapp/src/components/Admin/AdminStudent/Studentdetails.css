@@ -1,0 +1,159 @@
+#search {
+    margin-right: 1.5rem;
+    margin-left: 33rem;
+    margin-bottom: 5rem;
+    padding: -20px;
+    font-size: medium;
+}
+
+.addbtn {
+    display: flex;
+    float: right;
+    margin-bottom: 3rem;
+    margin-right: .5rem;
+    margin-top: 2rem;
+}
+
+#addStudent {
+    margin: 0%;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    padding:-40px;
+}
+
+#addStudent:hover {
+    background-color: green;
+    color: black;
+}
+
+.addbtn2{
+    display: flex;
+    float: right;
+    margin:0%
+}
+#addstudentbtn {
+   
+    margin: 0%;
+    translate: -0.75rem -22rem;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
+#addstudentbtn:hover {
+    background-color: green;
+    
+    border-radius: 10px;
+}
+
+#adminEditStudent {
+    margin-right: 2px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.693);
+    padding: 3px;
+}
+#adminEditStudent:hover {  
+   outline: none;
+   border: none;    
+}
+
+#adminDeleteStudent{
+   
+    border: none;
+    outline: none;
+    padding-block: 5px;
+    padding-right: 7px;
+    padding-left: 7px;
+    border-radius: 5px;
+}
+
+#updateStudent {
+    float: right;
+    margin: 0%;
+    translate: -0.75rem -22rem;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
+#updateStudent:hover {
+    background-color: green;
+    color: black;
+}
+
+
+.details {
+    display: flex;
+    flex: wrap;
+    margin-top: 5rem;
+    margin-left: 5rem;
+    margin-bottom: 2rem;
+    
+}
+
+.details input {
+    font-size: large;
+
+}
+
+input {
+    font-size:medium;
+    text-align: center;
+    padding: 7px;
+    margin: 2rem;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+/* #phoneNumber1{
+    outline:0;
+}
+#phoneNumber1:valid{
+    border-color: green;
+}
+#phoneNumber1:invalid{
+    border-color: red;
+} */
+
+.Address {
+    margin-top: 1rem;
+    margin-left: 5rem;
+    margin-bottom: 1rem;
+    font-size: medium;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: aliceblue;
+    translate: 30rem -22rem;
+    width: 55.3%;
+}
+
+.Address input {
+    font-size: medium;
+    font-family:'Times New Roman', Times, serif;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    margin-bottom: 0.79rem;
+}
+.areaName{
+    margin-left:0.5;
+}
+.pincode{
+    margin-left:2.1rem;
+}
+.state{
+    margin-left: 2.6rem;
+}
+.nationality{
+    margin-left:.5rem;
+}
+.table{
+    width: 100%;
+}
+.tr:col{
+    margin: 1rem;
+    padding: 30px;
+}
+/* //student */
