@@ -30,14 +30,14 @@ public class StudentController {
 
     //to GET the Student with the specific user id and handling Student Not Found Exception
     @GetMapping("/admin/viewStudent/{StudentId}")
-    StudentModel getUserById(@PathVariable Long id) {
+    StudentModel getUserById(@PathVariable(name="StudentId") Long id) {
         return studentRepository.findById(id)
                 .orElseThrow(() -> new StudentNotFoundException(id));
     }
 
     //For Editing the Student's data
     @PutMapping("/admin/editStudent/{StudentId}")
-    StudentModel updateUser(@RequestBody StudentModel newStudentModel, @PathVariable Long id) {
+    StudentModel updateUser(@RequestBody StudentModel newStudentModel, @PathVariable(name="StudentId") Long id) {
         return studentRepository.findById(id)
                 .map(studentModel -> {
                     studentModel.setFirstName(newStudentModel.getFirstName());          //setting the Students' details accordingly passed by the client
@@ -59,8 +59,8 @@ public class StudentController {
                 }).orElseThrow(() -> new StudentNotFoundException(id));
     }
     //For deleting the user data using Student ID
-    @DeleteMapping("/user/{id}")
-    String deleteUser(@PathVariable Long id){
+    @DeleteMapping("/admin/deleteStudent/{StudentId}")
+    String deleteUser(@PathVariable(name="StudentId") Long id){
         if(!studentRepository.existsById(id)){             //If the StudentModel ID does not exist
             throw new StudentNotFoundException(id);
         }

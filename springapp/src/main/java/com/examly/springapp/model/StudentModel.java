@@ -21,34 +21,46 @@ public class StudentModel{
 
     @Column (name = "firstName")
     private String firstName;
-    @Column (name = "lastName")
 
+    @Column (name = "lastName")
     private String lastName;
+   
     @Column (name = "gender")
     private String gender;
+   
     @Column (name = "fatherName")
     private String fatherName;
+   
     @Column (name = "phnNo1")
     private Long  phnNo1;
+   
     @Column (name = "phnNo2")
     private Long phnNo2;
+   
     @Column (name = "motherName")
     private String motherName;
+   
     @Column (name = "email")
     private String email;
 
     @Column (name = "age")
     private int age;
+   
     @Column(name = "houseNo")
     private String houseNo;
+   
     @Column(name = "streetName")
     private String streetName;
+   
     @Column(name = "areaName")
     private String areaName;
+   
     @Column(name = "pinCode")
     private Long pinCode;
+   
     @Column(name = "state")
     private String state;
+   
     @Column(name = "nationality")
     private String nationality;
 
@@ -73,8 +85,8 @@ public class StudentModel{
     @Column(name = "AlternamteNumber")
     private String alternatenumber ;
 
-    @Column(name = "Malefemale")
-    private String malefemale;
+    //@Column(name = "Malefemale")
+    //private String malefemale;
 
     public StudentModel(long studentId,String firstName,String lastName, String studentName, Date studentDOB, String address, String mobile, String email,String gender , String fatherName,  String motherName ,String alternatenumber,String completeaddress) {
         this.studentId = studentId;

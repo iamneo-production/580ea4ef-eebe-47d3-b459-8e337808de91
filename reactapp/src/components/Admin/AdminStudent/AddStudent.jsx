@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Studentdetails.css';
-import {API_BASE_URL} from "../../../utils/APIUtils";
+import { API_BASE_URL } from "../../../utils/APIUtils";
 
 const AddStudent = () => {
   let navigate = useNavigate();
@@ -24,7 +24,7 @@ const AddStudent = () => {
     areaName: "",
     pinCode: "",
     state: "",
-    nationality: ""
+    nationality: "",
   });
 
   const { firstName, lastName, gender, fatherName, phnNo1, phnNo2, motherName,
@@ -37,7 +37,7 @@ const AddStudent = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`${API_BASE_URL}/user`, user)
+    await axios.post(`${API_BASE_URL}/admin/addStudent`, user)
       .then((response) => {
         console.log(response);
         setUser(response.data);
@@ -46,9 +46,19 @@ const AddStudent = () => {
       .catch((error) => {
         console.log(error);
       });
-
+    const requiredFields = ["firstName", "lastName", "gender", "fatherName", "phnNo1", "motherName", "email", "age", "houseNo", "streetName", "areaName", "pinCode", "state", "nationality"];
+    for (const field of requiredFields) {
+      if (!user[field].trim()) {
+        
+        alert(`Please fill in all required fields.`);
+        return;
+      }
+    }
   };
-
+  const onCancel = (e) => {
+    e.preventDefault();
+    navigate("/admin/viewStudent");
+  }
   return (
 
     <>
@@ -60,8 +70,8 @@ const AddStudent = () => {
         Students="Students"
         Logout="Logout"
       />
-      <div className="details">
-        <form>
+      <div className="yashdetails" >
+        <form >
           <label>
             <input
               type={"text"}
@@ -185,7 +195,7 @@ const AddStudent = () => {
       <div className="Address">
         <form>
           <b>Address Information</b>
-          <br/>
+          <br />
           <label className='houseNo'>
             <b>House No :</b>
           </label>
@@ -230,14 +240,14 @@ const AddStudent = () => {
           </label>
           <input
             type={"text"}
-            name="PinCode"
+            name="pinCode"
             id='pinCode'
             size="20"
             value={pinCode}
             required
             onChange={(e) => onInputChange(e)}
           />
-          <br/>
+          <br />
           <label className='state'>
             <b>State:</b>
           </label>
@@ -269,7 +279,10 @@ const AddStudent = () => {
       <div className="addbtn2">
         <button type="submit" className="btn btn-light btn-lg" id="addstudentbtn" onClick={(e) => onSubmit(e)} >Add Student</button>
       </div>
+      <div className="cancelbtn">
+        <button type="button" className="btn btn-danger btn-lg" id="cancelBtn" onClick={(e) => onCancel(e)} >Cancel</button>
+      </div>
     </>
   );
 }
-export default AddStudent;
+export default AddStudent;

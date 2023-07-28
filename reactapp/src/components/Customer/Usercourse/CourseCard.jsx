@@ -21,13 +21,19 @@ const CourseCard = (props) => {
         //window.location.href = "/Details"; //Enrollment form page link path
         e.preventDefault();
         console.log('The link was clicked.');
+
+        
         const course = {
             courseId: courseId,
             courseName: props.name,
             courseDuration: props.duration,
             joinedDate: new Date(),
             endDate: new Date(new Date().getFullYear(), new Date().getMonth() + parseInt(props.duration), new Date().getDate()),
+            
+            
+
         };
+        
 
         axios.post(`${API_BASE_URL}/user/addAdmissions`, course)
             .then(() => {
@@ -47,7 +53,7 @@ const CourseCard = (props) => {
             <Card className="m-3" style={{backgroundColor:"#a8a8a8"}} >
                 <Card.Body >
                     <Card.Title className='m-3'>{props.name}</Card.Title>
-                    <Card.Subtitle className='m-3'>Course Duration :&nbsp;{props.duration} Months</Card.Subtitle>
+                    <Card.Subtitle className='m-3'>Course Duration :&nbsp;{props.duration}&nbsp;</Card.Subtitle>
                     <Card.Subtitle className='m-3'>Course Timings :&nbsp;{props.timings}</Card.Subtitle>
                     <Card.Subtitle className='m-3'>No. of Students :&nbsp;{props.students}</Card.Subtitle>
                     <Card.Subtitle className='m-3'>Course Description :&nbsp;{props.description}</Card.Subtitle>
