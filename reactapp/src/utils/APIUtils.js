@@ -1,7 +1,7 @@
-// export const API_BASE_URL ="https://8080-aaffcaedafdcdaadecbbaeeaadadfcaea.project.examly.io";
+// export const API_BASE_URL ="https://8080-aabbcbadccfbfcadcdaadecbbaebabefadbfdcd.project.examly.io";
 
 
-export const API_BASE_URL ="https://8080-daefebfdcdcdaadecbbaebabefadbfdcd.project.examly.io";   
+export const API_BASE_URL ="https://8080-aabbcbadccfbfcadcdaadecbbaebabefadbfdcd.project.examly.io";   
 
 
 
