@@ -25,7 +25,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-//@EnableMethodSecurity
+// @EnableMethodSecurity
 public class SecurityConfig {
 
     @Autowired
@@ -61,10 +61,23 @@ public class SecurityConfig {
     @Bean
     protected SecurityFilterChain filterchain(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
+         .authorizeRequests()
+        .anyRequest().permitAll()
+        // .antMatchers(
+
+        //         "/user/login",
+        //         "/admin/login",
+        //         "/admin/signup",
+        //         "/user/signup",
+        //         "/"
+        // ).permitAll()
+        // .antMatchers(HttpHeaders.ALLOW).permitAll()
+        // .anyRequest().authenticated()
+        .and()
                 .exceptionHandling().authenticationEntryPoint(authEntryPoint).and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .authorizeRequests().antMatchers("/**").permitAll()
-                .anyRequest().authenticated();
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+
         http.authenticationProvider(authenticationProvider());
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         return http.build();
