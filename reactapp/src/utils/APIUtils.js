@@ -1,4 +1,4 @@
-export const API_BASE_URL ="https://8080-eadabcbeccdddcdaadecbbaebabefadbfdcd.project.examly.io";
+export const API_BASE_URL ="https://8080-eadabcbeccdddcdaadecbbaeeaadadfcaea.project.examly.io";
 
 
 // export const API_BASE_URL ="https://8080-daefebfdcdcdaadecbbaeeaadadfcaea.project.examly.io";   
