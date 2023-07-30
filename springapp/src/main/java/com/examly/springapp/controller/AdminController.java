@@ -11,6 +11,11 @@ import java.util.List;
 import java.util.Optional;
 
 
+// test 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+
 @RestController
 @CrossOrigin("*")
 
@@ -57,4 +62,24 @@ public class AdminController {
     instituteModelRepository.deleteById(instituteId);
     return "Institute with id"+instituteId+" has been deleted";
 }
+
+
+
+
+//tset
+
+@GetMapping("/admin/institute")
+public ResponseEntity<?> getAllInstitute() {
+    
+        List<?> allInstitute = instituteModelRepository.findAll();
+        return ResponseEntity.ok(allInstitute);
+     
+}
+@GetMapping("/admin/admission")
+public ResponseEntity<?> getAllAdmission() {
+    
+        List<?> allInstitute = instituteModelRepository.findAll();
+        return ResponseEntity.ok(allInstitute);
+}
+
 }
