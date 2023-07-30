@@ -55,7 +55,12 @@ const AddStudent = () => {
       }
     }
   };
+<<<<<<< HEAD
   const onCancel = () => {
+=======
+  const onCancel = (e) => {
+    e.preventDefault();
+>>>>>>> 07ed1c6f2a67ba174d6a6e59b5efc0ae61025d06
     navigate("/admin/viewStudent");
   }
   return (

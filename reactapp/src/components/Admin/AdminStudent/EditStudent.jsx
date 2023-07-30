@@ -67,7 +67,8 @@ export default function EditStudent() {
   };
 
 
-  const onCancel = () => {
+  const onCancel = (e) => {
+    e.preventDefault();
     navigate("/admin/viewStudent");
   }
 
