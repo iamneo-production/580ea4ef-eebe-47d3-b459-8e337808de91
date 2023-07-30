@@ -10,6 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 
+
+import org.springframework.http.ResponseEntity;
+import java.util.Optional;
+
+
+
 @RestController
 @CrossOrigin("*")
 public class StudentController {
@@ -67,5 +73,17 @@ public class StudentController {
         studentRepository.deleteById(id);                   //If the StudentModel with a specific ID is present
         return  "Student with id "+id+" has been deleted: success.";
     }
+
+
+
+
+     //test
+
+     @GetMapping("/admin/student") 
+     public ResponseEntity<?> getAllStudents(){
+         List<?> allStu = studentRepository.findAll();
+         return ResponseEntity.ok(allStu);
+}
+ 
 }
 

@@ -9,6 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+// test
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+
+
 @RestController
 @CrossOrigin("*")
 
@@ -52,5 +59,16 @@ public class CourseController {
         return "user with id "+courseId+"has been deleted success,";
     }
 
+
+
+        // test cases 
+
+        @GetMapping("/admin/courses")
+        public ResponseEntity<List<CourseModel>> getAllCourses() {
+            
+                List<CourseModel> allCourses = userRepository.findAll();
+                return ResponseEntity.ok(allCourses);
+    }
+    
 }
 
